@@ -1,0 +1,19 @@
+{
+  "FirstName": "Mikolaj",
+  "LastName": "Kosmalski",
+  "address": "Pogrelzstraße 55/6/4",
+  "zip_code": "1220",
+  "city": "Wien",
+  "email": "mikolaj.jakub.kosmalski@gmail.com",
+  "linkedin": "https://linkedin.com/in/mikolajkosmalski",
+  "phone": "0660 20 57 157",
+  "application_text": {
+    "introduction": "Sehr geehrte Damen und Herren,<br/><br/>",
+    "position_intro": "mit großer Begeisterung bewerbe ich mich ",
+    "education": "Ich habe gerade eine zweijährige Ausbildung im Bereich der Anwendungsentwicklung mit LAP abgeschlossen, wo ich solide Grundlagen in der objektorientierten Programmierung mit .NET/C# erlernte. Darüber hinaus bin ich in der Lage, Webanwendungen in ASP.NET mit REST API zu entwickeln, wobei ich SQL-Datenbanken effektiv nutze.<br/><br/>",
+    "experience": "Von 2020 bis 2023 war ich Mitbegründer des Start-ups <a href='https://timagio.com' color='blue'><u>timagio.com</u></a>, das Apps für Eltern und Lehrer im Zusammenhang mit der Montessori-Pädagogik entwickelt. Dort habe ich mehrere Prototypen in JavaScript, Automatisierungen in Python und Powershell-Skripte entwickelt sowie Erfahrung mit Scrum, Azure DevOps und Git gesammelt.<br/><br/>",
+    "skills": "Ich lerne schnell, habe einen analytischen Verstand, bin kreativ, offen für Kritik und resistent gegen Stress. Ich bin daher überzeugt, dass ich ein wertvolles Mitglied Ihres Teams sein kann. Ich freue mich darauf, in einem persönlichen Gespräch mehr über diese Position zu erfahren.<br/><br/>",
+    "internship_offer": "Um meine Einarbeitung zu erleichtern, bin ich gerne bereit ein Praktikum zu absolvieren. Sie könnten profitieren von einer Eingliederungsbeihilfe für einen Zeitraum von 6 Monaten mit einem Höchstbetrag von insgesamt 18 000 EUR:<br/> <a href='https://ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe' color='blue'><u>ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe</u></a>.<br/><br/>",
+    "closing": "Ich füge diesem Schreiben meinen Lebenslauf und meine LAP-Zeugnis bei.<br/><br/>Mit freundlichen Grüßen<br/>Mikolaj Kosmalski"
+  }
+}
