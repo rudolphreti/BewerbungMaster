@@ -1,30 +1,15 @@
 ﻿using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Models;
+using BewerbungMasterApp.Services;
 
 namespace BewerbungMasterApp.Services
 {
     public partial class FileManagementService : IFileManagementService
     {
-        private static List<string> CreateFolderNamesList(List<JobApplication> jobApplications)
-        {
-            List<string> uniqueFolderNames = [];
-
-            for (int i = 0; i < jobApplications.Count; i++)
-            {
-                var application = jobApplications[i];
-                string subFolderName = CleanName($"{application.Company}_{application.Position}");
-
-                subFolderName = EnsureUniqueName(subFolderName, uniqueFolderNames);
-                uniqueFolderNames.Add(subFolderName);
-            }
-
-            return uniqueFolderNames;
-        }
-
         public void GenerateJobApplicationFolders(List<JobApplication> jobApplications)
         {
             //var user = await LoadUserDataAsync(_userDirectoryPath);
-            var uniqueFolderNames = CreateFolderNamesList(jobApplications);
+            var uniqueFolderNames = FileManagementServiceStatic.CreateFolderNamesList(jobApplications);
 
             foreach (var folderName in uniqueFolderNames)
             {

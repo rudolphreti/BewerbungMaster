@@ -6,14 +6,9 @@ using Microsoft.Extensions.Hosting;
 
 namespace BewerbungMasterApp.Services
 {
-    public class GetJobApplicationsService : IGetJobApplicationsService
+    public class GetJobApplicationsService(IWebHostEnvironment environment) : IGetJobApplicationsService
     {
-        private readonly IWebHostEnvironment _environment;
-
-        public GetJobApplicationsService(IWebHostEnvironment environment)
-        {
-            _environment = environment;
-        }
+        private readonly IWebHostEnvironment _environment = environment;
 
         public async Task<List<JobApplication>> GetJobApplicationsAsync()
         {
@@ -25,7 +20,7 @@ namespace BewerbungMasterApp.Services
                 if (!File.Exists(jsonFilePath))
                 {
                     Console.WriteLine($"File not found: {jsonFilePath}");
-                    return new List<JobApplication>();
+                    return [];
                 }
 
                 var jsonData = await File.ReadAllTextAsync(jsonFilePath);
@@ -35,7 +30,7 @@ namespace BewerbungMasterApp.Services
             {
                 // Handle other exceptions (e.g., JSON parsing errors)
                 Console.WriteLine($"An error occurred: {ex.Message}");
-                return new List<JobApplication>(); // Return an empty list on error
+                return []; // Return an empty list on error
             }
         }
     }

@@ -4,7 +4,7 @@ using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
-    public partial class FileManagementService : IFileManagementService
+    public partial class FileManagementServiceStatic
     {
         private static async Task<User> LoadUserDataAsync(string userDirectoryPath)
         {
