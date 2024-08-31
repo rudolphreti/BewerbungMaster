@@ -1,7 +1,6 @@
 using BewerbungMasterApp.Components;
 using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Services;
-using BewerbungMasterApp;
 
 namespace BewerbungMasterApp
 {
@@ -75,7 +74,7 @@ namespace BewerbungMasterApp
                     var jobApplications = jobApplicationsService.GetJobApplicationsAsync().Result;
 
                     // Generate job application folders
-                    fileManagementService.GenerateJobApplicationFoldersAsync(jobApplications).Wait();
+                    fileManagementService.GenerateJobApplicationFolders(jobApplications);
                 }
                 catch (Exception ex)
                 {

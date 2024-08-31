@@ -7,6 +7,6 @@ namespace BewerbungMasterApp.Interfaces
     public interface IFileManagementService
     {
         void InitializeJobAppDocsDirectory();
-        Task GenerateJobApplicationFoldersAsync(List<JobApplication> jobApplications);
+        void GenerateJobApplicationFolders(List<JobApplication> jobApplications);
     }
 }

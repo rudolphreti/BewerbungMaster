@@ -1,9 +1,10 @@
 ﻿using System.Text.Json;
+using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
-    public partial class FileManagementService
+    public partial class FileManagementService : IFileManagementService
     {
         private static async Task<User> LoadUserDataAsync(string userDirectoryPath)
         {

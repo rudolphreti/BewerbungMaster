@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-using BewerbungMasterApp.Models;
-using BewerbungMasterApp.Interfaces;
+﻿using BewerbungMasterApp.Interfaces;
 
 namespace BewerbungMasterApp.Services
 {
@@ -11,8 +9,6 @@ namespace BewerbungMasterApp.Services
 
         public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment)
         {
-            Console.WriteLine("Initializing FileManagementService...");
-
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
             _userDirectoryPath = Path.Combine(environment.WebRootPath, configuration["UserDirectoryPath"]?.Trim() ??
                 throw new InvalidOperationException("User directory path is not configured properly."));
@@ -29,11 +25,9 @@ namespace BewerbungMasterApp.Services
             if (Directory.Exists(_jobAppDocsPath))
             {
                 Directory.Delete(_jobAppDocsPath, true);
-                Console.WriteLine($"Cleared existing directory: {_jobAppDocsPath}");
             }
 
             Directory.CreateDirectory(_jobAppDocsPath);
-            Console.WriteLine($"Created new directory: {_jobAppDocsPath}");
         }
     }
 }

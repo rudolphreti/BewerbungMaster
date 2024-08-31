@@ -1,6 +1,8 @@
-﻿namespace BewerbungMasterApp.Services
+﻿using BewerbungMasterApp.Interfaces;
+
+namespace BewerbungMasterApp.Services
 {
-    public partial class FileManagementService
+    public partial class FileManagementService : IFileManagementService
     {
         private static string CleanName(string fileName)
         {
