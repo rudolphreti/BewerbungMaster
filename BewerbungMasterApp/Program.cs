@@ -40,6 +40,7 @@ namespace BewerbungMasterApp
 
             // Register application services
             builder.Services.AddSingleton<IGetJobApplicationsService, GetJobApplicationsService>();
+            builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
             builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
 
             var app = builder.Build();

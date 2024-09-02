@@ -1,6 +1,8 @@
 ﻿using System.Text.Json;
 using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Models;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace BewerbungMasterApp.Services
 {
@@ -17,7 +19,15 @@ namespace BewerbungMasterApp.Services
                 throw new FileNotFoundException($"User data file not found: {userJsonPath}");
 
             var userJson = await File.ReadAllTextAsync(userJsonPath);
-            return JsonSerializer.Deserialize<User>(userJson) ?? throw new InvalidOperationException("User data could not be loaded.");
+
+            // Configure JsonSerializer options to handle special characters correctly
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All), // Ensure all characters are encoded properly
+                PropertyNameCaseInsensitive = true // Optional, depending on your JSON structure
+            };
+
+            return JsonSerializer.Deserialize<User>(userJson, options) ?? throw new InvalidOperationException("User data could not be loaded.");
         }
     }
 }
