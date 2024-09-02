@@ -2,9 +2,9 @@
 
 namespace BewerbungMasterApp.Services
 {
-    public partial class FileManagementServiceStatic
+    public partial class FileManagementServiceStatic // to refactor, simplyfy
     {
-        private static string CleanName(string fileName)
+        public static string CleanName(string fileName)
         {
             fileName = fileName.Trim();
 
@@ -22,7 +22,7 @@ namespace BewerbungMasterApp.Services
             return fileName;
         }
 
-        private static string EnsureUniqueName(string name, List<string> existingNames)
+        public static string EnsureUniqueName(string name, List<string> existingNames)
         {
             int count = 1;
             string uniqueName = name;

@@ -19,5 +19,13 @@ namespace BewerbungMasterApp.Services
 
             return uniqueFolderNames;
         }
+
+        public static void CreateDirectories(string targetDirectoryPath, string cvLapSubFolderPath) // to rename, "folders" not "directory"
+        {
+            Directory.CreateDirectory(targetDirectoryPath);
+            Directory.CreateDirectory(cvLapSubFolderPath);
+        }
     }
+
+
 }

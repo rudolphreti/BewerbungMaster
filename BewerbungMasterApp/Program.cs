@@ -74,7 +74,7 @@ namespace BewerbungMasterApp
                     var jobApplications = jobApplicationsService.GetJobApplicationsAsync().Result;
 
                     // Generate job application folders
-                    fileManagementService.GenerateJobApplicationFolders(jobApplications);
+                    fileManagementService.GenerateJobApplicationSetsAsync(jobApplications); // with .Wait()? 
                 }
                 catch (Exception ex)
                 {

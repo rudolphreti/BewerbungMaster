@@ -6,7 +6,7 @@ namespace BewerbungMasterApp.Services
 {
     public partial class FileManagementServiceStatic
     {
-        private static async Task<User> LoadUserDataAsync(string userDirectoryPath)
+        public static async Task<User> LoadUserDataAsync(string userDirectoryPath)
         {
             if (string.IsNullOrWhiteSpace(userDirectoryPath))
                 throw new InvalidOperationException("User directory path is invalid.");
