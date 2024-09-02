@@ -52,7 +52,7 @@ namespace BewerbungMasterApp.Services
         public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications)
         {
             // Load user data asynchronously
-            var user = await FileManagementServiceStatic.LoadUserDataAsync(_userDirectoryPath);
+            var user = await GetUserData.GetUserDataAsync(_userDirectoryPath);
 
             // Create a mapping of unique folder names to job applications
             var folderApplicationMap = CreateFolderApplicationMap(jobApplications);

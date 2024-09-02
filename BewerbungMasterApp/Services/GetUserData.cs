@@ -1,14 +1,13 @@
 ﻿using System.Text.Json;
-using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Models;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 
 namespace BewerbungMasterApp.Services
 {
-    public partial class FileManagementServiceStatic
+    public static class GetUserData
     {
-        public static async Task<User> LoadUserDataAsync(string userDirectoryPath)
+        public static async Task<User> GetUserDataAsync(string userDirectoryPath)
         {
             if (string.IsNullOrWhiteSpace(userDirectoryPath))
                 throw new InvalidOperationException("User directory path is invalid.");

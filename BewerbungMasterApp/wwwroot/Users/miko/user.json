@@ -1,19 +1,19 @@
 {
   "FirstName": "Mikolaj",
   "LastName": "Kosmalski",
-  "address": "Pogrelzstraße 55/6/4",
-  "zip_code": "1220",
-  "city": "Wien",
-  "email": "mikolaj.jakub.kosmalski@gmail.com",
-  "linkedin": "https://linkedin.com/in/mikolajkosmalski",
-  "phone": "0660 20 57 157",
-  "application_text": {
-    "introduction": "Sehr geehrte Damen und Herren,",
-    "position_intro": "mit großer Begeisterung bewerbe ich mich ",
-    "education": "Ich habe gerade eine zweijährige Ausbildung im Bereich der Anwendungsentwicklung mit LAP abgeschlossen, wo ich solide Grundlagen in der objektorientierten Programmierung mit .NET/C# erlernte. Darüber hinaus bin ich in der Lage, Webanwendungen in ASP.NET mit REST API zu entwickeln, wobei ich SQL-Datenbanken effektiv nutze.",
-    "experience": "Von 2020 bis 2023 war ich Mitbegründer des Start-ups https://timagio.com, das Apps für Eltern und Lehrer im Zusammenhang mit der Montessori-Pädagogik entwickelt. Dort habe ich mehrere Prototypen in JavaScript, Automatisierungen in Python und Powershell-Skripte entwickelt sowie Erfahrung mit Scrum, Azure DevOps und Git gesammelt.",
-    "skills": "Ich lerne schnell, habe einen analytischen Verstand, bin kreativ, offen für Kritik und resistent gegen Stress. Ich bin daher überzeugt, dass ich ein wertvolles Mitglied Ihres Teams sein kann. Ich freue mich darauf, in einem persönlichen Gespräch mehr über diese Position zu erfahren.",
-    "internship_offer": "Um meine Einarbeitung zu erleichtern, bin ich gerne bereit ein Praktikum zu absolvieren. Sie könnten profitieren von einer Eingliederungsbeihilfe für einen Zeitraum von 6 Monaten mit einem Höchstbetrag von insgesamt 18 000 EUR: https://ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe",
-    "closing": "Ich füge diesem Schreiben meinen Lebenslauf und meine LAP-Zeugnis bei. Mit freundlichen Grüßen Mikolaj Kosmalski"
+  "Address": "Pogrelzstraße 55/6/4",
+  "ZipCode": "1220",
+  "City": "Wien",
+  "Email": "mikolaj.jakub.kosmalski@gmail.com",
+  "LinkedIn": "https://linkedin.com/in/mikolajkosmalski",
+  "Phone": "0660 20 57 157",
+  "ApplicationText": {
+    "Introduction": "Sehr geehrte Damen und Herren,",
+    "PositionIntro": "mit großer Begeisterung bewerbe ich mich ",
+    "Education": "Ich habe gerade eine zweijährige Ausbildung im Bereich der Anwendungsentwicklung mit LAP abgeschlossen, wo ich solide Grundlagen in der objektorientierten Programmierung mit .NET/C# erlernte. Darüber hinaus bin ich in der Lage, Webanwendungen in ASP.NET mit REST API zu entwickeln, wobei ich SQL-Datenbanken effektiv nutze.",
+    "Experience": "Von 2020 bis 2023 war ich Mitbegründer des Start-ups https://timagio.com, das Apps für Eltern und Lehrer im Zusammenhang mit der Montessori-Pädagogik entwickelt. Dort habe ich mehrere Prototypen in JavaScript, Automatisierungen in Python und Powershell-Skripte entwickelt sowie Erfahrung mit Scrum, Azure DevOps und Git gesammelt.",
+    "Skills": "Ich lerne schnell, habe einen analytischen Verstand, bin kreativ, offen für Kritik und resistent gegen Stress. Ich bin daher überzeugt, dass ich ein wertvolles Mitglied Ihres Teams sein kann. Ich freue mich darauf, in einem persönlichen Gespräch mehr über diese Position zu erfahren.",
+    "InternshipOffer": "Um meine Einarbeitung zu erleichtern, bin ich gerne bereit ein Praktikum zu absolvieren. Sie könnten profitieren von einer Eingliederungsbeihilfe für einen Zeitraum von 6 Monaten mit einem Höchstbetrag von insgesamt 18 000 EUR: https://ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe",
+    "Closing": "Ich füge diesem Schreiben meinen Lebenslauf und meine LAP-Zeugnis bei. Mit freundlichen Grüßen Mikolaj Kosmalski"
   }
 }
