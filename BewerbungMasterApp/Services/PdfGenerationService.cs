@@ -1,119 +1,76 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using PdfSharp.Drawing.Layout;
+using System.Text;
 using BewerbungMasterApp.Interfaces;
-using BewerbungMasterApp.Models;
 
-namespace BewerbungMasterApp.Services;
-
-public class PdfGenerationService : IPdfGenerationService
+namespace BewerbungMasterApp.Services
 {
-    public async Task GenerateCoverLetterPdfAsync(string targetDirectoryPath, string fileName, User user, JobApplication application)
+    public static class PdfGenerationService
     {
-        var pdfFilePath = Path.Combine(targetDirectoryPath, fileName);
 
-        using var document = new PdfDocument();
-        document.Info.Title = "Cover Letter";
-
-        var page = document.AddPage();
-        using var gfx = XGraphics.FromPdfPage(page);
-        var headerFont = new XFont("Verdana", 12);
-        var bodyFont = new XFont("Verdana", 12);
-
-        var marginLeft = XUnit.FromCentimeter(2).Point;
-        var marginRight = XUnit.FromCentimeter(2).Point;
-        var marginTop = XUnit.FromCentimeter(2).Point;
-
-        var tf = new XTextFormatter(gfx);
-
-        // User details
-        DrawUserDetails(tf, headerFont, marginLeft, marginTop, user);
-
-        // Company details
-        DrawCompanyDetails(tf, headerFont, marginLeft, marginTop, application);
-
-        // Date
-        tf.DrawString($"{user.City}, {DateTime.Now:dd.MM.yyyy}", headerFont, XBrushes.Black,
-            new XRect(marginLeft, marginTop + 200, page.Width.Point - marginLeft - marginRight, 20), XStringFormats.TopLeft);
-
-        // Application title
-        var applicationTitle = application.Position == "Initiativbewerbung"
-            ? application.Position
-            : $"Bewerbung als {application.Position}";
-        tf.DrawString(applicationTitle, headerFont, XBrushes.Black,
-            new XRect(marginLeft, marginTop + 240, page.Width.Point - marginLeft - marginRight, 20), XStringFormats.TopLeft);
-
-        // Application content
-        var content = GenerateApplicationContent(application.Company, application.Position, user);
-        DrawContentWithParagraphs(tf, bodyFont, marginLeft, marginTop + 280, page.Width.Point - marginLeft - marginRight, page.Height.Point - marginTop, content);
-
-        document.Save(pdfFilePath);
-
-        await Task.CompletedTask;
-    }
-
-    private static void DrawUserDetails(XTextFormatter tf, XFont font, double marginLeft, double marginTop, User user)
-    {
-        var userDetails = new[]
+        public static void GenerateCoverLetter(string outputPath, string company, string position)
         {
-            $"{user.FirstName} {user.LastName}",
-            user.Address,
-            $"{user.ZipCode} {user.City}",
-            $"Email: {user.Email}",
-            $"LinkedIn: {user.LinkedIn}",
-            $"Phone: {user.Phone}"
-        };
+            using (var document = new PdfSharp.Pdf.PdfDocument())
+            {
+                var page = document.AddPage();
+                using (var gfx = XGraphics.FromPdfPage(page))
+                {
+                    var tf = new XTextFormatter(gfx);
+                    var normalFont = new XFont("Arial", 11, XFontStyleEx.Regular);
+                    var boldFont = new XFont("Arial", 11, XFontStyleEx.Bold);
+                    var titleFont = new XFont("Arial", 14, XFontStyleEx.Bold);
 
-        for (int i = 0; i < userDetails.Length; i++)
-        {
-            tf.DrawString(userDetails[i], font, XBrushes.Black,
-                new XRect(marginLeft, marginTop + i * 20, 400, 20), XStringFormats.TopLeft);
+                    // Header
+                    var yPosition = 40;
+                    tf.DrawString("Mikolaj Kosmalski", boldFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 20;
+                    tf.DrawString("Pogrelzstraße 55/6/4", normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 20;
+                    tf.DrawString("1220 Wien", normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 20;
+                    tf.DrawString("mikolaj.jakub.kosmalski@gmail.com", normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 20;
+                    tf.DrawString("linkedin.com/in/mikolajkosmalski", normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 40;
+
+                    // Company
+                    tf.DrawString($"An:", normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 20;
+                    tf.DrawString(company, normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 40;
+
+                    // Date
+                    tf.DrawString($"Wien, {DateTime.Now:dd.MM.yyyy}", normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 40;
+
+                    // Title
+                    tf.DrawString($"Bewerbung als {position}", titleFont, XBrushes.Black, new XRect(40, yPosition, page.Width, 20), XStringFormats.TopLeft);
+                    yPosition += 40;
+
+                    // Content
+                    string content = $@"Sehr geehrte Damen und Herren,
+
+mit großer Begeisterung bewerbe ich mich um die Position {position} bei {company}. Ich habe gerade eine zweijährige Ausbildung im Bereich der Anwendungsentwicklung mit LAP abgeschlossen, wo ich solide Grundlagen in der objektorientierten Programmierung mit .NET/C# erlernte. Darüber hinaus bin ich in der Lage, Webanwendungen in ASP.NET mit REST API zu entwickeln, wobei ich SQL-Datenbanken effektiv nutze.
+
+Von 2020 bis 2023 war ich Mitbegründer des Start-ups timagio.com, das Apps für Eltern und Lehrer im Zusammenhang mit der Montessori-Pädagogik entwickelt. Dort habe ich mehrere Prototypen in JavaScript, Automatisierungen in Python und Powershell-Skripte entwickelt sowie Erfahrung mit Scrum, Azure DevOps und Git gesammelt.
+
+Ich lerne schnell, habe einen analytischen Verstand, bin kreativ, offen für Kritik und resistent gegen Stress. Ich bin daher überzeugt, dass ich ein wertvolles Mitglied Ihres Teams sein kann. Ich freue mich darauf, in einem persönlichen Gespräch mehr über diese Position zu erfahren.
+
+Um meine Einarbeitung zu erleichtern, bin ich gerne bereit ein Praktikum zu absolvieren. Sie könnten profitieren von einer Eingliederungsbeihilfe für einen Zeitraum von 6 Monaten mit einem Höchstbetrag von insgesamt 18 000 EUR: ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe
+
+Ich füge diesem Schreiben meinen Lebenslauf und meine LAP-Zeugnis bei.
+
+Mit freundlichen Grüßen
+Mikolaj Kosmalski";
+
+                    tf.DrawString(content, normalFont, XBrushes.Black, new XRect(40, yPosition, page.Width - 80, page.Height - yPosition - 40), XStringFormats.TopLeft);
+                }
+
+                document.Save(outputPath);
+            }
         }
-    }
-
-    private static void DrawCompanyDetails(XTextFormatter tf, XFont font, double marginLeft, double marginTop, JobApplication application)
-    {
-        tf.DrawString("An:", font, XBrushes.Black,
-            new XRect(marginLeft, marginTop + 140, 400, 20), XStringFormats.TopLeft);
-        tf.DrawString(application.Company, font, XBrushes.Black,
-            new XRect(marginLeft, marginTop + 160, 400, 20), XStringFormats.TopLeft);
-    }
-
-    private static void DrawContentWithParagraphs(XTextFormatter tf, XFont font, double x, double y, double width, double height, string content)
-    {
-        var paragraphs = content.Split("\n\n", StringSplitOptions.RemoveEmptyEntries);
-        var yOffset = y;
-
-        foreach (var paragraph in paragraphs)
-        {
-            tf.DrawString(paragraph, font, XBrushes.Black, new XRect(x, yOffset, width, height), XStringFormats.TopLeft);
-            yOffset += 30; // Add space between paragraphs
-        }
-    }
-
-    private static string GenerateApplicationContent(string company, string position, User user)
-    {
-        var positionText = position == "Initiativbewerbung"
-            ? $"bei {company}. "
-            : $"um die Position {position} bei {company}. ";
-
-        return $"""
-            {user.ApplicationText.Introduction}
-
-            {user.ApplicationText.PositionIntro}{positionText}
-
-            {user.ApplicationText.Education}
-
-            {user.ApplicationText.Experience}
-
-            {user.ApplicationText.Skills}
-
-            {user.ApplicationText.InternshipOffer}
-
-            {user.ApplicationText.Closing}
-            """;
     }
 }

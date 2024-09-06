@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Bewerbung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .company {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {{FirstName}} {{LastName}}<br>
+        {{Address}}<br>
+        {{ZipCode}} {{City}}<br>
+        {{Email}}<br>
+        {{LinkedIn}}
+    </div>
+
+    <div class="company">
+        An:<br>
+        {{Company}}
+    </div>
+
+    <div>{{City}}, {{Date}}</div>
+
+    <h2>{{#Position}}Bewerbung als {{Position}}{{/Position}}{{^Position}}Initiativbewerbung{{/Position}}</h2>
+
+    <div class="content">
+        <p>{{Introduction}}</p>
+        <p>{{PositionIntro}}{{#Position}}um die Position {{Position}} bei {{Company}}.{{/Position}}{{^Position}}bei {{Company}}.{{/Position}}</p>
+        <p>{{Education}}</p>
+        <p>{{Experience}}</p>
+        <p>{{Skills}}</p>
+        <p>{{InternshipOffer}}</p>
+        <p>{{Closing}}</p>
+    </div>
+</body>
+</html>

@@ -7,30 +7,27 @@ namespace BewerbungMasterApp.Services
     {
         private readonly string _jobAppDocsPath;
         private readonly string _userDirectoryPath;
+        private readonly string _coverLetterTemplateName;
 
         public string JobAppDocsPath => _jobAppDocsPath; // don't understand; unit test need it
         public string UserDirectoryPath => _userDirectoryPath; // don't understand; unit test need it
-        private readonly IPdfGenerationService _pdfGenerationService;
 
 
-        public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment, IPdfGenerationService pdfGenerationService)
+        public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment)
         {
             ArgumentNullException.ThrowIfNull(configuration);
             ArgumentNullException.ThrowIfNull(environment);
-            ArgumentNullException.ThrowIfNull(pdfGenerationService);
-
-            _pdfGenerationService = pdfGenerationService;
-
-
 
             if (string.IsNullOrWhiteSpace(environment.WebRootPath))
                 throw new InvalidOperationException("Web root path cannot be null or empty.");
 
-            if (string.IsNullOrWhiteSpace(configuration["UserDirectoryPath"]))
+            var userDirectoryPath = configuration["UserDirectoryPath"];
+            if (string.IsNullOrWhiteSpace(userDirectoryPath))
                 throw new InvalidOperationException("User directory path cannot be null or empty.");
 
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
-            _userDirectoryPath = Path.Combine(environment.WebRootPath, configuration["UserDirectoryPath"].Trim());
+            _userDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
+            _coverLetterTemplateName = configuration["CoverLetterTemplateName"] ?? "CoverLetterTemplate.html";
         }
 
 
@@ -51,32 +48,63 @@ namespace BewerbungMasterApp.Services
 
         public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications)
         {
-            // Load user data asynchronously
+            Console.WriteLine($"Starting GenerateJobApplicationSetsAsync with {jobApplications.Count} applications");
+
             var user = await GetUserData.GetUserDataAsync(_userDirectoryPath);
+            Console.WriteLine($"User data loaded for {user.FirstName} {user.LastName}");
 
-            // Create a mapping of unique folder names to job applications
             var folderApplicationMap = CreateFolderApplicationMap(jobApplications);
+            Console.WriteLine($"Created folder map with {folderApplicationMap.Count} entries");
 
-            foreach (var entry in folderApplicationMap)
+            foreach (var (uniqueFolderName, application) in folderApplicationMap)
             {
-                string uniqueFolderName = entry.Key;
-                JobApplication application = entry.Value;
+                Console.WriteLine($"Processing application for {application.Company} - {application.Position}");
 
                 string targetDirectoryPath = Path.Combine(_jobAppDocsPath, uniqueFolderName);
                 string cvLapSubFolderPath = Path.Combine(targetDirectoryPath, "CV_LAP_separated");
 
-                // Create necessary directories
                 FileManagementServiceStatic.CreateDirectories(targetDirectoryPath, cvLapSubFolderPath);
+                Console.WriteLine($"Directories created: {targetDirectoryPath}");
 
-                // Copy job application files with user-specific names
                 CopyJobApplicationFiles(targetDirectoryPath, cvLapSubFolderPath, user);
+                Console.WriteLine("Job application files copied");
 
-                // Generate the cover letter PDF
                 var fileName = $"{user.FirstName}_{user.LastName}_Bewerbungsschreiben.pdf";
 
-                await _pdfGenerationService.GenerateCoverLetterPdfAsync(targetDirectoryPath, fileName, user, application);
+                string templatePath = GetCoverLetterTemplatePath();
+                Console.WriteLine($"Template path: {templatePath}");
+
+                try
+                {
+                    PdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), application.Company, application.Position);
+                    Console.WriteLine($"PDF generated: {fileName}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error generating PDF: {ex.Message}");
+                }
+            }
+
+            Console.WriteLine("GenerateJobApplicationSetsAsync completed");
+
+            // Überprüfen Sie die Anzahl der generierten Ordner
+            int generatedFolderCount = Directory.GetDirectories(_jobAppDocsPath).Length;
+            if (generatedFolderCount != jobApplications.Count)
+            {
+                throw new InvalidOperationException($"Mismatch in generated folders. Expected: {jobApplications.Count}, Actual: {generatedFolderCount}");
             }
         }
+        private string GetCoverLetterTemplatePath()
+        {
+            string templatePath = Path.Combine(_userDirectoryPath, _coverLetterTemplateName);
+            if (File.Exists(templatePath))
+            {
+                return templatePath;
+            }
+
+            throw new FileNotFoundException($"Cover letter template not found at {templatePath}");
+        }
+
 
         // Helper method to create a mapping from unique folder names to job applications
         private static Dictionary<string, JobApplication> CreateFolderApplicationMap(List<JobApplication> jobApplications)

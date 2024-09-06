@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
@@ -11,12 +10,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="wwwroot\JobAppDocs\" />
+	  <PackageReference Include="IronPdf" Version="2024.8.3" />
+	  <PackageReference Include="itext7" Version="8.0.5" />
+	  <PackageReference Include="PdfSharp" Version="6.1.1" />
+	  <PackageReference Include="QuestPDF" Version="2024.7.3" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="itext7" Version="8.0.5" />
-	  <PackageReference Include="PdfSharp" Version="6.1.1" />
+	  <Folder Include="wwwroot\JobAppDocs\" />
 	</ItemGroup>
+
+	<PropertyGroup>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
 
 </Project>
