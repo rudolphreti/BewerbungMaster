@@ -1,6 +1,7 @@
 using BewerbungMasterApp.Components;
 using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Services;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BewerbungMasterApp
 {
@@ -63,7 +64,12 @@ namespace BewerbungMasterApp
             await InitializeApplicationAsync(app);
 
             await app.RunAsync();
+
+            
+            
+
         }
+        
 
         private static async Task InitializeApplicationAsync(WebApplication app)
         {
@@ -90,5 +96,8 @@ namespace BewerbungMasterApp
                 }
             }
         }
+
+        
+
     }
 }

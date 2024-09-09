@@ -48,35 +48,25 @@ namespace BewerbungMasterApp.Services
 
         public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications)
         {
-            Console.WriteLine($"Starting GenerateJobApplicationSetsAsync with {jobApplications.Count} applications");
-
             var user = await GetUserData.GetUserDataAsync(_userDirectoryPath);
-            Console.WriteLine($"User data loaded for {user.FirstName} {user.LastName}");
-
             var folderApplicationMap = CreateFolderApplicationMap(jobApplications);
-            Console.WriteLine($"Created folder map with {folderApplicationMap.Count} entries");
 
             foreach (var (uniqueFolderName, application) in folderApplicationMap)
             {
-                Console.WriteLine($"Processing application for {application.Company} - {application.Position}");
-
                 string targetDirectoryPath = Path.Combine(_jobAppDocsPath, uniqueFolderName);
                 string cvLapSubFolderPath = Path.Combine(targetDirectoryPath, "CV_LAP_separated");
 
                 FileManagementServiceStatic.CreateDirectories(targetDirectoryPath, cvLapSubFolderPath);
-                Console.WriteLine($"Directories created: {targetDirectoryPath}");
 
                 CopyJobApplicationFiles(targetDirectoryPath, cvLapSubFolderPath, user);
-                Console.WriteLine("Job application files copied");
 
                 var fileName = $"{user.FirstName}_{user.LastName}_Bewerbungsschreiben.pdf";
 
                 string templatePath = GetCoverLetterTemplatePath();
-                Console.WriteLine($"Template path: {templatePath}");
 
                 try
                 {
-                    PdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), application.Company, application.Position);
+                    PdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);
                     Console.WriteLine($"PDF generated: {fileName}");
                 }
                 catch (Exception ex)
