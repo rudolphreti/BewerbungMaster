@@ -1,8 +1,6 @@
 # BewerbungMaster
 
-BewerbungMaster is a Blazor web application designed to efficiently manage job applications. This application allows users to add, display, and delete job applications, as well as generate related documents such as CVs and cover letters.
-
-This project is an evolution of an older Python-based project, which can be found at: https://github.com/rudolphreti/autobewerbung
+BewerbungMaster is a Blazor web application designed to efficiently create and manage job applications. This project is an evolution of an older Python-based project, which can be found at: https://github.com/rudolphreti/autobewerbung
 
 ## Features
 - Document generation (CVs, cover letters)
