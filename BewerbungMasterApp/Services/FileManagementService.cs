@@ -8,15 +8,19 @@ namespace BewerbungMasterApp.Services
         private readonly string _jobAppDocsPath;
         private readonly string _userDirectoryPath;
         private readonly string _coverLetterTemplateName;
+        private readonly IPdfGenerationService _pdfGenerationService;
+
 
         public string JobAppDocsPath => _jobAppDocsPath; // don't understand; unit test need it
         public string UserDirectoryPath => _userDirectoryPath; // don't understand; unit test need it
 
 
-        public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment)
+        public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment, IPdfGenerationService pdfGenerationService)
         {
             ArgumentNullException.ThrowIfNull(configuration);
             ArgumentNullException.ThrowIfNull(environment);
+            ArgumentNullException.ThrowIfNull(pdfGenerationService);
+
 
             if (string.IsNullOrWhiteSpace(environment.WebRootPath))
                 throw new InvalidOperationException("Web root path cannot be null or empty.");
@@ -28,6 +32,7 @@ namespace BewerbungMasterApp.Services
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
             _userDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
             _coverLetterTemplateName = configuration["CoverLetterTemplateName"] ?? "CoverLetterTemplate.html";
+            _pdfGenerationService = pdfGenerationService;
         }
 
 
@@ -66,7 +71,7 @@ namespace BewerbungMasterApp.Services
 
                 try
                 {
-                    PdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);
+                    _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);
                     Console.WriteLine($"PDF generated: {fileName}");
                 }
                 catch (Exception ex)
@@ -74,8 +79,6 @@ namespace BewerbungMasterApp.Services
                     Console.WriteLine($"Error generating PDF: {ex.Message}");
                 }
             }
-
-            Console.WriteLine("GenerateJobApplicationSetsAsync completed");
 
             // Überprüfen Sie die Anzahl der generierten Ordner
             int generatedFolderCount = Directory.GetDirectories(_jobAppDocsPath).Length;
