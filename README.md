@@ -10,7 +10,7 @@ BewerbungMaster is a Blazor web application designed to efficiently create and m
 - Implement CRUD operations
 - Creating messages to employers
 
-## Project Structure
+## Key Components and Architecture
 ### wwwroot Directory
 - `JobAppDocs/`: Stores generated job application documents
 - `Users/`: Contains user-specific document templates
