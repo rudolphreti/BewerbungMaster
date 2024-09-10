@@ -1,7 +1,6 @@
 using BewerbungMasterApp.Components;
 using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Services;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BewerbungMasterApp
 {
@@ -41,10 +40,15 @@ namespace BewerbungMasterApp
             builder.Services.AddSingleton<IGetJobApplicationsService, GetJobApplicationsService>();
             builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
             builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
+            builder.Services.AddSingleton<IDeleteJobApplicationService, DeleteJobApplicationService>();
 
             // Register the application logger
             builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
             builder.Logging.AddConsole();
+            builder.Logging.AddDebug();
+            builder.Logging.SetMinimumLevel(LogLevel.Trace);  // Fügen Sie diese Zeile hinzu
+
+
 
             var app = builder.Build();
 
@@ -69,10 +73,6 @@ namespace BewerbungMasterApp
             await InitializeApplicationAsync(app);
 
             await app.RunAsync();
-
-            
-            
-
         }
         
 

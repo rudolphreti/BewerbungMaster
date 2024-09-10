@@ -35,11 +35,11 @@ namespace BewerbungMasterApp.Services
             }
 
             // Überprüfen Sie die Anzahl der generierten Ordner
-            int generatedFolderCount = Directory.GetDirectories(_jobAppDocsPath).Length;
-            if (generatedFolderCount != jobApplications.Count)
-            {
-                throw new InvalidOperationException($"Mismatch in generated folders. Expected: {jobApplications.Count}, Actual: {generatedFolderCount}");
-            }
+            //int generatedFolderCount = Directory.GetDirectories(_jobAppDocsPath).Length;
+            //if (generatedFolderCount != jobApplications.Count)
+            //{
+            //    throw new InvalidOperationException($"Mismatch in generated folders. Expected: {jobApplications.Count}, Actual: {generatedFolderCount}");
+            //}
         }
     }
 }
