@@ -9,7 +9,7 @@ namespace BewerbungMasterApp.Services
 {
     public partial class PdfGenerationService
     {
-        private string FillPlaceholders(string content, JobApplication application)
+        private static string FillPlaceholders(string content, JobApplication application)
         {
             return content
                 .Replace("{position}", application.Position)
@@ -17,7 +17,7 @@ namespace BewerbungMasterApp.Services
                 .Replace("\n", "\n\n");
         }
 
-        private Paragraph ProcessContentWithLinks(string text, PdfFont font, float fontSize)
+        private static Paragraph ProcessContentWithLinks(string text, PdfFont font, float fontSize)
         {
             Paragraph paragraph = new();
             string pattern = @"(https?://\S+[^.,;!?)\s]|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})([.,;!?)])?";

@@ -1,6 +1,4 @@
-﻿using BewerbungMasterApp.Interfaces;
-
-namespace BewerbungMasterApp.Services
+﻿namespace BewerbungMasterApp.Services
 {
     public partial class FileManagementServiceStatic // to refactor, simplyfy
     {

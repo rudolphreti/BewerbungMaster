@@ -1,13 +1,12 @@
 ﻿using BewerbungMasterApp.Interfaces;
-using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
-    public partial class FileManagementService : IFileManagementService
+    public partial class FileManagementService : IFileManagementService // change name to FileAndFoldersService
     {
         private readonly string _jobAppDocsPath;
         private readonly string _userDirectoryPath;
-        private readonly string _coverLetterTemplateName;
+        //private readonly string _coverLetterTemplateName;
         private readonly IPdfGenerationService _pdfGenerationService;
 
 
@@ -31,14 +30,11 @@ namespace BewerbungMasterApp.Services
 
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
             _userDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
-            _coverLetterTemplateName = configuration["CoverLetterTemplateName"] ?? "CoverLetterTemplate.html";
+            //_coverLetterTemplateName = configuration["CoverLetterTemplateName"] ?? "CoverLetterTemplate.html";
             _pdfGenerationService = pdfGenerationService;
         }
 
-
-
-
-        public void InitializeJobAppDocsDirectory()
+        public void InitializeJobAppDocsDirectory() //why must be public?
         {
             if (string.IsNullOrWhiteSpace(_jobAppDocsPath))
                 throw new InvalidOperationException("JobAppDocs path is invalid.");
@@ -51,72 +47,20 @@ namespace BewerbungMasterApp.Services
             Directory.CreateDirectory(_jobAppDocsPath);
         }
 
-        public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications)
-        {
-            var user = await GetUserData.GetUserDataAsync(_userDirectoryPath);
-            var folderApplicationMap = CreateFolderApplicationMap(jobApplications);
+        //TO DELETE
+        //private string GetCoverLetterTemplatePath()
+        //{
+        //    string templatePath = Path.Combine(_userDirectoryPath, _coverLetterTemplateName);
+        //    if (File.Exists(templatePath))
+        //    {
+        //        return templatePath;
+        //    }
 
-            foreach (var (uniqueFolderName, application) in folderApplicationMap)
-            {
-                string targetDirectoryPath = Path.Combine(_jobAppDocsPath, uniqueFolderName);
-                string cvLapSubFolderPath = Path.Combine(targetDirectoryPath, "CV_LAP_separated");
-
-                FileManagementServiceStatic.CreateDirectories(targetDirectoryPath, cvLapSubFolderPath);
-
-                CopyJobApplicationFiles(targetDirectoryPath, cvLapSubFolderPath, user);
-
-                var fileName = $"{user.FirstName}_{user.LastName}_Bewerbungsschreiben.pdf";
-
-                string templatePath = GetCoverLetterTemplatePath();
-
-                try
-                {
-                    _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);
-                    Console.WriteLine($"PDF generated: {fileName}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error generating PDF: {ex.Message}");
-                }
-            }
-
-            // Überprüfen Sie die Anzahl der generierten Ordner
-            int generatedFolderCount = Directory.GetDirectories(_jobAppDocsPath).Length;
-            if (generatedFolderCount != jobApplications.Count)
-            {
-                throw new InvalidOperationException($"Mismatch in generated folders. Expected: {jobApplications.Count}, Actual: {generatedFolderCount}");
-            }
-        }
-        private string GetCoverLetterTemplatePath()
-        {
-            string templatePath = Path.Combine(_userDirectoryPath, _coverLetterTemplateName);
-            if (File.Exists(templatePath))
-            {
-                return templatePath;
-            }
-
-            throw new FileNotFoundException($"Cover letter template not found at {templatePath}");
-        }
+        //    throw new FileNotFoundException($"Cover letter template not found at {templatePath}");
+        //}
 
 
-        // Helper method to create a mapping from unique folder names to job applications
-        private static Dictionary<string, JobApplication> CreateFolderApplicationMap(List<JobApplication> jobApplications)
-        {
-            var folderApplicationMap = new Dictionary<string, JobApplication>();
 
-            foreach (var application in jobApplications)
-            {
-                // Create a unique folder name based on the job application details
-                string uniqueFolderName = FileManagementServiceStatic.CleanName($"{application.Company}_{application.Position}");
-
-                // Ensure the folder name is unique
-                uniqueFolderName = FileManagementServiceStatic.EnsureUniqueName(uniqueFolderName, folderApplicationMap.Keys.ToList());
-
-                folderApplicationMap[uniqueFolderName] = application;
-            }
-
-            return folderApplicationMap;
-        }
 
     }
 }

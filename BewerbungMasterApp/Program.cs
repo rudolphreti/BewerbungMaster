@@ -78,27 +78,25 @@ namespace BewerbungMasterApp
 
         private static async Task InitializeApplicationAsync(WebApplication app)
         {
-            using (var scope = app.Services.CreateScope())
+            using var scope = app.Services.CreateScope();
+            var fileManagementService = scope.ServiceProvider.GetRequiredService<IFileManagementService>();
+            var jobApplicationsService = scope.ServiceProvider.GetRequiredService<IGetJobApplicationsService>();
+            try
             {
-                var fileManagementService = scope.ServiceProvider.GetRequiredService<IFileManagementService>();
-                var jobApplicationsService = scope.ServiceProvider.GetRequiredService<IGetJobApplicationsService>();
-                try
-                {
-                    // Initialize directories and fetch job applications
-                    fileManagementService.InitializeJobAppDocsDirectory();
-                    var jobApplications = await jobApplicationsService.GetJobApplicationsAsync();
-                    Console.WriteLine($"Fetched {jobApplications.Count} job applications");
+                // Initialize directories and fetch job applications
+                fileManagementService.InitializeJobAppDocsDirectory();
+                var jobApplications = await jobApplicationsService.GetJobApplicationsAsync();
+                Console.WriteLine($"Fetched {jobApplications.Count} job applications");
 
-                    // Generate job application folders
-                    await fileManagementService.GenerateJobApplicationSetsAsync(jobApplications);
-                    Console.WriteLine("Job application sets generation completed");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"An error occurred during initialization: {ex.Message}");
-                    // Handle initialization exceptions if necessary
-                    throw; // Re-throw the exception to stop the application if necessary
-                }
+                // Generate job application folders
+                await fileManagementService.GenerateJobApplicationSetsAsync(jobApplications);
+                Console.WriteLine("Job application sets generation completed");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred during initialization: {ex.Message}");
+                // Handle initialization exceptions if necessary
+                throw; // Re-throw the exception to stop the application if necessary
             }
         }
 

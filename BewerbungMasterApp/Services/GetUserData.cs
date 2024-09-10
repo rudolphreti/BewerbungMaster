@@ -20,11 +20,12 @@ namespace BewerbungMasterApp.Services
             var userJson = await File.ReadAllTextAsync(userJsonPath);
 
             // Configure JsonSerializer options to handle special characters correctly
-            var options = new JsonSerializerOptions
+            JsonSerializerOptions jsonSerializerOptions = new()
             {
                 Encoder = JavaScriptEncoder.Create(UnicodeRanges.All), // Ensure all characters are encoded properly
                 PropertyNameCaseInsensitive = true // Optional, depending on your JSON structure
             };
+            JsonSerializerOptions options = jsonSerializerOptions;
 
             return JsonSerializer.Deserialize<User>(userJson, options) ?? throw new InvalidOperationException("User data could not be loaded.");
         }

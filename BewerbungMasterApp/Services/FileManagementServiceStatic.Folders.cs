@@ -4,7 +4,7 @@ namespace BewerbungMasterApp.Services
 {
     public partial class FileManagementServiceStatic
     {
-        public static List<string> CreateFolderNamesList(List<JobApplication> jobApplications)
+        internal static List<string> CreateFolderNamesList(List<JobApplication> jobApplications)
         {
             List<string> uniqueFolderNames = [];
 
@@ -20,10 +20,29 @@ namespace BewerbungMasterApp.Services
             return uniqueFolderNames;
         }
 
-        public static void CreateDirectories(string targetDirectoryPath, string cvLapSubFolderPath) // to rename, "folders" not "directory"
+        internal static void CreateDirectories(string targetDirectoryPath, string cvLapSubFolderPath) // to rename, "folders" not "directory"
         {
             Directory.CreateDirectory(targetDirectoryPath);
             Directory.CreateDirectory(cvLapSubFolderPath);
+        }
+
+        // Helper method to create a mapping from unique folder names to job applications
+        internal static Dictionary<string, JobApplication> CreateFolderApplicationMap(List<JobApplication> jobApplications)
+        {
+            var folderApplicationMap = new Dictionary<string, JobApplication>();
+
+            foreach (var application in jobApplications)
+            {
+                // Create a unique folder name based on the job application details
+                string uniqueFolderName = FileManagementServiceStatic.CleanName($"{application.Company}_{application.Position}");
+
+                // Ensure the folder name is unique
+                uniqueFolderName = FileManagementServiceStatic.EnsureUniqueName(uniqueFolderName, [.. folderApplicationMap.Keys]);
+
+                folderApplicationMap[uniqueFolderName] = application;
+            }
+
+            return folderApplicationMap;
         }
     }
 

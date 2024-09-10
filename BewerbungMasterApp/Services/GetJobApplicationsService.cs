@@ -1,8 +1,6 @@
 ﻿using System.Text.Json;
 using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Models;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 
 namespace BewerbungMasterApp.Services
 {
