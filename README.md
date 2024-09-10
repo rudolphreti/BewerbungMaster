@@ -1,54 +1,24 @@
 # BewerbungMaster
 
-BewerbungMaster is a Blazor web application designed to efficiently manage job applications. This application allows users to add, display, and delete job applications, as well as generate related documents such as CVs and cover letters.
-
-This project is an evolution of an older Python-based project, which can be found at: https://github.com/rudolphreti/autobewerbung
+BewerbungMaster is a Blazor web application designed to efficiently create and manage job applications. This project is an evolution of an older Python-based project, which can be found at: https://github.com/rudolphreti/autobewerbung
 
 ## Features
-
-- Job application management (add, display, delete)
 - Document generation (CVs, cover letters)
-- Initially, job application documents are generated from JSON data
+- Job application documents are generated from JSON data
 
 ## To-Do
-
 - Implement CRUD operations
-- Add functionality for sending messages to employers
+- Creating messages to employers
 
-## Project Structure
-
-```
-BewerbungMasterApp/
-├── wwwroot/
-│   ├── bootstrap/
-│   ├── css/
-│   ├── JobAppDocs/
-│   ├── Users/
-│   ├── app.css
-│   ├── data.json
-│   └── favicon.png
-├── Services/
-│   ├── FileManagementService.cs
-│   ├── FileManagementServiceStatic.cs
-│   ├── GetJobApplicationServices.cs
-│   ├── GetUserData.cs
-│   └── PdfGenerationService.cs
-└── ... (other directories)
-```
-
+## Key Components and Architecture
 ### wwwroot Directory
-- `bootstrap/`: Contains Bootstrap framework files for styling
-- `css/`: Additional CSS files for custom styling
 - `JobAppDocs/`: Stores generated job application documents
 - `Users/`: Contains user-specific document templates
-- `app.css`: Application-wide CSS styles
 - `data.json`: Stores job application data in JSON format
-- `favicon.png`: Application favicon
 
 ### Services
 The `Services` directory contains the core business logic of the application:
-- `FileManagementService.cs`: Handles file operations for job application documents
-- `FileManagementServiceStatic.cs`: Provides static file management utilities
+- `FileManagementService.cs` and `FileManagementServiceStatic.cs`: File operations for job application documents
 - `GetJobApplicationServices.cs`: Retrieves job application data
 - `GetUserData.cs`: Manages user data retrieval
 - `PdfGenerationService.cs`: Generates PDF documents for job applications
@@ -94,7 +64,7 @@ This project uses the following main dependencies:
 
 - .NET 8.0
 - itext7 (v8.0.5)
-- itext7.bouncy-castle-adapter (v8.0.5)
+- itext7.bouncy-castle-adapter (v8.0.5) - doesn't work without it
 - itext7.commons (v8.0.5)
 - itext7.hyph (v8.0.5)
 
