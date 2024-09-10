@@ -2,9 +2,13 @@
 
 BewerbungMaster is a Blazor web application designed to efficiently create and manage job applications. This project is an evolution of an older Python-based project, which can be found at: https://github.com/rudolphreti/autobewerbung
 
+![screenshot](screens/screen.png)
+
 ## Features
 - Document generation (CVs, cover letters)
-- Job application documents are generated from JSON data
+- Job application files are generated from JSON data
+
+![screenshot](screens/screen2.png)
 
 ## To-Do
 - Implement CRUD operations
@@ -50,9 +54,12 @@ Currently, only the source code is available. To set up the project:
 ## Usage
 
 1. Provide job data in the `data.json` file located in the `wwwroot` directory. Include the following information for each job application:
+   - Id
    - URL
    - Position
    - Company
+
+In the wwwroot/Extras directory you will find sample offer crawlers written in Python/Selenium.
 
 2. You can create your own documents in the `Users` directory within `wwwroot`. Make sure to indicate this directory in the `appsetings.Development.json` file.
 
