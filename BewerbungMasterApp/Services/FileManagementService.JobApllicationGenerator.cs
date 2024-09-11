@@ -21,8 +21,6 @@ namespace BewerbungMasterApp.Services
 
                 var fileName = $"{user.FirstName}_{user.LastName}_Bewerbungsschreiben.pdf";
 
-                //string templatePath = GetCoverLetterTemplatePath();
-
                 try
                 {
                     _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);

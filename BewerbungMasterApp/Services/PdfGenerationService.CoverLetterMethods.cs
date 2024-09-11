@@ -80,7 +80,7 @@ namespace BewerbungMasterApp.Services
             document.Add(paragraph);
         }
 
-        private void AddParagraphWithLinks(Document document, string text, float marginBottom)
+        private static void AddParagraphWithLinks(Document document, string text, float marginBottom)
         {
             document.Add(ProcessContentWithLinks(text, GetRegularFont(), 10).SetMarginBottom(marginBottom));
         }

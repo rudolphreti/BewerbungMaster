@@ -6,19 +6,12 @@ namespace BewerbungMasterApp.Services
     {
         private readonly string _jobAppDocsPath;
         private readonly string _userDirectoryPath;
-        //private readonly string _coverLetterTemplateName;
         private readonly IPdfGenerationService _pdfGenerationService;
-
-
-        public string JobAppDocsPath => _jobAppDocsPath; // don't understand; unit test need it
-        public string UserDirectoryPath => _userDirectoryPath; // don't understand; unit test need it
-
-
         public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment, IPdfGenerationService pdfGenerationService)
         {
-            ArgumentNullException.ThrowIfNull(configuration);
-            ArgumentNullException.ThrowIfNull(environment);
-            ArgumentNullException.ThrowIfNull(pdfGenerationService);
+            ArgumentNullException.ThrowIfNull(configuration); //don't understand this
+            ArgumentNullException.ThrowIfNull(environment); //don't understand this
+            ArgumentNullException.ThrowIfNull(pdfGenerationService); //don't understand this
 
 
             if (string.IsNullOrWhiteSpace(environment.WebRootPath))
@@ -30,11 +23,10 @@ namespace BewerbungMasterApp.Services
 
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
             _userDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
-            //_coverLetterTemplateName = configuration["CoverLetterTemplateName"] ?? "CoverLetterTemplate.html";
             _pdfGenerationService = pdfGenerationService;
         }
 
-        public void InitializeJobAppDocsDirectory() //why must be public?
+        public void InitializeJobAppDocsDirectory() //why must it be public, not internal?
         {
             if (string.IsNullOrWhiteSpace(_jobAppDocsPath))
                 throw new InvalidOperationException("JobAppDocs path is invalid.");
@@ -46,21 +38,5 @@ namespace BewerbungMasterApp.Services
 
             Directory.CreateDirectory(_jobAppDocsPath);
         }
-
-        //TO DELETE
-        //private string GetCoverLetterTemplatePath()
-        //{
-        //    string templatePath = Path.Combine(_userDirectoryPath, _coverLetterTemplateName);
-        //    if (File.Exists(templatePath))
-        //    {
-        //        return templatePath;
-        //    }
-
-        //    throw new FileNotFoundException($"Cover letter template not found at {templatePath}");
-        //}
-
-
-
-
     }
 }

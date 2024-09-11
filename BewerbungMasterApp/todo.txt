@@ -1,0 +1,9 @@
+Three main services are needed: 
+1. FileManagementService.cs - create folders with files related to job search
+2. pdfGenerationService.cs - creating a cover letter from data.json
+3. jsonService - CRUD operations on data.json
+
+It would be useful to divide these services into folders, as each of them contains static and non-static methods.
+
+pdfGenerationService.cs can be divided into static and non-static
+

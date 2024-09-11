@@ -5,14 +5,8 @@ namespace BewerbungMasterApp.Services
 {
     public partial class PdfGenerationService
     {
-        private PdfFont GetRegularFont()
-        {
-            return PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-        }
+        private static PdfFont GetRegularFont() => PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
 
-        private PdfFont GetBoldFont()
-        {
-            return PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-        }
+        private static PdfFont GetBoldFont() => PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
     }
 }

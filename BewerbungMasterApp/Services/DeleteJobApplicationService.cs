@@ -4,20 +4,16 @@ using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
-    public class DeleteJobApplicationService : IDeleteJobApplicationService
+    public class DeleteJobApplicationService(IConfiguration configuration, IWebHostEnvironment environment, ILogger<DeleteJobApplicationService> logger) : IDeleteJobApplicationService
     {
-        private readonly IWebHostEnvironment _environment;
-        private readonly ILogger<DeleteJobApplicationService> _logger;
-
-        public DeleteJobApplicationService(IWebHostEnvironment environment, ILogger<DeleteJobApplicationService> logger)
-        {
-            _environment = environment;
-            _logger = logger;
-        }
+        private readonly IConfiguration _configuration = configuration;
+        private readonly IWebHostEnvironment _environment = environment;
+        private readonly ILogger<DeleteJobApplicationService> _logger = logger;
 
         public async Task<bool> DeleteJobApplicationAsync(Guid id)
         {
-            var jsonFilePath = Path.Combine(_environment.WebRootPath, "data.json");
+            var jobDataFileName = _configuration["JobDataFile"];
+            var jsonFilePath = Path.Combine(_environment.WebRootPath, jobDataFileName!);
 
             try
             {
@@ -30,16 +26,17 @@ namespace BewerbungMasterApp.Services
                 var jsonData = await File.ReadAllTextAsync(jsonFilePath);
                 var jobApplications = JsonSerializer.Deserialize<List<JobApplication>>(jsonData);
 
-                var jobToRemove = jobApplications.FirstOrDefault(job => job.Id == id);
+                var jobToRemove = jobApplications?.FirstOrDefault(job => job.Id == id);
                 if (jobToRemove == null)
                 {
                     _logger.LogWarning("Job application with ID {JobId} not found.", id);
                     return false;
                 }
 
-                jobApplications.Remove(jobToRemove);
+                jobApplications!.Remove(jobToRemove);
 
-                var updatedJsonData = JsonSerializer.Serialize(jobApplications, new JsonSerializerOptions { WriteIndented = true });
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                string updatedJsonData = JsonSerializer.Serialize(jobApplications, options);
                 await File.WriteAllTextAsync(jsonFilePath, updatedJsonData);
 
                 _logger.LogInformation("Job application with ID {JobId} successfully deleted.", id);

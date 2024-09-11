@@ -1,1269 +1,1094 @@
 [
   {
-    "id": "f80f7cfa-6f62-11ef-aa4f-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR925691_16341131",
-    "position": "Test Automation Engineer ",
-    "company": "EBCONT group GmbH",
-    "IsDeleted": false
+    "id": "fa456e4c-700d-11ef-b6fd-90fba680800b",
+    "URL": "https://karriere.post.at/job/Post-_net-Developer-IT-%28fmd%29-thro-0/989698701/?applySourceOverride=Karriere.at",
+    "position": ".net Developer",
+    "company": "Post AG"
   },
   {
-    "id": "f81940f2-6f62-11ef-83b2-90fba680800b",
+    "id": "fa5df65c-700d-11ef-8fe0-90fba680800b",
+    "URL": "https://www.karriere.at/jobalarm/3337240?page=2#7275781",
+    "position": "Software Engineer",
+    "company": "InfPro IT Solutions GmbH"
+  },
+  {
+    "id": "fa686724-700d-11ef-8151-90fba680800b",
+    "URL": "https://jobs.atos.net/job/Vienna-UI-Path-Automation-Engineer-(Test-AutomationRPA)-1210/1039679601/",
+    "position": "UI Path Automation Engineer (Test Automation/RPA)",
+    "company": "Atos"
+  },
+  {
+    "id": "fa72bf6e-700d-11ef-86be-90fba680800b",
     "URL": "https://jobs.smartrecruiters.com/Playtech/744000008646646-performance-test-engineer",
     "position": "Performance Test Engineer Quality",
-    "company": "Best Gaming Technology GmbH",
-    "IsDeleted": false
+    "company": "Best Gaming Technology GmbH"
   },
   {
-    "id": "f821ccc0-6f62-11ef-8bc7-90fba680800b",
+    "id": "fa80fbe9-700d-11ef-ac87-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR925691_16202441",
     "position": "Testmanager ",
-    "company": "EBCONT group GmbH",
-    "IsDeleted": false
+    "company": "EBCONT group GmbH"
   },
   {
-    "id": "f82e09f7-6f62-11ef-a076-90fba680800b",
-    "URL": "https://www.it-karriere.at/60989/0/IT-Business-Analyst---Store-Solutions-(m-w-x)",
-    "position": "IT Business Analyst - Store Solutions ",
-    "company": "Rewe Group",
-    "IsDeleted": false
+    "id": "fa8cff6a-700d-11ef-b3dd-90fba680800b",
+    "URL": "https://t-systems.jobs/karriere-at-de/jobs/at/223630/Test-Automation-Architect-(m%7Cw%7Cd)/Vienna.html",
+    "position": "Test Automation Architect ",
+    "company": "T-Systems International GmbH"
   },
   {
-    "id": "f838a297-6f62-11ef-9ad5-90fba680800b",
-    "URL": "https://www.it-karriere.at/60955/0/System-Engineer-Storage-und-SAN-(m-w-x)",
-    "position": "System Engineer Storage und SAN ",
-    "company": "Rewe Group",
-    "IsDeleted": false
-  },
-  {
-    "id": "f8423f9f-6f62-11ef-9f82-90fba680800b",
-    "URL": "https://www.it-karriere.at/60959/0/Digital-Operations-Manager-Intralogistik-(m-w-x)",
-    "position": "Digital Operations Manager Intralogistik ",
-    "company": "Rewe Group",
-    "IsDeleted": false
-  },
-  {
-    "id": "f84dc677-6f62-11ef-a759-90fba680800b",
-    "URL": "https://www.it-karriere.at/61262/0/Senior-Projektmanager-in-mit-Schwerpunkt-IT-Applikationen",
-    "position": "Senior Projektmanager mit Schwerpunkt IT Applikationen",
-    "company": "voestalpine AG",
-    "IsDeleted": false
-  },
-  {
-    "id": "f860fa66-6f62-11ef-bdb4-90fba680800b",
-    "URL": "https://www.karriere.at/jobs/7298299?utm_source=ams\u0026utm_campaign=allejobsams",
-    "position": "Software Tester ",
-    "company": "Evolit Consulting GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "f868f54b-6f62-11ef-a734-90fba680800b",
-    "URL": "https://www.karriere.at/jobs/7230811?utm_source=ams\u0026utm_campaign=allejobsams",
-    "position": "Software Tester ",
-    "company": "Bundesrechenzentrum GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "f8721355-6f62-11ef-85b8-90fba680800b",
-    "URL": "https://karriere.viennaairport.com/jart/prj3/karriere/main.jart?content-id=1653049408639\u0026rel=de\u0026job_id=8a90835e8ee3736d0190fe14aa8d0205\u0026reserve-mode=active",
-    "position": "Software-Tester Webentwicklung ",
-    "company": "Flughafen Wien AG",
-    "IsDeleted": false
-  },
-  {
-    "id": "f9f87a57-6f62-11ef-8843-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR1733524_16044367",
-    "position": "SW TESTER / TECHNICAL TESTER ",
-    "company": "IT-Services der Sozialversicherung GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa04d201-6f62-11ef-8c3f-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR925691_16341131",
-    "position": "Test Automation Engineer ",
-    "company": "EBCONT group GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa0fc4d3-6f62-11ef-9f5b-90fba680800b",
-    "URL": "https://jobs.smartrecruiters.com/Playtech/744000008646646-performance-test-engineer",
-    "position": "Performance Test Engineer Quality",
-    "company": "Best Gaming Technology GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa1a0cfd-6f62-11ef-8a97-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR925691_16202441",
-    "position": "Testmanager ",
-    "company": "EBCONT group GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa24c50b-6f62-11ef-86c0-90fba680800b",
-    "URL": "https://www.it-karriere.at/60989/0/IT-Business-Analyst---Store-Solutions-(m-w-x)",
-    "position": "IT Business Analyst - Store Solutions ",
-    "company": "Rewe Group",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa2f6b9b-6f62-11ef-8353-90fba680800b",
-    "URL": "https://www.it-karriere.at/60955/0/System-Engineer-Storage-und-SAN-(m-w-x)",
-    "position": "System Engineer Storage und SAN ",
-    "company": "Rewe Group",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa39b11b-6f62-11ef-abd8-90fba680800b",
-    "URL": "https://www.it-karriere.at/60959/0/Digital-Operations-Manager-Intralogistik-(m-w-x)",
-    "position": "Digital Operations Manager Intralogistik ",
-    "company": "Rewe Group",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa46a95d-6f62-11ef-8d65-90fba680800b",
-    "URL": "https://www.it-karriere.at/61262/0/Senior-Projektmanager-in-mit-Schwerpunkt-IT-Applikationen",
-    "position": "Senior Projektmanager mit Schwerpunkt IT Applikationen",
-    "company": "voestalpine AG",
-    "IsDeleted": false
-  },
-  {
-    "id": "fa533544-6f62-11ef-97f3-90fba680800b",
+    "id": "fa964e23-700d-11ef-9bb6-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3041738_16188850",
     "position": "Manuelle/r Tester",
-    "company": "ReQuest GmbH",
-    "IsDeleted": false
+    "company": "ReQuest GmbH"
   },
   {
-    "id": "fa5ec824-6f62-11ef-86a3-90fba680800b",
+    "id": "fa9ed991-700d-11ef-8d08-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7298299?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Tester ",
-    "company": "Evolit Consulting GmbH",
-    "IsDeleted": false
+    "company": "Evolit Consulting GmbH"
   },
   {
-    "id": "fa6a3efd-6f62-11ef-bfd5-90fba680800b",
+    "id": "faa7b33c-700d-11ef-b494-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7230811?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Tester ",
-    "company": "Bundesrechenzentrum GmbH",
-    "IsDeleted": false
+    "company": "Bundesrechenzentrum GmbH"
   },
   {
-    "id": "fa763e06-6f62-11ef-b480-90fba680800b",
+    "id": "fab3a404-700d-11ef-ab44-90fba680800b",
     "URL": "https://karriere.viennaairport.com/jart/prj3/karriere/main.jart?content-id=1653049408639\u0026rel=de\u0026job_id=8a90835e8ee3736d0190fe14aa8d0205\u0026reserve-mode=active",
     "position": "Software-Tester Webentwicklung ",
-    "company": "Flughafen Wien AG",
-    "IsDeleted": false
+    "company": "Flughafen Wien AG"
   },
   {
-    "id": "fc03e20d-6f62-11ef-9dc6-90fba680800b",
+    "id": "fabe9014-700d-11ef-83da-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=839655\u0026cid=partner_ams___Y",
     "position": "Software Tester ",
-    "company": "Herold Business Data GmbH",
-    "IsDeleted": false
+    "company": "Herold Business Data GmbH"
   },
   {
-    "id": "fc0ca776-6f62-11ef-9873-90fba680800b",
+    "id": "fc394c2c-700d-11ef-a0e0-90fba680800b",
+    "URL": "https://jobs.ams.at/public/emps/jobs/BTR1733524_16044367",
+    "position": "SW TESTER / TECHNICAL TESTER ",
+    "company": "IT-Services der Sozialversicherung GmbH"
+  },
+  {
+    "id": "fc45b8e7-700d-11ef-90a0-90fba680800b",
+    "URL": "https://www.glassdoor.at/job-listing/j?jl=1009439117009",
+    "position": "Lead Penetration Tester im Bereich Cyber Security ",
+    "company": "HAYS"
+  },
+  {
+    "id": "fc516a54-700d-11ef-809a-90fba680800b",
+    "URL": "https://jobs.ams.at/public/emps/jobs/BTR925691_16341131",
+    "position": "Test Automation Engineer ",
+    "company": "EBCONT group GmbH"
+  },
+  {
+    "id": "fc5d07ae-700d-11ef-925c-90fba680800b",
+    "URL": "https://jobs.atos.net/job/Vienna-UI-Path-Automation-Engineer-(Test-AutomationRPA)-1210/1039679601/",
+    "position": "UI Path Automation Engineer (Test Automation/RPA)",
+    "company": "Atos"
+  },
+  {
+    "id": "fc6b0433-700d-11ef-970e-90fba680800b",
+    "URL": "https://jobs.smartrecruiters.com/Playtech/744000008646646-performance-test-engineer",
+    "position": "Performance Test Engineer Quality",
+    "company": "Best Gaming Technology GmbH"
+  },
+  {
+    "id": "fc76bfff-700d-11ef-91c5-90fba680800b",
+    "URL": "https://jobs.ams.at/public/emps/jobs/BTR925691_16202441",
+    "position": "Testmanager ",
+    "company": "EBCONT group GmbH"
+  },
+  {
+    "id": "fc81999c-700d-11ef-b32a-90fba680800b",
+    "URL": "https://t-systems.jobs/karriere-at-de/jobs/at/223630/Test-Automation-Architect-(m%7Cw%7Cd)/Vienna.html",
+    "position": "Test Automation Architect ",
+    "company": "T-Systems International GmbH"
+  },
+  {
+    "id": "fc8aaf98-700d-11ef-b032-90fba680800b",
+    "URL": "https://jobs.ams.at/public/emps/jobs/BTR3041738_16188850",
+    "position": "Manuelle/r Tester",
+    "company": "ReQuest GmbH"
+  },
+  {
+    "id": "fc9488ff-700d-11ef-84c0-90fba680800b",
+    "URL": "https://www.karriere.at/jobs/7298299?utm_source=ams\u0026utm_campaign=allejobsams",
+    "position": "Software Tester ",
+    "company": "Evolit Consulting GmbH"
+  },
+  {
+    "id": "fcb07649-700d-11ef-b429-90fba680800b",
+    "URL": "https://www.karriere.at/jobs/7230811?utm_source=ams\u0026utm_campaign=allejobsams",
+    "position": "Software Tester ",
+    "company": "Bundesrechenzentrum GmbH"
+  },
+  {
+    "id": "fcd36401-700d-11ef-ac22-90fba680800b",
+    "URL": "https://karriere.viennaairport.com/jart/prj3/karriere/main.jart?content-id=1653049408639\u0026rel=de\u0026job_id=8a90835e8ee3736d0190fe14aa8d0205\u0026reserve-mode=active",
+    "position": "Software-Tester Webentwicklung ",
+    "company": "Flughafen Wien AG"
+  },
+  {
+    "id": "fce125dd-700d-11ef-ab4e-90fba680800b",
+    "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=839655\u0026cid=partner_ams___Y",
+    "position": "Software Tester ",
+    "company": "Herold Business Data GmbH"
+  },
+  {
+    "id": "fe67b97d-700d-11ef-aedd-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7298206?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Engineer f\u00FCr Hardware ",
-    "company": "ZELLNER Personal L\u00F6sungen GmbH",
-    "IsDeleted": false
+    "company": "ZELLNER Personal L\u00F6sungen GmbH"
   },
   {
-    "id": "fc15d6c4-6f62-11ef-a515-90fba680800b",
+    "id": "fe7099d1-700d-11ef-b771-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7009261?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer ",
-    "company": "Qnit Austria GmbH",
-    "IsDeleted": false
+    "company": "Qnit Austria GmbH"
   },
   {
-    "id": "fc1ed523-6f62-11ef-b137-90fba680800b",
+    "id": "fe7c617a-700d-11ef-a30c-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7230373?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Agile:r Senior Test Koordinator",
-    "company": "\u00D6BB Konzern",
-    "IsDeleted": false
+    "company": "\u00D6BB Konzern"
   },
   {
-    "id": "fc27f836-6f62-11ef-b85a-90fba680800b",
+    "id": "fe8b2d54-700d-11ef-9cfa-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=852654\u0026cid=partner_ams___Y",
     "position": "DevOps System Engineer ",
-    "company": "Universit\u00E4t f\u00FCr Bodenkultur (BOKU)",
-    "IsDeleted": false
+    "company": "Universit\u00E4t f\u00FCr Bodenkultur (BOKU)"
   },
   {
-    "id": "fc30e022-6f62-11ef-b7fe-90fba680800b",
+    "id": "fe98d2fa-700d-11ef-a542-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7211629?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Testmanager ",
-    "company": "Ebcont",
-    "IsDeleted": false
+    "company": "Ebcont"
   },
   {
-    "id": "fc39daec-6f62-11ef-ba77-90fba680800b",
+    "id": "fea5060e-700d-11ef-80a4-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7234846?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Senior Requirements Engineer  Backend (mind. 30 Std/Woche)",
-    "company": "\u00D6BB Konzern",
-    "IsDeleted": false
+    "company": "\u00D6BB Konzern"
   },
   {
-    "id": "fc49b384-6f62-11ef-96ca-90fba680800b",
+    "id": "feb3b4e9-700d-11ef-bdb9-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-service-desk-mitarbeiter-124648791?sc_cmp=parce035672",
     "position": "Service Desk Mitarbeiter ",
-    "company": "Mediaprint Zeitungs- und Zeitschriftenverlag",
-    "IsDeleted": false
+    "company": "Mediaprint Zeitungs- und Zeitschriftenverlag"
   },
   {
-    "id": "fc565541-6f62-11ef-90dc-90fba680800b",
+    "id": "fec0f20b-700d-11ef-b22e-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR49992_16276919",
     "position": "SOFTWARE TESTER ",
-    "company": "IVM-TC Wien GesmbH",
-    "IsDeleted": false
+    "company": "IVM-TC Wien GesmbH"
   },
   {
-    "id": "fc627e3b-6f62-11ef-99b8-90fba680800b",
+    "id": "feccbb48-700d-11ef-9b1c-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR49992_16274730",
     "position": "SOFTWARE TESTER  Integrationstests",
-    "company": "IVM-TC Wien GesmbH",
-    "IsDeleted": false
+    "company": "IVM-TC Wien GesmbH"
   },
   {
-    "id": "fc6daa1d-6f62-11ef-be6e-90fba680800b",
+    "id": "fed7b6de-700d-11ef-b55b-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR264907_16299407",
     "position": "Software Tester  Vienna / Full time / Start as of now",
-    "company": "HEROLD Business Data GmbH",
-    "IsDeleted": false
+    "company": "HEROLD Business Data GmbH"
   },
   {
-    "id": "fc77f425-6f62-11ef-84f7-90fba680800b",
+    "id": "fee2ddf8-700d-11ef-af36-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR1736883_16117862",
     "position": "Senior Test Engineer ",
-    "company": "softwareXperts GmbH",
-    "IsDeleted": false
+    "company": "softwareXperts GmbH"
   },
   {
-    "id": "fdf38061-6f62-11ef-9f6d-90fba680800b",
+    "id": "fef28bb6-700d-11ef-9205-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR49992_16301427",
     "position": "TEST SPECIALIST  SAP ABAP",
-    "company": "IVM-TC Wien GesmbH",
-    "IsDeleted": false
+    "company": "IVM-TC Wien GesmbH"
   },
   {
-    "id": "fdffc765-6f62-11ef-9fa0-90fba680800b",
+    "id": "0077d3dc-700e-11ef-88e7-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR997617_1229229_1",
     "position": "IT-Qualit\u00E4tsmanager",
-    "company": "OBJENTIS Software Integration GmbH",
-    "IsDeleted": false
+    "company": "OBJENTIS Software Integration GmbH"
   },
   {
-    "id": "fe0c1c7b-6f62-11ef-a097-90fba680800b",
+    "id": "00815716-700e-11ef-a859-90fba680800b",
     "URL": "https://devjobs.at/job/13574b722f3ef4a644100217664cea0e?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Test Manager",
-    "company": "SEQIS GmbH",
-    "IsDeleted": false
+    "company": "SEQIS GmbH"
   },
   {
-    "id": "fe16dfe6-6f62-11ef-b2ca-90fba680800b",
+    "id": "008b35c9-700e-11ef-9c28-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/511525/software-testerin-und-support-w-m-d?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Tester und Support ",
-    "company": "UPPER Solutions GmbH",
-    "IsDeleted": false
+    "company": "UPPER Solutions GmbH"
   },
   {
-    "id": "fe211991-6f62-11ef-8e66-90fba680800b",
+    "id": "00975c8e-700e-11ef-910e-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-software-tester-124548995?sc_cmp=parce035672",
     "position": "Software Tester ",
-    "company": "Bechtle direct GmbH",
-    "IsDeleted": false
+    "company": "Bechtle direct GmbH"
   },
   {
-    "id": "fe2b2085-6f62-11ef-9871-90fba680800b",
+    "id": "00a2ade2-700e-11ef-b420-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR2896132_16247241",
     "position": "Integration Test Engineer ",
-    "company": "Siemens Mobility Austria GmbH",
-    "IsDeleted": false
+    "company": "Siemens Mobility Austria GmbH"
   },
   {
-    "id": "fe363eae-6f62-11ef-aa24-90fba680800b",
+    "id": "00ad8604-700e-11ef-99b7-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/523332/test-manager-all-genders?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Manager (all genders)",
-    "company": "Frequentis AG",
-    "IsDeleted": false
+    "company": "Frequentis AG"
   },
   {
-    "id": "fe408bb2-6f62-11ef-8ce3-90fba680800b",
+    "id": "00b6bd77-700e-11ef-9e57-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7294747?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer ",
-    "company": "Softcom Consulting GmbH",
-    "IsDeleted": false
+    "company": "Softcom Consulting GmbH"
   },
   {
-    "id": "fe4e85d6-6f62-11ef-8573-90fba680800b",
+    "id": "00c049ea-700e-11ef-bb2f-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/f6955c33-2eb1-55fc-a437-2da75631bb33?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Technical Test Engineer  Vollzeit",
-    "company": "TechTalk GmbH",
-    "IsDeleted": false
+    "company": "TechTalk GmbH"
   },
   {
-    "id": "fe5b266a-6f62-11ef-9c8f-90fba680800b",
+    "id": "00ca00e0-700e-11ef-8669-90fba680800b",
     "URL": "https://www.selsys.com/job/test-automation-engineer-w-m-d/",
     "position": "Test Automation Engineer  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Railway sowie CyberSecurity suchen wir eine(n): Test Automation Engineer (w/m/d...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "fe672e56-6f62-11ef-935f-90fba680800b",
+    "id": "00d2f1ee-700e-11ef-ab1e-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=835044\u0026cid=partner_ams___Y",
     "position": "Support Engineer Mit Schwerpunkt Devops",
-    "company": "rubicon IT GmbH",
-    "IsDeleted": false
+    "company": "rubicon IT GmbH"
   },
   {
-    "id": "fe72283f-6f62-11ef-8edd-90fba680800b",
+    "id": "00dcb083-700e-11ef-a8ae-90fba680800b",
     "URL": "https://www.whatchado.com/de/job/senior-requirements-engineer-(mwx)-backend-mind.-30hwoche-32915",
     "position": "Senior Requirements Engineer  \u2013 Backend - mind. 30h/Woche",
-    "company": "\u00D6BB Konzern",
-    "IsDeleted": false
+    "company": "\u00D6BB Konzern"
   },
   {
-    "id": "ffeafb1c-6f62-11ef-b9db-90fba680800b",
+    "id": "00e95774-700e-11ef-abe4-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=832586\u0026cid=partner_ams___Y",
     "position": "Senior Tester",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "fff73f94-6f62-11ef-a56b-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR3465774_16255843",
-    "position": "Agile:r Senior Test Koordinator",
-    "company": "\u00D6V Ticketshop GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "0001d0a1-6f63-11ef-8b83-90fba680800b",
+    "id": "026a4298-700e-11ef-8600-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=845302\u0026cid=partner_ams___Y",
     "position": "Software-Tester Webentwicklung  Teilzeit, 20Std/Woche",
-    "company": "Flughafen Wien AG",
-    "IsDeleted": false
+    "company": "Flughafen Wien AG"
   },
   {
-    "id": "000cb532-6f63-11ef-8ec1-90fba680800b",
+    "id": "02746cbb-700e-11ef-962d-90fba680800b",
+    "URL": "https://jobs.ams.at/public/emps/jobs/BTR3465774_16255843",
+    "position": "Agile:r Senior Test Koordinator",
+    "company": "\u00D6V Ticketshop GmbH"
+  },
+  {
+    "id": "027dc314-700e-11ef-841e-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3041738_16273669",
     "position": "Test Automation Engineer (Python) ",
-    "company": "ReQuest GmbH",
-    "IsDeleted": false
+    "company": "ReQuest GmbH"
   },
   {
-    "id": "0016c749-6f63-11ef-9e8a-90fba680800b",
+    "id": "028bcf90-700e-11ef-8ba7-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=836353\u0026cid=partner_ams___Y",
     "position": "Test Manager",
-    "company": "OBJENTIS Software Integratio GmbH",
-    "IsDeleted": false
+    "company": "OBJENTIS Software Integratio GmbH"
   },
   {
-    "id": "0021d196-6f63-11ef-8f9c-90fba680800b",
+    "id": "0296a268-700e-11ef-819b-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=832579\u0026cid=partner_ams___Y",
     "position": "Test Engineer",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "002d136a-6f63-11ef-91c2-90fba680800b",
+    "id": "02a17ce9-700e-11ef-b7f6-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=832705\u0026cid=partner_ams___Y",
     "position": "Test Automation Engineer",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "00366224-6f63-11ef-bdd2-90fba680800b",
+    "id": "02acb676-700e-11ef-948c-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=832570\u0026cid=partner_ams___Y",
     "position": "Senior Test Engineer",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "0042f53c-6f63-11ef-8f08-90fba680800b",
+    "id": "02b7a3ed-700e-11ef-b09b-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=832590\u0026cid=partner_ams___Y",
     "position": "System Test Engineer",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "004ddd30-6f63-11ef-9d70-90fba680800b",
+    "id": "02c11159-700e-11ef-b24b-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=836345\u0026cid=partner_ams___Y",
     "position": "Test - Automations - Experte",
-    "company": "OBJENTIS Software Integratio GmbH",
-    "IsDeleted": false
+    "company": "OBJENTIS Software Integratio GmbH"
   },
   {
-    "id": "0061cb1a-6f63-11ef-931f-90fba680800b",
+    "id": "02caf0c2-700e-11ef-af2b-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=836347\u0026cid=partner_ams___Y",
     "position": "Sap Test Consultant",
-    "company": "OBJENTIS Software Integratio GmbH",
-    "IsDeleted": false
+    "company": "OBJENTIS Software Integratio GmbH"
   },
   {
-    "id": "0074dc33-6f63-11ef-93d7-90fba680800b",
+    "id": "02d58f5e-700e-11ef-bf78-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-test-automation-engineer-genders-123565567?sc_cmp=parce035672",
     "position": "Test Automation Engineer (all genders)",
-    "company": "StreamUnlimited Engineering GmbH",
-    "IsDeleted": false
+    "company": "StreamUnlimited Engineering GmbH"
   },
   {
-    "id": "021c7171-6f63-11ef-847a-90fba680800b",
+    "id": "02df5d6f-700e-11ef-800e-90fba680800b",
     "URL": "https://www.tecjobs.at/fileadmin/content/customers/expleo_group/Test_Automation_Engineer/index.html",
     "position": "Test Automation Engineer (all genders) \u2013 Focus Tosca",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "022cfab9-6f63-11ef-8739-90fba680800b",
+    "id": "046ee11b-700e-11ef-bd82-90fba680800b",
     "URL": "https://www.tecjobs.at/fileadmin/content/customers/expleo_group/Test_Automation_Engineer_Selenium/index.html",
     "position": "Test Automation Engineer (all genders) \u2013 Focus Selenium",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "023e4749-6f63-11ef-b8d1-90fba680800b",
+    "id": "047912b0-700e-11ef-aa6c-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=847640\u0026cid=partner_ams___Y",
     "position": "Test Engineer f\u00FCr Software ",
-    "company": "ZELLNER Personal L\u00F6sungen GmbH",
-    "IsDeleted": false
+    "company": "ZELLNER Personal L\u00F6sungen GmbH"
   },
   {
-    "id": "024c80f5-6f63-11ef-9b4d-90fba680800b",
+    "id": "0483dda1-700e-11ef-828b-90fba680800b",
     "URL": "https://devjobs.at/job/9fc856b3d5812e0b9efe7c8ae9ac321b?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior Software Tester Manager",
-    "company": "Computer Futures",
-    "IsDeleted": false
+    "company": "Computer Futures"
   },
   {
-    "id": "02595317-6f63-11ef-a340-90fba680800b",
+    "id": "0490fde4-700e-11ef-9d51-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR1506818_16368744",
     "position": "Test Manager f\u00FCr medizinische IT-Systeme",
-    "company": "MA 01 - Wien Digital",
-    "IsDeleted": false
+    "company": "MA 01 - Wien Digital"
   },
   {
-    "id": "02670605-6f63-11ef-b832-90fba680800b",
+    "id": "049eec3f-700e-11ef-9c10-90fba680800b",
     "URL": "https://devjobs.at/job/efd0b05617b4942d47149ff3e99c6c15?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Test Automation Engineer",
-    "company": "Computer Futures",
-    "IsDeleted": false
+    "company": "Computer Futures"
   },
   {
-    "id": "0296deb7-6f63-11ef-9694-90fba680800b",
+    "id": "04ab1625-700e-11ef-ad7e-90fba680800b",
     "URL": "https://devjobs.at/job/1ad775ce10633a4fe05ca3e8d8137782?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Test Automation",
-    "company": "HDI Versicherung \u00D6sterreich",
-    "IsDeleted": false
+    "company": "HDI Versicherung \u00D6sterreich"
   },
   {
-    "id": "02a5d255-6f63-11ef-aaf9-90fba680800b",
+    "id": "04b606b1-700e-11ef-a4f7-90fba680800b",
     "URL": "https://www.glassdoor.at/job-listing/j?jl=1009321730292",
     "position": "Smart Onboard test Vienna",
-    "company": "DO \u0026 CO",
-    "IsDeleted": false
+    "company": "DO \u0026 CO"
   },
   {
-    "id": "02bd5e40-6f63-11ef-96ad-90fba680800b",
+    "id": "04c0f877-700e-11ef-b395-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7293094?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Anforderungsmanager",
-    "company": "\u00D6sterreichische Forschungsf\u00F6rderungsgesellschaft mbH (FFG)",
-    "IsDeleted": false
+    "company": "\u00D6sterreichische Forschungsf\u00F6rderungsgesellschaft mbH (FFG)"
   },
   {
-    "id": "02c7b0fd-6f63-11ef-a50f-90fba680800b",
+    "id": "04cab978-700e-11ef-af42-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR2518236_15945829",
     "position": "IT Test Manager_",
-    "company": "Consent Personal- und Unternehmensberatung",
-    "IsDeleted": false
+    "company": "Consent Personal- und Unternehmensberatung"
   },
   {
-    "id": "02d0cda9-6f63-11ef-bdfd-90fba680800b",
+    "id": "04d48de4-700e-11ef-9027-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR787027_16249720",
     "position": "(Senior) Software Test Engineer \u0026 Documentation Writer ",
-    "company": "Delegate Technology GmbH",
-    "IsDeleted": false
+    "company": "Delegate Technology GmbH"
   },
   {
-    "id": "02db7527-6f63-11ef-99fc-90fba680800b",
+    "id": "04df87f5-700e-11ef-8099-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR2245252_16367118",
     "position": "TEST ENGINEER ",
-    "company": "Beyond Gravity Austria GmbH",
-    "IsDeleted": false
+    "company": "Beyond Gravity Austria GmbH"
   },
   {
-    "id": "046b5865-6f63-11ef-a7b5-90fba680800b",
+    "id": "04e8a5ad-700e-11ef-b182-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7291012?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer ",
-    "company": "Dolpheen IT Solutions GmbH",
-    "IsDeleted": false
+    "company": "Dolpheen IT Solutions GmbH"
   },
   {
-    "id": "04765393-6f63-11ef-8031-90fba680800b",
+    "id": "0660ceaa-700e-11ef-8b8c-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-test-automation-architekt-124382275?sc_cmp=parce035672",
     "position": "Test Automation Architekt",
-    "company": "Page Personnel Deutschland",
-    "IsDeleted": false
+    "company": "Page Personnel Deutschland"
   },
   {
-    "id": "0481b186-6f63-11ef-b829-90fba680800b",
+    "id": "0669e126-700e-11ef-8b6e-90fba680800b",
     "URL": "https://www.kapsch.net/de/karriere/job/posting-software-test-engineer-f-m-div-12297",
     "position": "Software Test Engineer (f/m/div*) J\u00F6nk\u00F6ping Full time",
-    "company": "Kapsch Aktiengesellschaft",
-    "IsDeleted": false
+    "company": "Kapsch Aktiengesellschaft"
   },
   {
-    "id": "0495ca8b-6f63-11ef-a6fe-90fba680800b",
+    "id": "06737f86-700e-11ef-9f21-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR2988090_16363433",
     "position": "Test Automation Engineer an unsererem Standort Wien",
-    "company": "EBCONT communication GmbH",
-    "IsDeleted": false
+    "company": "EBCONT communication GmbH"
   },
   {
-    "id": "04a2135c-6f63-11ef-b95c-90fba680800b",
+    "id": "067f8504-700e-11ef-b37d-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR192926_16062892",
     "position": "KFZ-Techniker mit LAP ",
-    "company": "Forstinger \u00D6sterreich GmbH",
-    "IsDeleted": false
+    "company": "Forstinger \u00D6sterreich GmbH"
   },
   {
-    "id": "04adabb8-6f63-11ef-b173-90fba680800b",
+    "id": "068ac6ec-700e-11ef-afca-90fba680800b",
     "URL": "https://devjobs.at/job/30fef52ef7299b591edcb7584051d7bd?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Tester",
-    "company": "apsa personnel concepts gmbh",
-    "IsDeleted": false
+    "company": "apsa personnel concepts gmbh"
   },
   {
-    "id": "04b917c3-6f63-11ef-8534-90fba680800b",
+    "id": "069685f0-700e-11ef-83ce-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR13906_16250020",
     "position": "Test Engineer ",
-    "company": "Kontron Transportation GmbH",
-    "IsDeleted": false
+    "company": "Kontron Transportation GmbH"
   },
   {
-    "id": "04c6034c-6f63-11ef-bdd1-90fba680800b",
+    "id": "06aa4b64-700e-11ef-8265-90fba680800b",
     "URL": "https://www.selsys.com/job/solution-integration-tester-railway/",
     "position": "Solution Integration Tester  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): Solution Int...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "04cf50c3-6f63-11ef-ba7d-90fba680800b",
+    "id": "06b5e41d-700e-11ef-827d-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=826699\u0026cid=partner_ams___Y",
     "position": "Test Manager",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "04d7c10f-6f63-11ef-baa1-90fba680800b",
+    "id": "06c036bb-700e-11ef-809d-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=826702\u0026cid=partner_ams___Y",
     "position": "Professional Test Engineer",
-    "company": "SELSYS GmbH",
-    "IsDeleted": false
+    "company": "SELSYS GmbH"
   },
   {
-    "id": "04df6213-6f63-11ef-85b2-90fba680800b",
+    "id": "06cab7c2-700e-11ef-b691-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-orbis-test-project-manager-124211157?sc_cmp=parce035672",
     "position": "ORBIS Test Project Manager ",
-    "company": "Dedalus",
-    "IsDeleted": false
+    "company": "Dedalus"
   },
   {
-    "id": "04e618ac-6f63-11ef-9a2f-90fba680800b",
+    "id": "06d83798-700e-11ef-aa01-90fba680800b",
     "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=850249\u0026cid=partner_ams___Y",
     "position": "ORBIS Test Project Manager  / home based",
-    "company": "Dedalus HealthCare GmbH",
-    "IsDeleted": false
+    "company": "Dedalus HealthCare GmbH"
   },
   {
-    "id": "06795146-6f63-11ef-bb93-90fba680800b",
+    "id": "06e45acd-700e-11ef-a14e-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR277310_16356609",
     "position": "Test Engineer (f/m/div*)",
-    "company": "KAPSCH TrafficCom AG",
-    "IsDeleted": false
+    "company": "KAPSCH TrafficCom AG"
   },
   {
-    "id": "0685f488-6f63-11ef-972a-90fba680800b",
+    "id": "08630408-700e-11ef-956d-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3570149_16031710",
     "position": "Software Test Automation Engineer ",
-    "company": "SEQUELLO GmbH",
-    "IsDeleted": false
+    "company": "SEQUELLO GmbH"
   },
   {
-    "id": "068efd36-6f63-11ef-92e9-90fba680800b",
+    "id": "086d9914-700e-11ef-81f2-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7284127?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Quality Assurance Tester ",
-    "company": "KERN engineering careers GmbH",
-    "IsDeleted": false
+    "company": "KERN engineering careers GmbH"
   },
   {
-    "id": "0698c9f0-6f63-11ef-9710-90fba680800b",
+    "id": "0877cc31-700e-11ef-ae47-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3226869_16050702",
     "position": "EMV-Test Engineer ",
-    "company": "ASCO Engineering GmbH, Niederlassung Wien",
-    "IsDeleted": false
+    "company": "ASCO Engineering GmbH, Niederlassung Wien"
   },
   {
-    "id": "06efefa2-6f63-11ef-aaff-90fba680800b",
+    "id": "088411bb-700e-11ef-b77d-90fba680800b",
     "URL": "https://www.kapsch.net/de/karriere/job/posting-test-engineer-f-m-div-12246",
     "position": "Test Engineer (f/m/div*) Vienna Full time",
-    "company": "Kapsch Aktiengesellschaft",
-    "IsDeleted": false
+    "company": "Kapsch Aktiengesellschaft"
   },
   {
-    "id": "06fc72c1-6f63-11ef-8c0c-90fba680800b",
+    "id": "088fcd0d-700e-11ef-8461-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-integration-test-verification-manager-124159278?sc_cmp=parce035672",
     "position": "Integration, Test and Verification Manager ",
-    "company": "Page Personnel Deutschland",
-    "IsDeleted": false
+    "company": "Page Personnel Deutschland"
   },
   {
-    "id": "07054cfb-6f63-11ef-833c-90fba680800b",
+    "id": "089bb1f6-700e-11ef-b72e-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/542765/security-engineer-und-penetration-testerin-?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Security Engineer und Penetration Tester",
-    "company": "VERBUND",
-    "IsDeleted": false
+    "company": "VERBUND"
   },
   {
-    "id": "070dff02-6f63-11ef-b589-90fba680800b",
+    "id": "08a57df1-700e-11ef-9ccf-90fba680800b",
     "URL": "https://www.selsys.com/job/component-tester-railway/",
     "position": "Component Tester  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): Component Tester (m/w/d...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0716ffb9-6f63-11ef-9589-90fba680800b",
+    "id": "08af1083-700e-11ef-8090-90fba680800b",
     "URL": "https://devjobs.at/job/76e53c9ff822e16169ae5f69f788e0ae?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior Test Automation Mitarbeiter",
-    "company": "WienIT",
-    "IsDeleted": false
+    "company": "WienIT"
   },
   {
-    "id": "07249424-6f63-11ef-9f2f-90fba680800b",
+    "id": "08b81cf9-700e-11ef-a959-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7093405?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer ",
-    "company": "Ebcont",
-    "IsDeleted": false
+    "company": "Ebcont"
   },
   {
-    "id": "072e0a41-6f63-11ef-961f-90fba680800b",
+    "id": "08c184e7-700e-11ef-bccb-90fba680800b",
     "URL": "https://devjobs.at/job/1f261a5946ed34f65ed4341b18b9f47e?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Technical Tester",
-    "company": "SEQIS GmbH",
-    "IsDeleted": false
+    "company": "SEQIS GmbH"
   },
   {
-    "id": "0737a715-6f63-11ef-a704-90fba680800b",
+    "id": "08cb89a3-700e-11ef-b56b-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3416989_16211271",
     "position": "Software Test Manager",
-    "company": "Upstream - next level mobility GmbH",
-    "IsDeleted": false
+    "company": "Upstream - next level mobility GmbH"
   },
   {
-    "id": "08e7032f-6f63-11ef-8ffb-90fba680800b",
+    "id": "08d56796-700e-11ef-88e7-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR486_16245529",
     "position": "Software Tester_ ",
-    "company": "BUNDESRECHENZENTRUM GmbH",
-    "IsDeleted": false
+    "company": "BUNDESRECHENZENTRUM GmbH"
   },
   {
-    "id": "08f35f32-6f63-11ef-9d8f-90fba680800b",
+    "id": "0a6b7935-700e-11ef-8138-90fba680800b",
     "URL": "https://devjobs.at/job/fb1f2f2ab1a84d567befead347bca748?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Tester",
-    "company": "smartpoint dataformers GmbH",
-    "IsDeleted": false
+    "company": "smartpoint dataformers GmbH"
   },
   {
-    "id": "0900f3ba-6f63-11ef-934f-90fba680800b",
+    "id": "0a73e69e-700e-11ef-b588-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-software-tester-124012604?sc_cmp=parce035672",
     "position": "Software Tester ",
-    "company": "apsa personnel concepts gmbh",
-    "IsDeleted": false
+    "company": "apsa personnel concepts gmbh"
   },
   {
-    "id": "0911bcbb-6f63-11ef-b485-90fba680800b",
+    "id": "0a7d1893-700e-11ef-bf11-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7281889?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Ingenieur f\u00FCr Hardware ",
-    "company": "Adecco Personalbereitstellungs GmbH",
-    "IsDeleted": false
+    "company": "Adecco Personalbereitstellungs GmbH"
   },
   {
-    "id": "091feda2-6f63-11ef-a307-90fba680800b",
+    "id": "0a84ed70-700e-11ef-9ffa-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7280434?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Security Engineer und Penetration Tester",
-    "company": "VERBUND AG",
-    "IsDeleted": false
+    "company": "VERBUND AG"
   },
   {
-    "id": "092ae9fa-6f63-11ef-af4b-90fba680800b",
+    "id": "0a8c7507-700e-11ef-aed6-90fba680800b",
     "URL": "https://careers.ey.com/ey/job/Vienna-Senior-Penetration-Tester-(wmd)-1220/1040851201/",
     "position": "Senior Penetration Tester ",
-    "company": "Ernst \u0026 Young GmbH Wirtschaftspr\u00FCfungsgesellschaft",
-    "IsDeleted": false
+    "company": "Ernst \u0026 Young GmbH Wirtschaftspr\u00FCfungsgesellschaft"
   },
   {
-    "id": "0933cf7e-6f63-11ef-9f57-90fba680800b",
+    "id": "0a94a4b7-700e-11ef-ab0d-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3042788_16324955",
     "position": "Software Test Engineer (all genders)",
-    "company": "ISG Personalmanagement GmbH",
-    "IsDeleted": false
+    "company": "ISG Personalmanagement GmbH"
   },
   {
-    "id": "093e4d89-6f63-11ef-b844-90fba680800b",
+    "id": "0a9cd314-700e-11ef-be54-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-software-tester-web-windowsanwendungen-122194694?sc_cmp=parce035672",
     "position": "Software-Tester f\u00FCr Web \u0096 und Windowsanwendungen ",
-    "company": "PKE Holding AG",
-    "IsDeleted": false
+    "company": "PKE Holding AG"
   },
   {
-    "id": "09475c86-6f63-11ef-b069-90fba680800b",
+    "id": "0aa4921f-700e-11ef-b329-90fba680800b",
     "URL": "https://www.selsys.com/job/senior-tester-m-w-d/",
     "position": "Senior Tester  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahnverkehr sowie Cybersicherheit suchen wir eine(n): Senior Tester  Wien, \u00D6sterrei...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "094f3e68-6f63-11ef-9c23-90fba680800b",
+    "id": "0aacb594-700e-11ef-a2a3-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR1623234_16115981",
     "position": "Software Quality Assurance",
-    "company": "Compax SoftwareDevelopment GmbH",
-    "IsDeleted": false
+    "company": "Compax SoftwareDevelopment GmbH"
   },
   {
-    "id": "0956cb0a-6f63-11ef-87e3-90fba680800b",
-    "URL": "https://devjobs.at/job/6cca30387671d3f2fdd1e33b67326e5a?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
-    "position": "Solution Architect",
-    "company": "Eviden Austria GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "095f7ced-6f63-11ef-9f7e-90fba680800b",
+    "id": "0ab491ca-700e-11ef-a2e2-90fba680800b",
     "URL": "https://www.selsys.com/job/integrationtestengineer/",
     "position": "Integration Test Engineer  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): Integration Te...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0aef8c5a-6f63-11ef-87be-90fba680800b",
+    "id": "0abc9e53-700e-11ef-8bf8-90fba680800b",
     "URL": "https://devjobs.at/job/572170630317?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Tester Support",
-    "company": "UPPER Solutions GmbH",
-    "IsDeleted": false
+    "company": "UPPER Solutions GmbH"
   },
   {
-    "id": "0af7d860-6f63-11ef-8e9b-90fba680800b",
+    "id": "0ac49f27-700e-11ef-81c9-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7179799?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "SAP Tester (all genders)",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "0afe829d-6f63-11ef-908b-90fba680800b",
+    "id": "0c39f670-700e-11ef-a1c4-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/4117b2f7-6e38-5672-9054-396fe56e2404?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Mystery Tester:innen diverse Projekte",
-    "company": "Inkognito GmbH",
-    "IsDeleted": false
+    "company": "Inkognito GmbH"
   },
   {
-    "id": "0b056373-6f63-11ef-8c75-90fba680800b",
+    "id": "0c41e3c9-700e-11ef-9ac9-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/ba04618c-f506-59f8-927e-8059e5b54db2?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Mystery Tester:innen zum Thema Jugendschutz",
-    "company": "Inkognito GmbH",
-    "IsDeleted": false
+    "company": "Inkognito GmbH"
   },
   {
-    "id": "0b0cd24b-6f63-11ef-acbc-90fba680800b",
+    "id": "0c4a96c8-700e-11ef-b9db-90fba680800b",
     "URL": "https://www.selsys.com/job/system-tester-railway/",
     "position": "System Tester  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): System Tester  Wien,\u2026",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0b1476fb-6f63-11ef-9804-90fba680800b",
+    "id": "0c524ebc-700e-11ef-80bd-90fba680800b",
     "URL": "https://jobs.atos.net/job/Vienna-Software-Test-Automation-Specialist-1210/1053305501/",
     "position": "Software Test Automation Specialist",
-    "company": "Atos",
-    "IsDeleted": false
+    "company": "Atos"
   },
   {
-    "id": "0b1cb947-6f63-11ef-ae8e-90fba680800b",
+    "id": "0c5a68c6-700e-11ef-a73c-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7158010?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Manager (all genders)",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "0b24612b-6f63-11ef-bc8e-90fba680800b",
+    "id": "0c6241f9-700e-11ef-9920-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7179796?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "SAP Test Manager (all genders)",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "0b2c4b6e-6f63-11ef-aacf-90fba680800b",
+    "id": "0c6aff7e-700e-11ef-ad10-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7169134?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Architect ",
-    "company": "Software Daten Service Gesellschaft m.b.H.",
-    "IsDeleted": false
+    "company": "Software Daten Service Gesellschaft m.b.H."
   },
   {
-    "id": "0b3466d7-6f63-11ef-af96-90fba680800b",
+    "id": "0c72ccc2-700e-11ef-8e87-90fba680800b",
     "URL": "https://devjobs.at/job/2be799b78f67b3af9f5eb02065da500b?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior Expert Cybersecurity Penetration Test Mitarbeiter",
-    "company": "PwC",
-    "IsDeleted": false
+    "company": "PwC"
   },
   {
-    "id": "0b3c6b61-6f63-11ef-a414-90fba680800b",
+    "id": "0c7ace30-700e-11ef-bbd4-90fba680800b",
     "URL": "https://www.tecjobs.at/fileadmin/content/customers/schneider_electric/Hardware_Test_Engineer/index.html",
     "position": "Hardware Test Engineer ",
-    "company": "Schneider Electric Austria Ges.m.b.H.",
-    "IsDeleted": false
+    "company": "Schneider Electric Austria Ges.m.b.H."
   },
   {
-    "id": "0b446882-6f63-11ef-ac9c-90fba680800b",
+    "id": "0c82acfe-700e-11ef-aca9-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7179802?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer (all genders)",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "0ccee483-6f63-11ef-bb3e-90fba680800b",
+    "id": "0c8b43b6-700e-11ef-a0a8-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7055293?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Manager ",
-    "company": "Qnit Austria GmbH",
-    "IsDeleted": false
+    "company": "Qnit Austria GmbH"
   },
   {
-    "id": "0cd601f8-6f63-11ef-9c53-90fba680800b",
+    "id": "0c932b92-700e-11ef-afe5-90fba680800b",
     "URL": "https://www.selsys.com/job/professional-test-engineer-m-w-d/",
     "position": "Professional Test Engineer  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): Test Engineer...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0cdd79ea-6f63-11ef-9d3f-90fba680800b",
+    "id": "0e03fa7c-700e-11ef-b875-90fba680800b",
     "URL": "https://www.selsys.com/job/senior-test-engineer-m-w-d/",
     "position": "Senior Test Engineer  Wien, \u00D6sterreich F\u00FCr unseren Kunden, einen der weltweit f\u00FChrenden Automobilzulieferer mit Spezialisierung auf innovative Technologien im Bereich e-Mobility, IoT, Security suchen wir: Senior Test Engineer  Wien...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0ce56396-6f63-11ef-ade1-90fba680800b",
+    "id": "0e0d7fed-700e-11ef-ba95-90fba680800b",
     "URL": "https://www.selsys.com/job/test-manager-m-w-d/",
     "position": "Test Manager  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): Test Manager \u2026",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0ced4796-6f63-11ef-b79e-90fba680800b",
+    "id": "0e162641-700e-11ef-ba80-90fba680800b",
     "URL": "https://www.selsys.com/job/test-engineer-m-w-d/",
     "position": "Test Engineer  Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): Test Engineer  Wien,\u2026",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0cf51f5a-6f63-11ef-a8f4-90fba680800b",
+    "id": "0e1f524e-700e-11ef-a6f8-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7055317?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer Tosca Expert ",
-    "company": "Qnit Austria GmbH",
-    "IsDeleted": false
+    "company": "Qnit Austria GmbH"
   },
   {
-    "id": "0cfcf3bf-6f63-11ef-a2f4-90fba680800b",
+    "id": "0e27dc41-700e-11ef-bc81-90fba680800b",
     "URL": "https://www.selsys.com/job/system-test-engineer-m-w-d/",
     "position": "System Test Engineer  Full Time Wien, \u00D6sterreich Ohne dich bewegt sich nichts \u2013 nur mit dir l\u00E4uft\u2018s! F\u00FCr unseren Kunden, einen globalen Technologieleader im Bereich Bahn- und Flugverkehr sowie Cybersicherheit suchen wir eine(n): System Te...",
-    "company": "SELSYS Software Solutions GmbH",
-    "IsDeleted": false
+    "company": "SELSYS Software Solutions GmbH"
   },
   {
-    "id": "0d0511f6-6f63-11ef-93c2-90fba680800b",
+    "id": "0e304b63-700e-11ef-accf-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/425041/senior-java-developer-75-000-90-000-salary-micro-services-cloud-platforms-?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Senior Java Developer \u002B 75.000-90.000 Salary - (Micro Services, Cloud Platforms...)",
-    "company": "Specific-Group Austria",
-    "IsDeleted": false
+    "company": "Specific-Group Austria"
   },
   {
-    "id": "0d0be0a2-6f63-11ef-838e-90fba680800b",
+    "id": "0e38dc5e-700e-11ef-bfd0-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7267135?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "CQV Ingenieur ",
-    "company": "Vogelbusch Biopharma GmbH",
-    "IsDeleted": false
+    "company": "Vogelbusch Biopharma GmbH"
   },
   {
-    "id": "0d12b08c-6f63-11ef-a806-90fba680800b",
+    "id": "0e420a64-700e-11ef-8cd1-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/60863049-f98b-5ec0-ad2c-dec092767adf?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Senior Solution Architect Vollzeit",
-    "company": "Eviden Austria GmbH",
-    "IsDeleted": false
+    "company": "Eviden Austria GmbH"
   },
   {
-    "id": "0d19ca9f-6f63-11ef-a805-90fba680800b",
+    "id": "0e4aae4a-700e-11ef-8c5f-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR605072_16336947",
     "position": "Test Automation Engineer ",
-    "company": "PORR AG",
-    "IsDeleted": false
+    "company": "PORR AG"
   },
   {
-    "id": "0d2197b8-6f63-11ef-9862-90fba680800b",
+    "id": "0e536b21-700e-11ef-9691-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR49992_4786620_18",
     "position": "IT-Qualit\u00E4tsmanager",
-    "company": "IVM-TC Wien GesmbH",
-    "IsDeleted": false
+    "company": "IVM-TC Wien GesmbH"
   },
   {
-    "id": "0ea7c5fb-6f63-11ef-8ce7-90fba680800b",
+    "id": "0e5c3b4f-700e-11ef-8156-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7276663?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Test Automation Engineer* ",
-    "company": "msg Plaut Austria GmbH",
-    "IsDeleted": false
+    "company": "msg Plaut Austria GmbH"
   },
   {
-    "id": "0eb01f3e-6f63-11ef-b739-90fba680800b",
+    "id": "0e6513b3-700e-11ef-83f9-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7276660?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Manager* ",
-    "company": "msg Plaut Austria GmbH",
-    "IsDeleted": false
+    "company": "msg Plaut Austria GmbH"
   },
   {
-    "id": "0eb7d9b8-6f63-11ef-9ac0-90fba680800b",
+    "id": "0fdac699-700e-11ef-b4eb-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7272277?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Tester ",
-    "company": "Sage GmbH",
-    "IsDeleted": false
+    "company": "Sage GmbH"
   },
   {
-    "id": "0ebf82ac-6f63-11ef-ad9a-90fba680800b",
+    "id": "0fe2e7f0-700e-11ef-9cee-90fba680800b",
     "URL": "https://devjobs.at/job/c028f21b67555d54a0a929a1ba6f0af8?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Test Automation Specialist",
-    "company": "Wiener Linien GmbH \u0026 Co KG",
-    "IsDeleted": false
+    "company": "Wiener Linien GmbH \u0026 Co KG"
   },
   {
-    "id": "0ec62b15-6f63-11ef-85ec-90fba680800b",
+    "id": "0feb52e3-700e-11ef-92e8-90fba680800b",
     "URL": "https://devjobs.at/job/0a98fa6ae58afffef695424295f1c864?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Engineer Test Automation",
-    "company": "Hitachi Rail",
-    "IsDeleted": false
+    "company": "Hitachi Rail"
   },
   {
-    "id": "0ecdeb0b-6f63-11ef-aab4-90fba680800b",
+    "id": "0ff355a5-700e-11ef-94f4-90fba680800b",
     "URL": "https://devjobs.at/job/b92496ccc78cd08185ef289060d0bce0?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior QA Software Tester",
-    "company": "Journi GmbH",
-    "IsDeleted": false
+    "company": "Journi GmbH"
   },
   {
-    "id": "0ed500ea-6f63-11ef-afc4-90fba680800b",
+    "id": "0ffb768c-700e-11ef-8aa0-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR1976166_3989422_4",
     "position": "IT-Projektmanager",
-    "company": "Equip GmbH",
-    "IsDeleted": false
+    "company": "Equip GmbH"
   },
   {
-    "id": "0edcd7f7-6f63-11ef-a961-90fba680800b",
+    "id": "10037eb5-700e-11ef-b1d6-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7269277?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Engineer (f/m/div*)",
-    "company": "Kapsch TrafficCom",
-    "IsDeleted": false
+    "company": "Kapsch TrafficCom"
   },
   {
-    "id": "0ee4addc-6f63-11ef-beba-90fba680800b",
+    "id": "100cb1f6-700e-11ef-87f6-90fba680800b",
     "URL": "https://devjobs.at/job/c14a93ab3ca10e6947fb11c2f80a702a?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "C# Developer Software Test Automation",
-    "company": "impactit GmbH",
-    "IsDeleted": false
+    "company": "impactit GmbH"
   },
   {
-    "id": "0eec78ea-6f63-11ef-b6f5-90fba680800b",
+    "id": "10148987-700e-11ef-88a5-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR1803385_4795514_6",
     "position": "IT-Qualit\u00E4tsmanager",
-    "company": "TODAY Experts GmbH",
-    "IsDeleted": false
+    "company": "TODAY Experts GmbH"
   },
   {
-    "id": "0ef47fdb-6f63-11ef-a834-90fba680800b",
+    "id": "101cdd6f-700e-11ef-9d75-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR2245181_16235272",
     "position": "System-Test-Engineer ",
-    "company": "Rail Expert Consult GmbH",
-    "IsDeleted": false
+    "company": "Rail Expert Consult GmbH"
   },
   {
-    "id": "0efca513-6f63-11ef-9580-90fba680800b",
+    "id": "10255280-700e-11ef-a88b-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR2245181_16233531",
     "position": "Senior System Test Engineer ",
-    "company": "Rail Expert Consult GmbH",
-    "IsDeleted": false
+    "company": "Rail Expert Consult GmbH"
   },
   {
-    "id": "1079891c-6f63-11ef-8bdb-90fba680800b",
+    "id": "102d7c0d-700e-11ef-b1c6-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-test-manager-121351584?sc_cmp=parce035672",
     "position": "Test Manager",
-    "company": "Atos SE",
-    "IsDeleted": false
+    "company": "Atos SE"
   },
   {
-    "id": "10807d3e-6f63-11ef-97fb-90fba680800b",
+    "id": "10358ce6-700e-11ef-934f-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-software-quality-assurance-test-manager-advisory-122073730?sc_cmp=parce035672",
     "position": "Software Quality Assurance, Test Manager , Advisory",
-    "company": "PwC Austria",
-    "IsDeleted": false
+    "company": "PwC Austria"
   },
   {
-    "id": "1086fd1b-6f63-11ef-a2e7-90fba680800b",
+    "id": "11ae011b-700e-11ef-8d6e-90fba680800b",
     "URL": "https://devjobs.at/job/e81ac06bf694809ee865134df77bda75?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Uipath Test Automation Engineer RPA",
-    "company": "Eviden Austria GmbH",
-    "IsDeleted": false
+    "company": "Eviden Austria GmbH"
   },
   {
-    "id": "108da35b-6f63-11ef-9718-90fba680800b",
+    "id": "11b65b20-700e-11ef-ba90-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7261852?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Test-Engineer  f\u00FCr e-card/ ELGA",
-    "company": "SV-Chipkarten Betriebs- und Errichtungsges.m.b.H.",
-    "IsDeleted": false
+    "company": "SV-Chipkarten Betriebs- und Errichtungsges.m.b.H."
   },
   {
-    "id": "10acaaf3-6f63-11ef-b41e-90fba680800b",
+    "id": "11bd6697-700e-11ef-98e4-90fba680800b",
+    "URL": "https://devjobs.at/job/1893b740d9ebe0533e64f4a5d3528de1?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
+    "position": "Software Tester",
+    "company": "T-Systems International GmbH"
+  },
+  {
+    "id": "11c4cf00-700e-11ef-af53-90fba680800b",
+    "URL": "https://www.finden.at/jobs/detail/32628d42-c902-5112-ba15-a013c4dec635?utm_source=ams\u0026utm_campaign=allejobsams",
+    "position": "Software Tester CORACT ",
+    "company": "T-Systems International GmbH"
+  },
+  {
+    "id": "11cc879a-700e-11ef-b49d-90fba680800b",
+    "URL": "https://www.karriere.at/jobs/7258708?utm_source=ams\u0026utm_campaign=allejobsams",
+    "position": "Software Tester CORACT ",
+    "company": "Software Daten Service Gesellschaft m.b.H."
+  },
+  {
+    "id": "11d4cfd1-700e-11ef-b45c-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7258795?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Pr\u00FCftechniker / System Test Engineer (all genders)",
-    "company": "MELECS EWS GmbH",
-    "IsDeleted": false
+    "company": "MELECS EWS GmbH"
   },
   {
-    "id": "10b4464c-6f63-11ef-81f0-90fba680800b",
+    "id": "11dcff2b-700e-11ef-8020-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7258945?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Requirements Engineer ",
-    "company": "Capgemini",
-    "IsDeleted": false
+    "company": "Capgemini"
   },
   {
-    "id": "10bbe6c3-6f63-11ef-8c5b-90fba680800b",
+    "id": "11e4da17-700e-11ef-a0a9-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7257907?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "TIBER Test-Manager",
-    "company": "Oesterreichische Nationalbank",
-    "IsDeleted": false
+    "company": "Oesterreichische Nationalbank"
   },
   {
-    "id": "10c47227-6f63-11ef-8482-90fba680800b",
+    "id": "11ed1860-700e-11ef-a91b-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7257769?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Engineer w/m/d f\u00FCr die Elektronikfertigung  der Raumfahrtindustrie",
-    "company": "Beyond Gravity Austria GmbH",
-    "IsDeleted": false
+    "company": "Beyond Gravity Austria GmbH"
   },
   {
-    "id": "10ccc6e4-6f63-11ef-a17f-90fba680800b",
+    "id": "11f55642-700e-11ef-b003-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-kfz-techniker-lap-57a-vollzeit-122341348?sc_cmp=parce035672",
     "position": "KFZ-Techniker mit LAP und \u00A757a  - Vollzeit",
-    "company": "Forstinger \u00D6sterreich GmbH",
-    "IsDeleted": false
+    "company": "Forstinger \u00D6sterreich GmbH"
   },
   {
-    "id": "1245bdd8-6f63-11ef-917c-90fba680800b",
+    "id": "11fe1610-700e-11ef-86c7-90fba680800b",
     "URL": "https://devjobs.at/job/7645be76aa56990ae7047b2dcc0a64d3?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Test Automation Expert",
-    "company": "Eviden Austria GmbH",
-    "IsDeleted": false
+    "company": "Eviden Austria GmbH"
   },
   {
-    "id": "124d78c0-6f63-11ef-8947-90fba680800b",
+    "id": "1205646b-700e-11ef-9df4-90fba680800b",
     "URL": "https://jobs.atos.net/job/Vienna-Test-Manager-1210/1082465001/",
     "position": "Test Manager",
-    "company": "Atos",
-    "IsDeleted": false
+    "company": "Atos"
   },
   {
-    "id": "125548d5-6f63-11ef-815e-90fba680800b",
+    "id": "13801b00-700e-11ef-ae4b-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/505972/full-stack-tester-all-genders?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Full Stack Tester (all genders)",
-    "company": "Expleo Group Austria GmbH",
-    "IsDeleted": false
+    "company": "Expleo Group Austria GmbH"
   },
   {
-    "id": "125cd891-6f63-11ef-9bdd-90fba680800b",
+    "id": "138846de-700e-11ef-9968-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7158247?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Security Penetration Tester ",
-    "company": "A1 Digital International GmbH",
-    "IsDeleted": false
+    "company": "A1 Digital International GmbH"
   },
   {
-    "id": "1265ca11-6f63-11ef-bc28-90fba680800b",
+    "id": "139021be-700e-11ef-a88e-90fba680800b",
     "URL": "https://www.karriere.at/jobs/6798914?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Test Engineer ",
-    "company": "ADMIRAL Technologies",
-    "IsDeleted": false
+    "company": "ADMIRAL Technologies"
   },
   {
-    "id": "126d519f-6f63-11ef-a5ca-90fba680800b",
+    "id": "13971284-700e-11ef-a21c-90fba680800b",
     "URL": "https://www.karriere.at/jobs/6798917?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer C# ",
-    "company": "ADMIRAL Technologies",
-    "IsDeleted": false
+    "company": "ADMIRAL Technologies"
   },
   {
-    "id": "12748c5d-6f63-11ef-b109-90fba680800b",
+    "id": "139ec1f8-700e-11ef-a08b-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/505710/senior-it-security-consultant-w-m-d?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Senior IT Security Consultant ",
-    "company": "Certitude Consulting GmbH",
-    "IsDeleted": false
+    "company": "Certitude Consulting GmbH"
   },
   {
-    "id": "127c839b-6f63-11ef-94d2-90fba680800b",
+    "id": "13a70104-700e-11ef-82c1-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7250206?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Specialist ",
-    "company": "IVM Technical Consultants",
-    "IsDeleted": false
+    "company": "IVM Technical Consultants"
   },
   {
-    "id": "12847361-6f63-11ef-b261-90fba680800b",
+    "id": "13af57fd-700e-11ef-a679-90fba680800b",
     "URL": "https://devjobs.at/job/6441d0b345739a3d5f1a0a1ff34b301b?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Agile Senior Test/QA Coordinator",
-    "company": "\u00D6BB Konzern",
-    "IsDeleted": false
+    "company": "\u00D6BB Konzern"
   },
   {
-    "id": "128c7723-6f63-11ef-bcc2-90fba680800b",
+    "id": "13b706e0-700e-11ef-99b6-90fba680800b",
     "URL": "https://devjobs.at/job/901c04bc7afb1cd1cf6c6013350abf5e?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior Requirements Engineer Back End",
-    "company": "\u00D6BB Konzern",
-    "IsDeleted": false
+    "company": "\u00D6BB Konzern"
   },
   {
-    "id": "129510c7-6f63-11ef-af7a-90fba680800b",
+    "id": "13bf5772-700e-11ef-bf70-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/6c090dea-24dd-50a4-b3ab-82cbf8e05ac6?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "JETZT BEIM TOP-ARBEITGEBER BEWERBEN UNLOCK A BETTER TOMORROW Bewerben als Schoellerbank Praktikant  Projektunterst\u00FCtzung, Wien",
-    "company": "Schoellerbank AG",
-    "IsDeleted": false
+    "company": "Schoellerbank AG"
   },
   {
-    "id": "129d43ef-6f63-11ef-aa5a-90fba680800b",
+    "id": "13c7ec12-700e-11ef-bb6a-90fba680800b",
     "URL": "https://devjobs.at/job/895108fce4d05351199cd3365395c61d?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Tester Engineer",
-    "company": "apsa personnel concepts gmbh",
-    "IsDeleted": false
+    "company": "apsa personnel concepts gmbh"
   },
   {
-    "id": "141351d3-6f63-11ef-9a28-90fba680800b",
+    "id": "13d02f70-700e-11ef-96b2-90fba680800b",
     "URL": "https://devjobs.at/job/a69122d0d7f7cb0b193ab28b8b123a1d?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Test Automation Engineer",
-    "company": "apsa personnel concepts gmbh",
-    "IsDeleted": false
+    "company": "apsa personnel concepts gmbh"
   },
   {
-    "id": "141b1e56-6f63-11ef-b833-90fba680800b",
+    "id": "13d76313-700e-11ef-9b2c-90fba680800b",
     "URL": "https://devjobs.at/job/37f8c6a071fc532b8ee61293538ef759?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior Test Automation Engineer",
-    "company": "Capture Europe",
-    "IsDeleted": false
+    "company": "Capture Europe"
   },
   {
-    "id": "1422fe32-6f63-11ef-b1c7-90fba680800b",
+    "id": "155d513b-700e-11ef-a76a-90fba680800b",
     "URL": "https://devjobs.at/job/9a5489cee97e059d5c4e796915da8748?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Tester",
-    "company": "Herold Business Data GmbH",
-    "IsDeleted": false
+    "company": "Herold Business Data GmbH"
   },
   {
-    "id": "1429f976-6f63-11ef-998b-90fba680800b",
+    "id": "1565cee0-700e-11ef-b7c6-90fba680800b",
     "URL": "https://devjobs.at/job/b7c3df68279a532997c5ef7e95223cb5?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Cybersecurity Penetration Test Mitarbeiter",
-    "company": "ZTP.digital ZT-GmbH",
-    "IsDeleted": false
+    "company": "ZTP.digital ZT-GmbH"
   },
   {
-    "id": "14311e13-6f63-11ef-b600-90fba680800b",
+    "id": "156e1a73-700e-11ef-9613-90fba680800b",
     "URL": "https://devjobs.at/job/051e75afcf15ee5a97150aaf0ad1d04f?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software Tester Engineer",
-    "company": "Otto Bock Healthcare Products GmbH",
-    "IsDeleted": false
+    "company": "Otto Bock Healthcare Products GmbH"
   },
   {
-    "id": "143834dd-6f63-11ef-ae90-90fba680800b",
+    "id": "1576a001-700e-11ef-a779-90fba680800b",
     "URL": "https://jobs.atos.net/job/Vienna-Solution-Architect-1210/1065127201/",
     "position": "Solution Architect",
-    "company": "Atos",
-    "IsDeleted": false
+    "company": "Atos"
   },
   {
-    "id": "1442a2a4-6f63-11ef-b9f9-90fba680800b",
+    "id": "157e9e82-700e-11ef-939e-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/528339/penetration-tester-w-m-d?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Penetration Tester ",
-    "company": "Ernst \u0026 Young GmbH Wirtschaftspr\u00FCfungsgesellschaft",
-    "IsDeleted": false
+    "company": "Ernst \u0026 Young GmbH Wirtschaftspr\u00FCfungsgesellschaft"
   },
   {
-    "id": "144c8d99-6f63-11ef-bae0-90fba680800b",
+    "id": "15865c5a-700e-11ef-9bc1-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3229096_4871334_2",
     "position": "IT-Qualit\u00E4tsmanager",
-    "company": "consourcive GmbH",
-    "IsDeleted": false
+    "company": "consourcive GmbH"
   },
   {
-    "id": "1458ec3e-6f63-11ef-8493-90fba680800b",
+    "id": "158eb5df-700e-11ef-8073-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/5a84fff8-88ef-5000-aa75-02b14a4eec14?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Test Automation Engineer  Vollzeit/Teilzeit",
-    "company": "consourcive GmbH",
-    "IsDeleted": false
+    "company": "consourcive GmbH"
   },
   {
-    "id": "14617bdf-6f63-11ef-903e-90fba680800b",
+    "id": "15972552-700e-11ef-a508-90fba680800b",
     "URL": "https://devjobs.at/job/45e58a25c8bc981a515d21cd73cea0ca?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Software System Tester",
-    "company": "Voxtronic Technology Computer-Systeme GmbH",
-    "IsDeleted": false
+    "company": "Voxtronic Technology Computer-Systeme GmbH"
   },
   {
-    "id": "14699fe2-6f63-11ef-a10f-90fba680800b",
+    "id": "159f56ea-700e-11ef-beb2-90fba680800b",
     "URL": "https://www.finden.at/jobs/detail/26a8e40e-c20e-568b-89e4-b0bf829b7aea?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Agile:r Senior Test Koordinator",
-    "company": "\u00D6BB Konzern",
-    "IsDeleted": false
+    "company": "\u00D6BB Konzern"
   },
   {
-    "id": "14756ce4-6f63-11ef-af67-90fba680800b",
+    "id": "15a7350f-700e-11ef-84e5-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3065109_4447756_73",
     "position": "Wirtschaftstreuh\u00E4nder",
-    "company": "test \u0026 hire",
-    "IsDeleted": false
+    "company": "test \u0026 hire"
   },
   {
-    "id": "15ff60bf-6f63-11ef-a2a8-90fba680800b",
+    "id": "15af434c-700e-11ef-92b8-90fba680800b",
     "URL": "https://devjobs.at/job/46d7a9ed96758e94265e3aa86d2abc29?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Project Manager",
-    "company": "Allaboutapps",
-    "IsDeleted": false
+    "company": "Allaboutapps"
   },
   {
-    "id": "160a6214-6f63-11ef-b8c8-90fba680800b",
-    "URL": "https://devjobs.at/job/0371e320ba2d9d5a75884e1661e80a6c?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
-    "position": "Software Tester Manager",
-    "company": "ITSV GmbH",
-    "IsDeleted": false
-  },
-  {
-    "id": "16120935-6f63-11ef-90cb-90fba680800b",
+    "id": "15b71a3f-700e-11ef-969e-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7134553?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Full Stack Tester (all genders)",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "161a8fe9-6f63-11ef-89fc-90fba680800b",
+    "id": "17238ea3-700e-11ef-93fb-90fba680800b",
     "URL": "https://www.karriere.at/jobs/7134745?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Software Test Engineer (all genders)",
-    "company": "Expleo Group Austria",
-    "IsDeleted": false
+    "company": "Expleo Group Austria"
   },
   {
-    "id": "1622e68c-6f63-11ef-9459-90fba680800b",
+    "id": "172caa67-700e-11ef-a7e7-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR356721_3584202_61",
     "position": "IT-Qualit\u00E4tsmanager",
-    "company": "InfraSoft Datenservice GmbH.",
-    "IsDeleted": false
+    "company": "InfraSoft Datenservice GmbH."
   },
   {
-    "id": "162ad93d-6f63-11ef-be47-90fba680800b",
+    "id": "17349f6f-700e-11ef-b092-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3341427_4646289_6",
     "position": "IT-Qualit\u00E4tsmanager",
-    "company": "Karin Weiss Recruiting Personal Coaching",
-    "IsDeleted": false
+    "company": "Karin Weiss Recruiting Personal Coaching"
   }
 ]

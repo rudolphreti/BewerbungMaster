@@ -15,7 +15,6 @@ namespace BewerbungMasterApp.Models
 
         [JsonPropertyName("company")]
         public string Company { get; set; }
-        public bool IsDeleted { get; set; }
 
     }
 }

@@ -7,12 +7,12 @@ namespace BewerbungMasterApp.Services
 {
     public static class GetUserData
     {
-        public static async Task<User> GetUserDataAsync(string userDirectoryPath)
+        public static async Task<User> GetUserDataAsync(string userDirectoryPath) // it must be JSON-CRUD service!!!! 
         {
             if (string.IsNullOrWhiteSpace(userDirectoryPath))
                 throw new InvalidOperationException("User directory path is invalid.");
 
-            var userJsonPath = Path.Combine(userDirectoryPath, "user.json");
+            var userJsonPath = Path.Combine(userDirectoryPath, "user.json"); //user.json must be in settings file
 
             if (!File.Exists(userJsonPath))
                 throw new FileNotFoundException($"User data file not found: {userJsonPath}");
