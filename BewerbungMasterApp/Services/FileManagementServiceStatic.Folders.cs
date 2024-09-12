@@ -45,6 +45,4 @@ namespace BewerbungMasterApp.Services
             return folderApplicationMap;
         }
     }
-
-
 }

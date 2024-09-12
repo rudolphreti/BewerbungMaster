@@ -4,18 +4,19 @@
     {
         public static string CleanName(string fileName)
         {
-            fileName = fileName.Trim();
-
             char[] invalidChars = Path.GetInvalidFileNameChars();
             foreach (char c in invalidChars)
             {
                 fileName = fileName.Replace(c, '_');
             }
 
-            if (fileName.Length > 100)
+            if (fileName.Length > 90)
             {
-                fileName = fileName[..100];
+                fileName = fileName[..90];
             }
+
+            // Removes only spaces at the end of the file name - IMPORTANT! without TrimEnd() the file or folder name is not created correctly
+            fileName = fileName.TrimEnd();
 
             return fileName;
         }
