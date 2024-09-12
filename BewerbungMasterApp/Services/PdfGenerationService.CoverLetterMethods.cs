@@ -14,7 +14,7 @@ namespace BewerbungMasterApp.Services
             document.SetFont(regularFont).SetFontSize(10);
         }
 
-        private void AddHeader(Document document, User user)
+        private static void AddHeader(Document document, User user)
         {
             AddParagraph(document, $"{user.FirstName} {user.LastName}", 0);
             AddParagraph(document, user.Address, 0);

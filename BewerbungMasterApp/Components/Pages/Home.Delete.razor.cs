@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Components.Pages
 {
@@ -6,7 +7,7 @@ namespace BewerbungMasterApp.Components.Pages
     {
         protected async Task DeleteJobApplication(Guid id)
         {
-            var success = await DeleteJobApplicationService.DeleteJobApplicationAsync(id);
+            var success = await JsonService.DeleteAsync<JobApplication>(id);
             if (success)
             {
                 jobApplications.RemoveAll(job => job.Id == id);

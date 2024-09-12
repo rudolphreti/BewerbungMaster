@@ -7,13 +7,10 @@ namespace BewerbungMasterApp.Services
         private readonly string _jobAppDocsPath;
         private readonly string _userDirectoryPath;
         private readonly IPdfGenerationService _pdfGenerationService;
-        public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment, IPdfGenerationService pdfGenerationService)
+        private readonly IJsonService _jsonService;
+        private readonly ILogger<FileManagementService> _logger;
+        public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment, IPdfGenerationService pdfGenerationService, IJsonService jsonService, ILogger<FileManagementService> logger)
         {
-            ArgumentNullException.ThrowIfNull(configuration); //don't understand this
-            ArgumentNullException.ThrowIfNull(environment); //don't understand this
-            ArgumentNullException.ThrowIfNull(pdfGenerationService); //don't understand this
-
-
             if (string.IsNullOrWhiteSpace(environment.WebRootPath))
                 throw new InvalidOperationException("Web root path cannot be null or empty.");
 
@@ -24,6 +21,8 @@ namespace BewerbungMasterApp.Services
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
             _userDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
             _pdfGenerationService = pdfGenerationService;
+            _jsonService = jsonService;
+            _logger = logger;
         }
 
         public void InitializeJobAppDocsDirectory() //why must it be public, not internal?

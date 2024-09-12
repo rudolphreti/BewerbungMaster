@@ -22,14 +22,6 @@ namespace BewerbungMasterApp
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                 .Build();
 
-            var userDirectoryPath = config["UserDirectoryPath"];
-            Console.WriteLine("Configuration Loaded. UserDirectoryPath: " + (userDirectoryPath ?? "null or empty"));
-
-            foreach (var key in config.AsEnumerable())
-            {
-                Console.WriteLine($"{key.Key}: {key.Value}");
-            }
-
             // Register configuration
             builder.Services.AddSingleton<IConfiguration>(config);
 
@@ -37,18 +29,17 @@ namespace BewerbungMasterApp
             builder.Services.AddHttpClient();
 
             // Register application services
-            builder.Services.AddSingleton<IGetJobApplicationsService, GetJobApplicationsService>();
             builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
             builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
-            builder.Services.AddSingleton<IDeleteJobApplicationService, DeleteJobApplicationService>();
+            builder.Services.AddSingleton<IJsonService, JsonService>();
+            builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
+
 
             // Register the application logger
             builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
             builder.Logging.AddConsole();
             builder.Logging.AddDebug();
             builder.Logging.SetMinimumLevel(LogLevel.Trace);  // Fügen Sie diese Zeile hinzu
-
-
 
             var app = builder.Build();
 
@@ -70,37 +61,13 @@ namespace BewerbungMasterApp
                 .AddInteractiveServerRenderMode();
 
             // Initialize application
-            await InitializeApplicationAsync(app);
+            // Initialize application
+            var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
+            await initializationService.InitializeAsync(app.Services);
 
             await app.RunAsync();
         }
-        
-
-        private static async Task InitializeApplicationAsync(WebApplication app)
-        {
-            using var scope = app.Services.CreateScope();
-            var fileManagementService = scope.ServiceProvider.GetRequiredService<IFileManagementService>();
-            var jobApplicationsService = scope.ServiceProvider.GetRequiredService<IGetJobApplicationsService>();
-            try
-            {
-                // Initialize directories and fetch job applications
-                fileManagementService.InitializeJobAppDocsDirectory();
-                var jobApplications = await jobApplicationsService.GetJobApplicationsAsync();
-                Console.WriteLine($"Fetched {jobApplications.Count} job applications");
-
-                // Generate job application folders
-                await fileManagementService.GenerateJobApplicationSetsAsync(jobApplications);
-                Console.WriteLine("Job application sets generation completed");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred during initialization: {ex.Message}");
-                // Handle initialization exceptions if necessary
-                throw; // Re-throw the exception to stop the application if necessary
-            }
-        }
 
         
-
     }
 }
