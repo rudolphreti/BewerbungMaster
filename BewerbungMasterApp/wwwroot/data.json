@@ -978,12 +978,6 @@
     "company": "IVM Technical Consultants"
   },
   {
-    "id": "0a58fc85-7106-11ef-988d-90fba680800b",
-    "URL": "https://devjobs.at/job/6441d0b345739a3d5f1a0a1ff34b301b?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
-    "position": "Agile Senior Test/QA Coordinator",
-    "company": "ÖBB Konzern"
-  },
-  {
     "id": "0a628c93-7106-11ef-886a-90fba680800b",
     "URL": "https://devjobs.at/job/901c04bc7afb1cd1cf6c6013350abf5e?utm_source=allejobs\u0026utm_medium=extern\u0026utm_campaign=aj1",
     "position": "Senior Requirements Engineer Back End",
@@ -1026,12 +1020,6 @@
     "company": "Otto Bock Healthcare Products GmbH"
   },
   {
-    "id": "0bf4a045-7106-11ef-b280-90fba680800b",
-    "URL": "https://jobs.atos.net/job/Vienna-Solution-Architect-1210/1065127201/",
-    "position": "Solution Architect",
-    "company": "Atos"
-  },
-  {
     "id": "0bfb6458-7106-11ef-99e1-90fba680800b",
     "URL": "https://jobs.derstandard.at/jobsuche/jobs/528339/penetration-tester-w-m-d?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Penetration Tester ",
@@ -1064,13 +1052,7 @@
   {
     "id": "0c1ee694-7106-11ef-9aa0-90fba680800b",
     "URL": "https://jobs.ams.at/public/emps/jobs/BTR3065109_4447756_73",
-    "position": "Wirtschaftstreuhänder",
-    "company": "test \u0026 hire"
-  },
-  {
-    "id": "0c2b527c-7106-11ef-87ff-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR356721_3584202_61",
-    "position": "IT-Qualitätsmanager",
-    "company": "InfraSoft Datenservice GmbH."
+    "position": "Software Tester",
+    "company": "Upper Solutions"
   }
 ]

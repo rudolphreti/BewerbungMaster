@@ -4,7 +4,7 @@ namespace BewerbungMasterApp.Services
 {
     public partial class FileManagementService : IFileManagementService
     {
-        public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications)
+        public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications) //TODO: Unit test - if the number of folders matches the number of items
         {
             var user = await _jsonService.GetUserDataAsync();
             var folderApplicationMap = FileManagementServiceStatic.CreateFolderApplicationMap(jobApplications);
