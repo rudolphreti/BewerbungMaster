@@ -1,0 +1,20 @@
+[
+  {
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "URL": "https://example.com/jobs/1",
+    "position": "Junior Software Developer",
+    "company": "Tech Innovations GmbH"
+  },
+  {
+    "id": "987e6543-e21c-34f6-b789-654321098765",
+    "URL": "https://example.com/jobs/2",
+    "position": "QA Engineer",
+    "company": "Creative Solutions Ltd."
+  },
+  {
+    "id": "456f1234-e76d-98a2-b456-123456789abc",
+    "URL": "https://example.com/jobs/3",
+    "position": "Data Scientist",
+    "company": "DataXperts AG"
+  }
+]

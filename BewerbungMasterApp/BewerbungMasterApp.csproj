@@ -10,6 +10,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!--TODO: explain for what? it seems to be unneccessary-->
+	  <Content Include="wwwroot\Users\default\data.json">
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="wwwroot\Users\miko\data.json">
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="itext7" Version="8.0.5" />
 	  <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.5" />
 		<PackageReference Include="itext7.commons" Version="8.0.5" />
