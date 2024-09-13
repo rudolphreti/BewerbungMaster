@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Hosting;
-using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
-    public class JsonService : IJsonService
+    public partial class JsonService : IJsonService
     {
         private readonly ILogger<JsonService> _logger;
         private readonly string _jobDataFilePath;
@@ -104,25 +96,6 @@ namespace BewerbungMasterApp.Services
                 return true;
             }
             return false;
-        }
-
-        // User-specific methods
-        public async Task<User> GetUserDataAsync()
-        {
-            if (!File.Exists(_userDataFilePath))
-            {
-                throw new FileNotFoundException($"User data file not found: {_userDataFilePath}");
-            }
-
-            var userJson = await File.ReadAllTextAsync(_userDataFilePath);
-            return JsonSerializer.Deserialize<User>(userJson, _jsonOptions)
-                ?? throw new InvalidOperationException("User data could not be loaded.");
-        }
-
-        public async Task UpdateUserDataAsync(User user)
-        {
-            var jsonString = JsonSerializer.Serialize(user, _jsonOptions);
-            await File.WriteAllTextAsync(_userDataFilePath, jsonString);
         }
     }
 }
