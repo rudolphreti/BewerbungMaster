@@ -22,5 +22,21 @@ namespace BewerbungMasterApp.Components.Pages
         {
             jobApplications = await JsonService.GetAllAsync<JobApplication>();
         }
+
+        protected async Task MoveJobApplicationToEnd(Guid id)
+        {
+            var jobToMove = jobApplications.FirstOrDefault(j => j.Id == id);
+            if (jobToMove != null)
+            {
+                jobApplications.Remove(jobToMove);
+                jobApplications.Add(jobToMove);
+
+                // Update the JSON file
+                await JsonService.UpdateAllAsync(jobApplications);
+
+                // Trigger a re-render of the component
+                StateHasChanged();
+            }
+        }
     }
 }

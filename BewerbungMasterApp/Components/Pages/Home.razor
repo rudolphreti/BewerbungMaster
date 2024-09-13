@@ -4,9 +4,6 @@
 @inherits HomeBase
 @rendermode InteractiveServer
 
-
-
-
 <div class="container my-5">
     <h3 class="text-center mb-4">Job Applications List</h3>
 
@@ -25,10 +22,10 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col" class="text-center">#</th>
-                        <th scope="col" class="text-center">Position</th>
-                        <th scope="col" class="text-center">Company</th>
+                        <th scope="col" class="text-center col-4">Position</th>
+                        <th scope="col" class="text-center col-4">Company</th>
                         <th scope="col" class="text-center">URL</th>
-                        <th scope="col" class="text-center">Actions</th>
+                        <th scope="col" class="text-center col-3">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +42,8 @@
                                 <a href="@job.URL" target="_blank" class="btn btn-primary btn-sm">Link</a>
                             </td>
                             <td class="text-center">
-                                <button class="btn btn-danger btn-sm" @onclick="@(() => DeleteJobApplication(job.Id))">Delete</button>
+                                <button class="btn btn-danger btn-sm me-2" @onclick="@(() => DeleteJobApplication(job.Id))">Delete</button>
+                                <button class="btn btn-secondary btn-sm" @onclick="@(() => MoveJobApplicationToEnd(job.Id))">Down</button>
                             </td>
                         </tr>
                         index++;

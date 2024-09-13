@@ -86,6 +86,19 @@ namespace BewerbungMasterApp.Services
             throw new KeyNotFoundException($"Item with ID {(item as dynamic).Id} not found.");
         }
 
+        public async Task UpdateAllAsync<T>(List<T> items) where T : class, new()
+        {
+            try
+            {
+                await WriteJsonFileAsync(_jobDataFilePath, items);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating all items in JSON file");
+                throw;
+            }
+        }
+
         public async Task<bool> DeleteAsync<T>(Guid id) where T : class, new()
         {
             var items = await ReadJsonFileAsync<T>(_jobDataFilePath);
