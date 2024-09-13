@@ -20,23 +20,15 @@ namespace BewerbungMasterApp.Components.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            jobApplications = await JsonService.GetAllAsync<JobApplication>();
+            await RefreshList();
         }
 
-        protected async Task MoveJobApplicationToEnd(Guid id)
+        protected async Task RefreshList()
         {
-            var jobToMove = jobApplications.FirstOrDefault(j => j.Id == id);
-            if (jobToMove != null)
-            {
-                jobApplications.Remove(jobToMove);
-                jobApplications.Add(jobToMove);
-
-                // Update the JSON file
-                await JsonService.UpdateAllAsync(jobApplications);
-
-                // Trigger a re-render of the component
-                StateHasChanged();
-            }
+            jobApplications = await JsonService.GetAllAsync<JobApplication>();
+            StateHasChanged();
         }
+
+
     }
 }

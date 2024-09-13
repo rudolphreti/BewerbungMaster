@@ -4,6 +4,7 @@
 @inherits HomeBase
 @rendermode InteractiveServer
 
+
 <div class="container my-5">
     <h3 class="text-center mb-4">Job Applications List</h3>
 
@@ -36,14 +37,13 @@
                     {
                         <tr>
                             <td class="text-center">@index</td>
-                            <td class="text-center text-wrap">@job.Position</td>
-                            <td class="text-center text-wrap">@job.Company</td>
+                            <HomeEdit Job="job" OnUpdate="RefreshList" />
                             <td class="text-center">
                                 <a href="@job.URL" target="_blank" class="btn btn-primary btn-sm">Link</a>
                             </td>
                             <td class="text-center">
                                 <button class="btn btn-danger btn-sm me-2" @onclick="@(() => DeleteJobApplication(job.Id))">Delete</button>
-                                <button class="btn btn-secondary btn-sm" @onclick="@(() => MoveJobApplicationToEnd(job.Id))">Down</button>
+                                <button class="btn btn-secondary btn-sm" @onclick="@(() => MoveJobApplicationToEnd(job.Id))">Down &#x2193;</button>
                             </td>
                         </tr>
                         index++;
