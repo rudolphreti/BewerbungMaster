@@ -1,20 +1,26 @@
-﻿using Microsoft.JSInterop;
+﻿using Microsoft.AspNetCore.Components;
 using BewerbungMasterApp.Models;
+using BewerbungMasterApp.Services;
 
-namespace BewerbungMasterApp.Components.Pages
+namespace BewerbungMasterApp.Components
 {
-    public partial class HomeBase
+    public class HomeDeleteBase : ComponentBase
     {
-        protected async Task DeleteJobApplication(Guid id)
+        [Inject]
+        protected IJsonService JsonService { get; set; } = default!;
+
+        [Parameter]
+        public JobApplication Job { get; set; } = default!;
+
+        [Parameter]
+        public EventCallback OnDelete { get; set; }
+
+        protected async Task DeleteJobApplication()
         {
-            var success = await JsonService.DeleteAsync<JobApplication>(id);
+            var success = await JsonService.DeleteAsync<JobApplication>(Job.Id);
             if (success)
             {
-                jobApplications.RemoveAll(job => job.Id == id);
-            }
-            else
-            {
-                await JSRuntime.InvokeVoidAsync("alert", "Failed to delete the job application.");
+                await OnDelete.InvokeAsync();
             }
         }
     }

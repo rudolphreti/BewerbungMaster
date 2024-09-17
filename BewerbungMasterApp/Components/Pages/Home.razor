@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using BewerbungMasterApp.Components.Pages
+@using BewerbungMasterApp.Components
 @using BewerbungMasterApp.Interfaces
 @inherits HomeBase
 @rendermode InteractiveServer
@@ -42,9 +43,9 @@
                                 <a href="@job.URL" target="_blank" class="btn btn-primary btn-sm">Link</a>
                             </td>
                             <td class="text-center">
-                                <button class="btn btn-danger btn-sm me-2" @onclick="@(() => DeleteJobApplication(job.Id))">Delete</button>
-                                <button class="btn btn-secondary btn-sm" @onclick="@(() => MoveJobApplicationToEnd(job.Id))">Down &#x2193;</button>
-                                <HomeMessage Job="job" />
+                                <HomeDelete Job="job" OnDelete="RefreshList" />
+                                <HomeMoveDown Job="job" OnMove="RefreshList" />
+                                <HomeMessage Job="job" /> 
                             </td>
                         </tr>
                         index++;

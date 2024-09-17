@@ -1,23 +1,31 @@
-﻿using Microsoft.JSInterop;
+﻿using Microsoft.AspNetCore.Components;
 using BewerbungMasterApp.Models;
+using BewerbungMasterApp.Services;
 
-namespace BewerbungMasterApp.Components.Pages
+namespace BewerbungMasterApp.Components
 {
-    public partial class HomeBase
+    public class HomeMoveDownBase : ComponentBase
     {
-        protected async Task MoveJobApplicationToEnd(Guid id)
+        [Inject]
+        protected IJsonService JsonService { get; set; } = default!;
+
+        [Parameter]
+        public JobApplication Job { get; set; } = default!;
+
+        [Parameter]
+        public EventCallback OnMove { get; set; }
+
+        protected async Task MoveJobApplicationToEnd()
         {
-            var jobToMove = jobApplications.FirstOrDefault(j => j.Id == id);
+            var jobs = await JsonService.GetAllAsync<JobApplication>();
+            var jobToMove = jobs.FirstOrDefault(j => j.Id == Job.Id);
             if (jobToMove != null)
             {
-                jobApplications.Remove(jobToMove);
-                jobApplications.Add(jobToMove);
+                jobs.Remove(jobToMove);
+                jobs.Add(jobToMove);
 
-                // Update the JSON file
-                await JsonService.UpdateAllAsync(jobApplications);
-
-                // Trigger a re-render of the component
-                StateHasChanged();
+                await JsonService.UpdateAllAsync(jobs);
+                await OnMove.InvokeAsync();
             }
         }
     }

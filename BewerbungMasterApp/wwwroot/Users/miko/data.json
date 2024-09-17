@@ -1,29 +1,5 @@
 [
   {
-    "id": "f1c5f0a5-71c6-11ef-afbe-90fba680800b",
-    "URL": "https://www.karriere.at/jobs/7298206?utm_source=ams\u0026utm_campaign=allejobsams",
-    "position": "Test Engineer für Hardware ",
-    "company": "ZELLNER Personal Lösungen GmbH"
-  },
-  {
-    "id": "f1d43eeb-71c6-11ef-bc66-90fba680800b",
-    "URL": "https://www.karriere.at/jobs/7009261?utm_source=ams\u0026utm_campaign=allejobsams",
-    "position": "Test Automation Engineer ",
-    "company": "Qnit Austria GmbH"
-  },
-  {
-    "id": "f1efbe20-71c6-11ef-ad86-90fba680800b",
-    "URL": "https://www.stepstone.at/offers/offer_detail.cfm?id=852654\u0026cid=partner_ams___Y",
-    "position": "DevOps System Engineer ",
-    "company": "Universität für Bodenkultur (BOKU)"
-  },
-  {
-    "id": "f2085537-71c6-11ef-a991-90fba680800b",
-    "URL": "https://www.karriere.at/jobs/7234846?utm_source=ams\u0026utm_campaign=allejobsams",
-    "position": "Senior Requirements Engineer  Backend (mind. 30 Std/Woche)",
-    "company": "ÖBB Konzern"
-  },
-  {
     "id": "f2138e74-71c6-11ef-9640-90fba680800b",
     "URL": "https://www.xing.com/jobs/wien-service-desk-mitarbeiter-124648791?sc_cmp=parce035672",
     "position": "Service Desk Mitarbeiter ",
@@ -154,12 +130,6 @@
     "URL": "https://www.karriere.at/jobs/7293094?utm_source=ams\u0026utm_campaign=allejobsams",
     "position": "Anforderungsmanager",
     "company": "Österreichische Forschungsförderungsgesellschaft mbH (FFG)"
-  },
-  {
-    "id": "f78bdd8a-71c6-11ef-91ae-90fba680800b",
-    "URL": "https://jobs.ams.at/public/emps/jobs/BTR2518236_15945829",
-    "position": "IT Test Manager_",
-    "company": "Consent Personal- und Unternehmensberatung"
   },
   {
     "id": "f7a1bf43-71c6-11ef-8538-90fba680800b",
@@ -760,5 +730,17 @@
     "URL": "https://www.xing.com/jobs/wien-software-tester-124548995?sc_cmp=parce035672",
     "position": "Software Tester ",
     "company": "Bechtle direct GmbH"
+  },
+  {
+    "id": "f1c5f0a5-71c6-11ef-afbe-90fba680800b",
+    "URL": "https://www.karriere.at/jobs/7298206?utm_source=ams\u0026utm_campaign=allejobsams",
+    "position": "Test Engineer für Hardware ",
+    "company": "ZELLNER Personal Lösungen GmbH"
+  },
+  {
+    "id": "f2085537-71c6-11ef-a991-90fba680800b",
+    "URL": "https://www.karriere.at/jobs/7234846?utm_source=ams\u0026utm_campaign=allejobsams",
+    "position": "Senior Requirements Engineer  Backend (mind. 30 Std/Woche)",
+    "company": "ÖBB Konzern"
   }
 ]
