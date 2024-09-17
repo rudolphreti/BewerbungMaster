@@ -13,8 +13,24 @@ namespace BewerbungMasterApp
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
 
-            var environment = builder.Environment.EnvironmentName;
-            Console.WriteLine($"Current Environment: {environment}");
+            // Configure SignalR for indefinite connection
+            builder.Services.AddSignalR(options =>
+            {
+                options.ClientTimeoutInterval = TimeSpan.FromDays(1);
+                options.KeepAliveInterval = TimeSpan.FromSeconds(10);
+                options.HandshakeTimeout = TimeSpan.FromSeconds(30);
+                options.MaximumReceiveMessageSize = 1024 * 1024; // 1 MB
+            });
+
+            // Configure Blazor Server options
+            builder.Services.AddServerSideBlazor(options =>
+            {
+                options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromDays(1);
+                options.DisconnectedCircuitMaxRetained = 100;
+                options.JSInteropDefaultCallTimeout = TimeSpan.FromMinutes(5);
+                options.MaxBufferedUnacknowledgedRenderBatches = 100;
+                options.DetailedErrors = true; // Enable detailed errors for development
+            });
 
             // Set up configuration
             var config = new ConfigurationBuilder()

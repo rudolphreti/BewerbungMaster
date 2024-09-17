@@ -35,7 +35,9 @@ regex_to_remove = r"""
 |
 [:/\*]*in\b            # Matches combinations of :, /, * followed by "in" at word boundary
 |
-\(all genders\)        # Matches the specific pattern "(all genders)"
+\(all\s+genders\)       # Matches the specific pattern "(all genders)"
+|
+[:_]innen\b              # Matches ":innen" at the end of a word
 """
 
 # Compile the regex with re.VERBOSE and re.IGNORECASE flags for better readability and case insensitivity

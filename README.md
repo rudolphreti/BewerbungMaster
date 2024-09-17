@@ -54,7 +54,7 @@ Currently, only the source code is available. To set up the project:
 
 ## Usage
 
-1. Provide job data in the `data.json` file located in the `wwwroot` directory. Include the following information for each job application:
+1. Provide job data in the `data.json` file located in the `wwwroot/default` directory. Include the following information for each job application:
    - Id
    - URL
    - Position

@@ -1,3 +1,7 @@
 pdfGenerationService.cs can be divided into static and non-static
 
 unit test - check if number of folders matches to data.json objects
+
+copy icons in inputs
+
+notes for entry
