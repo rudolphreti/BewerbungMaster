@@ -1,6 +1,6 @@
 # BewerbungMaster
 
-BewerbungMaster is a Blazor web application designed to efficiently create and manage job applications. 
+BewerbungMaster is a Blazor application designed to efficiently create and manage job applications. 
 
 ![screenshot](screens/screen.png)
 
@@ -10,10 +10,10 @@ BewerbungMaster is a Blazor web application designed to efficiently create and m
 ![screenshot](screens/screen3.png)
 - Editing and deleting entries
 - Moving entries to the end of the list
+- Copying a message to an employer to the clipboard
 
 ## To-Do
 - Adding entries manually
-- Creating messages to employers
 
 ## Key Components and Architecture
 ### wwwroot Directory
@@ -24,9 +24,9 @@ BewerbungMaster is a Blazor web application designed to efficiently create and m
 ### Services
 The `Services` directory contains the core business logic of the application:
 - `FileManagementService.cs` and `FileManagementServiceStatic.cs`: File operations for job application documents
-- `GetJobApplicationServices.cs`: Retrieves job application data
-- `GetUserData.cs`: Manages user data retrieval
+- `JsonService.cs`: Operations on the data.json and user.json files
 - `PdfGenerationService.cs`: Generates PDF documents for job applications
+- `ApplicationInitializationService.cs`: Methods running at startup, such as generating job application documents from json files
 
 #### PdfGenerationService.cs
 This service is responsible for generating PDF documents for job applications. It utilizes the iText7 library to create professional-looking PDFs with advanced features:
