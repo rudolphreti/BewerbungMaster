@@ -49,6 +49,7 @@ namespace BewerbungMasterApp
             builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
             builder.Services.AddSingleton<IJsonService, JsonService>();
             builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
+            builder.Services.AddSingleton<JobEditService>();
 
 
             // Register the application logger

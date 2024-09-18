@@ -13,7 +13,8 @@ namespace BewerbungMasterApp.Services
 
         public void GenerateCoverLetter(string outputPath, User user, JobApplication application)
         {
-            _logger.LogInformation($"Generating cover letter for {user.FirstName} {user.LastName}: {outputPath}"); //intelisense warning: why use string interpolation?
+            _logger.LogInformation("Generating cover letter for {UserName}: {OutputPath}",
+                $"{user.FirstName} {user.LastName}", outputPath);
             try
             {
                 using var writer = new PdfWriter(outputPath);
@@ -37,7 +38,8 @@ namespace BewerbungMasterApp.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error generating cover letter: {ex.Message}"); //intelisense warning: why use string interpolation? 
+                _logger.LogError(ex, "Error generating cover letter: {ErrorMessage}", ex.Message);
+
             }
         }
     }

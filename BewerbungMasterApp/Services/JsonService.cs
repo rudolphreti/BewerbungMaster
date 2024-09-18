@@ -14,9 +14,9 @@ namespace BewerbungMasterApp.Services
         public JsonService(ILogger<JsonService> logger, IConfiguration configuration, IWebHostEnvironment environment)
         {
             _logger = logger;
-            var jobDataFileName = configuration["JobDataFile"];
-            var userDirectoryPath = configuration["UserDirectoryPath"];
-            var userDataFileName = configuration["UserDataFile"];
+            var jobDataFileName = configuration["JobDataFile"] ?? throw new InvalidOperationException("JobDataFile configuration is missing");
+            var userDirectoryPath = configuration["UserDirectoryPath"] ?? throw new InvalidOperationException("UserDirectoryPath configuration is missing");
+            var userDataFileName = configuration["UserDataFile"] ?? throw new InvalidOperationException("UserDataFile configuration is missing");
 
             _jobDataFilePath = Path.Combine(environment.WebRootPath, jobDataFileName);
             _userDataFilePath = Path.Combine(environment.WebRootPath, userDirectoryPath, userDataFileName);

@@ -8,19 +8,19 @@ namespace BewerbungMasterApp.Components
     public class HomeEditBase : ComponentBase
     {
         // Inject the JSON service for data operations
-        [Inject] protected IJsonService JsonService { get; set; }
+        [Inject] protected IJsonService JsonService { get; set; } = default!;
 
         // Parameters for component configuration and data binding
-        [Parameter] public JobApplication Job { get; set; }
-        [Parameter] public EventCallback OnUpdate { get; set; }
+        [Parameter] public JobApplication Job { get; set; } = default!;
+        [Parameter] public EventCallback OnUpdate { get; set; } = default!;
         [Parameter] public bool IsEditingPosition { get; set; }
         [Parameter] public bool IsEditingCompany { get; set; }
         [Parameter] public EventCallback<string> OnStartEditing { get; set; }
-        [Parameter] public EventCallback OnStopEditing { get; set; }
+        [Parameter] public EventCallback OnStopEditing { get; set; } = default!;
 
         // Properties to hold edited values
-        protected string EditedPosition { get; set; }
-        protected string EditedCompany { get; set; }
+        protected string EditedPosition { get; set; } = string.Empty;
+        protected string EditedCompany { get; set; } = string.Empty; 
 
         // References to input elements for focus management
         protected ElementReference positionInput;

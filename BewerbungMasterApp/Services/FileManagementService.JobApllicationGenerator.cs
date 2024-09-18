@@ -23,16 +23,16 @@ namespace BewerbungMasterApp.Services
                     try
                     {
                         _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);
-                        _logger.LogInformation($"PDF generated: {fileName} for folder: {uniqueFolderName}");
+                        _logger.LogInformation("PDF generated: {FileName} for folder: {FolderName}", fileName, uniqueFolderName);
                     }
                     catch (Exception ex)
                     {
-                        _logger.LogError(ex, $"Error generating PDF: {fileName} for folder: {uniqueFolderName}");
+                        _logger.LogError(ex, "Error generating PDF: {FileName} for folder: {FolderName}", fileName, uniqueFolderName);
                     }
                 }
                 else
                 {
-                    _logger.LogWarning($"Folder already exists: {uniqueFolderName}");
+                    _logger.LogWarning("Folder already exists: {FolderName}", uniqueFolderName);
                 }
             }
         }

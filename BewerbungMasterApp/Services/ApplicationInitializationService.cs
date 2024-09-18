@@ -3,14 +3,9 @@ using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
-    public class ApplicationInitializationService : IApplicationInitializationService
+    public class ApplicationInitializationService(ILogger<ApplicationInitializationService> logger) : IApplicationInitializationService
     {
-        private readonly ILogger<ApplicationInitializationService> _logger;
-
-        public ApplicationInitializationService(ILogger<ApplicationInitializationService> logger)
-        {
-            _logger = logger;
-        }
+        private readonly ILogger<ApplicationInitializationService> _logger = logger;
 
         public async Task InitializeAsync(IServiceProvider serviceProvider)
         {

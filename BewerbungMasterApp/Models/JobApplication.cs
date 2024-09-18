@@ -8,13 +8,13 @@ namespace BewerbungMasterApp.Models
         public Guid Id { get; set; }
 
         [JsonPropertyName("URL")]
-        public string URL { get; set; }
+        public string URL { get; set; } = string.Empty;
 
         [JsonPropertyName("position")]
-        public string Position { get; set; }
+        public string Position { get; set; } = string.Empty;
 
         [JsonPropertyName("company")]
-        public string Company { get; set; }
+        public string Company { get; set; } = string.Empty;
 
     }
 }

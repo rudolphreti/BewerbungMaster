@@ -90,12 +90,12 @@ namespace BewerbungMasterApp.Services
             FileInfo fileInfo = new(outputPath);
             if (fileInfo.Exists && fileInfo.Length > 0)
             {
-                _logger.LogInformation($"Cover letter successfully created: {outputPath}");
-                _logger.LogInformation($"File size: {fileInfo.Length} bytes");
+                _logger.LogInformation("Cover letter successfully created. Path: {OutputPath}", outputPath);
+                _logger.LogInformation("Cover letter file size: {FileSize} bytes", fileInfo.Length);
             }
             else
             {
-                _logger.LogWarning($"Cover letter file was created but appears to be empty: {outputPath}");
+                _logger.LogWarning("Cover letter file created but empty or not found. Path: {OutputPath}", outputPath);
             }
         }
     }
