@@ -17,6 +17,7 @@ namespace BewerbungMasterApp.Components.Pages
         public ILogger<HomeBase> Logger { get; set; } = default!;
 
         protected List<JobApplication> jobApplications = [];
+        protected (int Index, string Field) ActiveEditField { get; set; } = (-1, string.Empty);
 
         protected override async Task OnInitializedAsync()
         {
@@ -29,6 +30,29 @@ namespace BewerbungMasterApp.Components.Pages
             StateHasChanged();
         }
 
+        protected void SetActiveEditField(int index, string field)
+        {
+            ActiveEditField = (index, field);
+            StateHasChanged();
+        }
 
+        protected async Task ClearActiveEditField()
+        {
+            if (ActiveEditField != (-1, string.Empty))
+            {
+                ActiveEditField = (-1, string.Empty);
+                await RefreshList();
+            }
+        }
+
+        protected bool IsEditingPosition(int index)
+        {
+            return ActiveEditField.Index == index && ActiveEditField.Field == "position";
+        }
+
+        protected bool IsEditingCompany(int index)
+        {
+            return ActiveEditField.Index == index && ActiveEditField.Field == "company";
+        }
     }
 }

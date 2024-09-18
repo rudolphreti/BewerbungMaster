@@ -1,84 +1,34 @@
-﻿@using BewerbungMasterApp.Models
-@using BewerbungMasterApp.Services
-@inject IJsonService JsonService
+﻿@inherits HomeEditBase
 
 <td class="text-center text-wrap">
-    @if (IsEditingPosition) //TODO: move css to a separate file
+    @if (IsEditingPosition)
     {
-        <input @bind="EditedPosition" @bind:event="oninput" @onfocusout="UpdatePosition" @onkeydown="@HandleKeyDown" style="width:100%" />
+        <input @ref="positionInput"
+               @bind="EditedPosition"
+               @bind:event="oninput"
+               @onfocusout="UpdatePosition"
+               @onkeydown="HandleKeyDown"
+        @onclick:stopPropagation
+               style="width:100%" />
     }
     else
     {
-        <span @onclick="() => IsEditingPosition = true">@Job.Position</span>
+        <span @onclick="StartEditingPosition">@Job.Position</span>
     }
 </td>
 <td class="text-center text-wrap">
     @if (IsEditingCompany)
     {
-        <input @bind="EditedCompany" @bind:event="oninput" @onfocusout="UpdateCompany" @onkeydown="@HandleKeyDown" style="width:100%" />
+        <input @ref="companyInput"
+               @bind="EditedCompany"
+               @bind:event="oninput"
+               @onfocusout="UpdateCompany"
+               @onkeydown="HandleKeyDown"
+        @onclick:stopPropagation
+               style="width:100%" />
     }
     else
     {
-        <span @onclick="() => IsEditingCompany = true">@Job.Company</span>
+        <span @onclick="StartEditingCompany">@Job.Company</span>
     }
 </td>
-
-@code {
-    [Parameter] public JobApplication Job { get; set; }
-    [Parameter] public EventCallback OnUpdate { get; set; }
-
-    private bool IsEditingPosition { get; set; } = false;
-    private bool IsEditingCompany { get; set; } = false;
-    private string EditedPosition { get; set; }
-    private string EditedCompany { get; set; }
-
-    protected override void OnInitialized()
-    {
-        EditedPosition = Job.Position;
-        EditedCompany = Job.Company;
-    }
-
-    private async Task UpdatePosition()
-    {
-        if (Job.Position != EditedPosition)
-        {
-            Job.Position = EditedPosition;
-            await UpdateJob();
-        }
-        IsEditingPosition = false;
-    }
-
-    private async Task UpdateCompany()
-    {
-        if (Job.Company != EditedCompany)
-        {
-            Job.Company = EditedCompany;
-            await UpdateJob();
-        }
-        IsEditingCompany = false;
-    }
-
-    private async Task UpdateJob()
-    {
-        await JsonService.UpdateAsync(Job);
-        await OnUpdate.InvokeAsync();
-    }
-
-    private async Task HandleKeyDown(KeyboardEventArgs e)
-    {
-        if (e.Key == "Enter")
-        {
-            if (IsEditingPosition)
-                await UpdatePosition();
-            else if (IsEditingCompany)
-                await UpdateCompany();
-        }
-        else if (e.Key == "Escape")
-        {
-            IsEditingPosition = false;
-            IsEditingCompany = false;
-            EditedPosition = Job.Position;
-            EditedCompany = Job.Company;
-        }
-    }
-}
