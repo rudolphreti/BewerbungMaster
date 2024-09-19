@@ -13,7 +13,15 @@ BewerbungMaster is a Blazor application designed to efficiently create and manag
 - Copying a message to an employer to the clipboard
 
 ## To-Do
-- Adding entries manually
+- adding entries manually
+- unit tests
+- integration tests eg. with Selenium
+- isolate dependency injection logic 
+- check if I/O operations are asynchronous 
+- check for error handling
+- check for performance
+- check for security
+- add XML documentation comments 
 
 ## Key Components and Architecture
 ### wwwroot Directory
