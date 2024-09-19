@@ -11,6 +11,7 @@ BewerbungMaster is a Blazor application designed to efficiently create and manag
 - Editing and deleting entries
 - Moving entries to the end of the list
 - Copying a message to an employer to the clipboard
+-  Copying a job application folder path to the clipboard
 
 ## To-Do
 - adding entries manually
