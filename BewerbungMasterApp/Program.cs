@@ -8,81 +8,90 @@ namespace BewerbungMasterApp
     {
         public static async Task Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-            // Add services to the container
-            builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents();
-
-            // Configure SignalR for indefinite connection
-            builder.Services.AddSignalR(options =>
+            try
             {
-                options.ClientTimeoutInterval = TimeSpan.FromDays(1);
-                options.KeepAliveInterval = TimeSpan.FromSeconds(10);
-                options.HandshakeTimeout = TimeSpan.FromSeconds(30);
-                options.MaximumReceiveMessageSize = 1024 * 1024; // 1 MB
-            });
+                var builder = WebApplication.CreateBuilder(args);
+                // Add services to the container
+                builder.Services.AddRazorComponents()
+                    .AddInteractiveServerComponents();
 
-            // Configure Blazor Server options
-            builder.Services.AddServerSideBlazor(options =>
-            {
-                options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromDays(1);
-                options.DisconnectedCircuitMaxRetained = 100;
-                options.JSInteropDefaultCallTimeout = TimeSpan.FromMinutes(5);
-                options.MaxBufferedUnacknowledgedRenderBatches = 100;
-                options.DetailedErrors = true; // Enable detailed errors for development
-            });
+                // Configure SignalR for indefinite connection
+                builder.Services.AddSignalR(options =>
+                {
+                    options.ClientTimeoutInterval = TimeSpan.FromDays(1);
+                    options.KeepAliveInterval = TimeSpan.FromSeconds(10);
+                    options.HandshakeTimeout = TimeSpan.FromSeconds(30);
+                    options.MaximumReceiveMessageSize = 1024 * 1024; // 1 MB
+                });
 
-            // Set up configuration
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                .Build();
+                // Configure Blazor Server options
+                builder.Services.AddServerSideBlazor(options =>
+                {
+                    options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromDays(1);
+                    options.DisconnectedCircuitMaxRetained = 100;
+                    options.JSInteropDefaultCallTimeout = TimeSpan.FromMinutes(5);
+                    options.MaxBufferedUnacknowledgedRenderBatches = 100;
+                    options.DetailedErrors = true; // Enable detailed errors for development
+                });
 
-            // Register configuration
-            builder.Services.AddSingleton<IConfiguration>(config);
+                // Set up configuration
+                var config = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                    .Build();
 
-            // Register HttpClient for use in services
-            builder.Services.AddHttpClient();
+                // Register configuration
+                builder.Services.AddSingleton<IConfiguration>(config);
 
-            // TODO: create a service (with a method with services and logging instructions)
-            // Register application services
-            builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
-            builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
-            builder.Services.AddSingleton<IJsonService, JsonService>();
-            builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
-            builder.Services.AddSingleton<JobEditService>();
+                // Register HttpClient for use in services
+                builder.Services.AddHttpClient();
 
-            // Register the application logger
-            builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
-            builder.Logging.AddConsole();
-            builder.Logging.AddDebug();
-            builder.Logging.SetMinimumLevel(LogLevel.Trace);  // Fügen Sie diese Zeile hinzu
+                // TODO: create a service (with a method with services and logging instructions)
+                // Register application services
+                builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
+                builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
+                builder.Services.AddSingleton<IJsonService, JsonService>();
+                builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
+                builder.Services.AddSingleton<JobEditService>();
 
-            var app = builder.Build();
+                // Register the application logger
+                builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
+                builder.Logging.AddConsole();
+                builder.Logging.AddDebug();
+                builder.Logging.SetMinimumLevel(LogLevel.Trace);  // Fügen Sie diese Zeile hinzu
 
-            // Configure the HTTP request pipeline
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
+                var app = builder.Build();
+
+                // Configure the HTTP request pipeline
+                if (!app.Environment.IsDevelopment())
+                {
+                    app.UseExceptionHandler("/Error");
+                    app.UseHsts();
+                }
+
+                app.UseHttpsRedirection();
+                app.UseStaticFiles();
+                app.UseRouting();
+                app.UseAntiforgery();
+                app.UseAuthorization();
+
+                // Map Razor Components
+                app.MapRazorComponents<App>()
+                    .AddInteractiveServerRenderMode();
+
+                // Initialize application
+                // Initialize application
+                var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
+                await initializationService.InitializeAsync(app.Services);
+
+                await app.RunAsync();
             }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
-            app.UseAntiforgery();
-            app.UseAuthorization();
-
-            // Map Razor Components
-            app.MapRazorComponents<App>()
-                .AddInteractiveServerRenderMode();
-
-            // Initialize application
-            // Initialize application
-            var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
-            await initializationService.InitializeAsync(app.Services);
-
-            await app.RunAsync();
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unhandled exception: {ex}");
+                // Optionally log the exception
+            }
+            
         }
 
         

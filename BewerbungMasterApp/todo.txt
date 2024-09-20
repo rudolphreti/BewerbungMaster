@@ -1,3 +1,5 @@
+coloring red: Manager, Senior, KFZ, Wirtschaftstreuhänder,  + deleting option
+
 pdfGenerationService.cs can be divided into static and non-static
 
 unit test - check if number of folders matches to data.json objects

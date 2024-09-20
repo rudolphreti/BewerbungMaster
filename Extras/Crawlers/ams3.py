@@ -19,7 +19,12 @@ chrome_options.add_argument("--no-default-browser-check")
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the JSON file
-json_file_path = os.path.join(current_directory, 'ams_jobs.json')
+json_file_path = os.path.join(current_directory, 'data.json')
+
+# Delete the old JSON file if it exists
+if os.path.exists(json_file_path):
+    os.remove(json_file_path)
+    print(f"Deleted old {json_file_path}")
 
 # Initialize the browser
 driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -90,6 +95,7 @@ def extract_job_information_from_page(driver):
 
 def crawl_ams_jobs():
     page_number = 0
+    all_jobs = []
 
     while True:
         # Construct URL for the current page
@@ -108,24 +114,15 @@ def crawl_ams_jobs():
             print(f"No more job listings found. Stopping at page {page_number}.")
             break
 
-        # Read the current JSON file or create a new list
-        try:
-            with open(json_file_path, 'r+', encoding='utf-8') as file:
-                try:
-                    jobs = json.load(file)
-                except json.JSONDecodeError:
-                    jobs = []
-                jobs.extend(job_data)
-                file.seek(0)
-                json.dump(jobs, file, ensure_ascii=False, indent=4)
-                file.truncate()
-                print(f"Added {len(job_data)} jobs to JSON file.")
-        except FileNotFoundError:
-            with open('ams_jobs.json', 'w', encoding='utf-8') as file:
-                json.dump(job_data, file, ensure_ascii=False, indent=4)
-                print(f"Created new JSON file with {len(job_data)} jobs.")
+        all_jobs.extend(job_data)
+        print(f"Added {len(job_data)} jobs from page {page_number}.")
 
         page_number += 1
+
+    # Save all collected jobs to the JSON file
+    with open(json_file_path, 'w', encoding='utf-8') as file:
+        json.dump(all_jobs, file, ensure_ascii=False, indent=4)
+    print(f"Created new JSON file with {len(all_jobs)} jobs.")
 
     print("Job data extraction and saving completed.")
 
