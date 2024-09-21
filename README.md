@@ -23,6 +23,7 @@ BewerbungMaster is a Blazor application designed to efficiently create and manag
 - check for performance
 - check for security
 - add XML documentation comments 
+- add toast notification
 
 ## Key Components and Architecture
 ### wwwroot Directory
