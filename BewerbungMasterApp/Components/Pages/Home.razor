@@ -30,7 +30,9 @@
                         <th scope="col" class="text-center col-4">Position</th>
                         <th scope="col" class="text-center col-3">Company</th>
                         <th scope="col" class="text-center">URL</th>
-                        <th scope="col" class="text-center col-4">Actions</th>
+                        <th scope="col" class="text-center">Path</th>
+                        <th scope="col" class="text-center col-2">Actions</th>
+                        <th scope="col" class="text-center col-2">Messages</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,13 +49,17 @@
                                       OnStartEditing="(field) => JobEditService.SetActiveEditField(currentIndex, field)"
                                       OnStopEditing="JobEditService.ClearActiveEditField" />
                             <td class="text-center">
-                                <a href="@job.URL" target="_blank" class="btn btn-primary btn-sm">Link</a>
+                                <a href="@job.URL" target="_blank" class="btn btn-primary btn-sm">📋</a>
+                            </td>
+                            <td class="text-center">
+                                <HomeFolder Job="job" />
                             </td>
                             <td class="text-center">
                                 <HomeDelete Job="job" OnDelete="RefreshList" />
                                 <HomeMoveUpDown Job="job" OnMove="RefreshList" />
+                            </td>
+                            <td class="text-center">
                                 <HomeMessage Job="job" />
-                                <HomeFolder Job="job" />
                                 <HomeCoverLetter Job="job" />
                             </td>
                         </tr>
