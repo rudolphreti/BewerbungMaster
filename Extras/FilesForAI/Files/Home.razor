@@ -26,9 +26,9 @@
                     <tr>
                         <th scope="col" class="text-center">#</th>
                         <th scope="col" class="text-center col-4">Position</th>
-                        <th scope="col" class="text-center col-4">Company</th>
+                        <th scope="col" class="text-center col-3">Company</th>
                         <th scope="col" class="text-center">URL</th>
-                        <th scope="col" class="text-center col-3">Actions</th>
+                        <th scope="col" class="text-center col-4">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,8 +49,9 @@
                             </td>
                             <td class="text-center">
                                 <HomeDelete Job="job" OnDelete="RefreshList" />
-                                <HomeMoveDown Job="job" OnMove="RefreshList" />
+                                <HomeMoveUpDown Job="job" OnMove="RefreshList" />
                                 <HomeMessage Job="job" />
+                                <HomeFolder Job="job" />
                             </td>
                         </tr>
                     }

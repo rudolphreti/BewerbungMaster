@@ -27,6 +27,17 @@ class BaseCrawler(ABC):
 
     @staticmethod
     def _get_regex_pattern():
+        # TODO: unreadable!!! add comments 
+        # (w/m/div.) or (f/m/div*)
+        # Full time
+        # Start as of now
+        # (mind. 30 Std/Woche)
+        # :r
+        # _
+        # *
+        # Salary
+        # digits
+
         return r"""\((?:[dmfwx](/?[dmfwx])*(\s/\*)?|[dmf](?:\|[dmf]){1,2})\)|[:/\*]*in\b|\(all\s+genders\)|[:_]innen\b"""
 
     def generate_uuid(self):

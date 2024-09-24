@@ -1,0 +1,27 @@
+﻿@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+@inject IWebHostEnvironment Environment
+@using BewerbungMasterApp.Models
+
+<button title="Copy folder path to the clipboard" class="btn btn-primary btn-sm" @onclick="CopyFolderPathToClipboard">Path 📋</button>
+
+@code {
+    [Parameter]
+    public required JobApplication Job { get; set; }
+
+    private async Task CopyFolderPathToClipboard()
+    {
+        var jobAppDocsPath = Path.Combine(Environment.WebRootPath, "JobAppDocs");
+        var folderName = CleanName($"{Job.Company}_{Job.Position}");
+        var fullPath = Path.Combine(jobAppDocsPath, folderName);
+
+        await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", fullPath);
+    }
+
+    private static string CleanName(string fileName)
+    {
+        var invalidChars = Path.GetInvalidFileNameChars();
+        var cleanName = new string(fileName.Select(c => invalidChars.Contains(c) ? '_' : c).ToArray());
+        return cleanName.Length > 90 ? cleanName[..90].TrimEnd() : cleanName.TrimEnd();
+    }
+}

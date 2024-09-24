@@ -33,7 +33,7 @@ class DevJobsCrawler(BaseCrawler):
             logging.info(f"Extracted job: {job_title} at {company_name}")
             return {
                 "id": self.generate_uuid(),
-                "title": self.clean_job_title(job_title),
+                "position": self.clean_job_title(job_title),
                 "company": company_name,
                 "url": job_url
             }

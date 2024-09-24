@@ -66,9 +66,9 @@
                     <tr>
                         <th scope="col" class="text-center">#</th>
                         <th scope="col" class="text-center col-4">Position</th>
-                        <th scope="col" class="text-center col-4">Company</th>
+                        <th scope="col" class="text-center col-3">Company</th>
                         <th scope="col" class="text-center">URL</th>
-                        <th scope="col" class="text-center col-3">Actions</th>
+                        <th scope="col" class="text-center col-4">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,8 +89,9 @@
                             </td>
                             <td class="text-center">
                                 <HomeDelete Job="job" OnDelete="RefreshList" />
-                                <HomeMoveDown Job="job" OnMove="RefreshList" />
+                                <HomeMoveUpDown Job="job" OnMove="RefreshList" />
                                 <HomeMessage Job="job" />
+                                <HomeFolder Job="job" />
                             </td>
                         </tr>
                     }
@@ -306,10 +307,39 @@ namespace BewerbungMasterApp.Components
     }
 }
 
+<D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeFolder.razor>
+@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+@inject IWebHostEnvironment Environment
+@using BewerbungMasterApp.Models
+
+<button title="Copy folder path to the clipboard" class="btn btn-primary btn-sm" @onclick="CopyFolderPathToClipboard">Path 📋</button>
+
+@code {
+    [Parameter]
+    public required JobApplication Job { get; set; }
+
+    private async Task CopyFolderPathToClipboard()
+    {
+        var jobAppDocsPath = Path.Combine(Environment.WebRootPath, "JobAppDocs");
+        var folderName = CleanName($"{Job.Company}_{Job.Position}");
+        var fullPath = Path.Combine(jobAppDocsPath, folderName);
+
+        await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", fullPath);
+    }
+
+    private static string CleanName(string fileName)
+    {
+        var invalidChars = Path.GetInvalidFileNameChars();
+        var cleanName = new string(fileName.Select(c => invalidChars.Contains(c) ? '_' : c).ToArray());
+        return cleanName.Length > 90 ? cleanName[..90].TrimEnd() : cleanName.TrimEnd();
+    }
+}
+
 <D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeMessage.razor>
 @inherits HomeMessageBase
 
-<button class="btn btn-primary btn-sm" @onclick="CopyPersonalizedMessage">Message</button>
+<button title="Copy message to the employer to the clipboard" class="btn btn-primary btn-sm" @onclick="CopyPersonalizedMessage">Message 📋</button>
 
 <D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeMessage.razor.cs>
 using BewerbungMasterApp.Models;
@@ -345,19 +375,20 @@ Mit freundlichen Grüßen
     }
 }
 
-<D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeMoveDown.razor>
-@inherits HomeMoveDownBase
+<D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeMoveUpDown.razor>
+@inherits HomeMoveUpDownBase
 
-<button class="btn btn-secondary btn-sm" @onclick="MoveJobApplicationToEnd">Down &#x2193;</button>
+<button class="btn btn-secondary btn-sm" @onclick="MoveJobApplicationToTop">&#x2191;</button>
+<button class="btn btn-secondary btn-sm" @onclick="MoveJobApplicationToBottom">&#x2193;</button>
 
-<D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeMoveDown.razor.cs>
+<D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeMoveUpDown.razor.cs>
 using Microsoft.AspNetCore.Components;
 using BewerbungMasterApp.Models;
 using BewerbungMasterApp.Services;
 
 namespace BewerbungMasterApp.Components
 {
-    public class HomeMoveDownBase : ComponentBase
+    public class HomeMoveUpDownBase : ComponentBase
     {
         [Inject]
         protected IJsonService JsonService { get; set; } = default!;
@@ -368,7 +399,21 @@ namespace BewerbungMasterApp.Components
         [Parameter]
         public EventCallback OnMove { get; set; }
 
-        protected async Task MoveJobApplicationToEnd()
+        protected async Task MoveJobApplicationToTop()
+        {
+            var jobs = await JsonService.GetAllAsync<JobApplication>();
+            var jobToMove = jobs.FirstOrDefault(j => j.Id == Job.Id);
+            if (jobToMove != null)
+            {
+                jobs.Remove(jobToMove);
+                jobs.Insert(0, jobToMove);
+
+                await JsonService.UpdateAllAsync(jobs);
+                await OnMove.InvokeAsync();
+            }
+        }
+
+        protected async Task MoveJobApplicationToBottom()
         {
             var jobs = await JsonService.GetAllAsync<JobApplication>();
             var jobToMove = jobs.FirstOrDefault(j => j.Id == Job.Id);
@@ -1222,81 +1267,90 @@ namespace BewerbungMasterApp
     {
         public static async Task Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-            // Add services to the container
-            builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents();
-
-            // Configure SignalR for indefinite connection
-            builder.Services.AddSignalR(options =>
+            try
             {
-                options.ClientTimeoutInterval = TimeSpan.FromDays(1);
-                options.KeepAliveInterval = TimeSpan.FromSeconds(10);
-                options.HandshakeTimeout = TimeSpan.FromSeconds(30);
-                options.MaximumReceiveMessageSize = 1024 * 1024; // 1 MB
-            });
+                var builder = WebApplication.CreateBuilder(args);
+                // Add services to the container
+                builder.Services.AddRazorComponents()
+                    .AddInteractiveServerComponents();
 
-            // Configure Blazor Server options
-            builder.Services.AddServerSideBlazor(options =>
-            {
-                options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromDays(1);
-                options.DisconnectedCircuitMaxRetained = 100;
-                options.JSInteropDefaultCallTimeout = TimeSpan.FromMinutes(5);
-                options.MaxBufferedUnacknowledgedRenderBatches = 100;
-                options.DetailedErrors = true; // Enable detailed errors for development
-            });
+                // Configure SignalR for indefinite connection
+                builder.Services.AddSignalR(options =>
+                {
+                    options.ClientTimeoutInterval = TimeSpan.FromDays(1);
+                    options.KeepAliveInterval = TimeSpan.FromSeconds(10);
+                    options.HandshakeTimeout = TimeSpan.FromSeconds(30);
+                    options.MaximumReceiveMessageSize = 1024 * 1024; // 1 MB
+                });
 
-            // Set up configuration
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                .Build();
+                // Configure Blazor Server options
+                builder.Services.AddServerSideBlazor(options =>
+                {
+                    options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromDays(1);
+                    options.DisconnectedCircuitMaxRetained = 100;
+                    options.JSInteropDefaultCallTimeout = TimeSpan.FromMinutes(5);
+                    options.MaxBufferedUnacknowledgedRenderBatches = 100;
+                    options.DetailedErrors = true; // Enable detailed errors for development
+                });
 
-            // Register configuration
-            builder.Services.AddSingleton<IConfiguration>(config);
+                // Set up configuration
+                var config = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                    .Build();
 
-            // Register HttpClient for use in services
-            builder.Services.AddHttpClient();
+                // Register configuration
+                builder.Services.AddSingleton<IConfiguration>(config);
 
-            // TODO: create a service (with a method with services and logging instructions)
-            // Register application services
-            builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
-            builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
-            builder.Services.AddSingleton<IJsonService, JsonService>();
-            builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
-            builder.Services.AddSingleton<JobEditService>();
+                // Register HttpClient for use in services
+                builder.Services.AddHttpClient();
 
-            // Register the application logger
-            builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
-            builder.Logging.AddConsole();
-            builder.Logging.AddDebug();
-            builder.Logging.SetMinimumLevel(LogLevel.Trace);  // F�gen Sie diese Zeile hinzu
+                // TODO: create a service (with a method with services and logging instructions)
+                // Register application services
+                builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
+                builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
+                builder.Services.AddSingleton<IJsonService, JsonService>();
+                builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
+                builder.Services.AddSingleton<JobEditService>();
 
-            var app = builder.Build();
+                // Register the application logger
+                builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
+                builder.Logging.AddConsole();
+                builder.Logging.AddDebug();
+                builder.Logging.SetMinimumLevel(LogLevel.Trace);  // F�gen Sie diese Zeile hinzu
 
-            // Configure the HTTP request pipeline
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
+                var app = builder.Build();
+
+                // Configure the HTTP request pipeline
+                if (!app.Environment.IsDevelopment())
+                {
+                    app.UseExceptionHandler("/Error");
+                    app.UseHsts();
+                }
+
+                app.UseHttpsRedirection();
+                app.UseStaticFiles();
+                app.UseRouting();
+                app.UseAntiforgery();
+                app.UseAuthorization();
+
+                // Map Razor Components
+                app.MapRazorComponents<App>()
+                    .AddInteractiveServerRenderMode();
+
+                // Initialize application
+                // Initialize application
+                var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
+                await initializationService.InitializeAsync(app.Services);
+
+                await app.RunAsync();
             }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
-            app.UseAntiforgery();
-            app.UseAuthorization();
-
-            // Map Razor Components
-            app.MapRazorComponents<App>()
-                .AddInteractiveServerRenderMode();
-
-            // Initialize application
-            // Initialize application
-            var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
-            await initializationService.InitializeAsync(app.Services);
-
-            await app.RunAsync();
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unhandled exception: {ex}");
+                // Optionally log the exception
+            }
+            
         }
 
         
@@ -1345,9 +1399,19 @@ BewerbungMaster is a Blazor application designed to efficiently create and manag
 - Editing and deleting entries
 - Moving entries to the end of the list
 - Copying a message to an employer to the clipboard
+-  Copying a job application folder path to the clipboard
 
 ## To-Do
-- Adding entries manually
+- adding entries manually
+- unit tests
+- integration tests eg. with Selenium
+- isolate dependency injection logic 
+- check if I/O operations are asynchronous 
+- check for error handling
+- check for performance
+- check for security
+- add XML documentation comments 
+- add toast notification
 
 ## Key Components and Architecture
 ### wwwroot Directory
