@@ -1,0 +1,60 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+
+<div class="text-end mb-3">
+    <button class="btn btn-primary" @onclick="ToggleForm">+</button>
+</div>
+
+@if (showForm)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <EditForm Model="@newJob" OnValidSubmit="HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <div class="mb-3">
+                    <label for="position" class="form-label">Position</label>
+                    <InputText id="position" @bind-Value="newJob.Position" class="form-control" />
+                    <ValidationMessage For="@(() => newJob.Position)" />
+                </div>
+                <div class="mb-3">
+                    <label for="company" class="form-label">Unternehmen</label>
+                    <InputText id="company" @bind-Value="newJob.Company" class="form-control" />
+                    <ValidationMessage For="@(() => newJob.Company)" />
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">URL</label>
+                    <InputText id="url" @bind-Value="newJob.URL" class="form-control" />
+                    <ValidationMessage For="@(() => newJob.URL)" />
+                </div>
+                <button type="submit" class="btn btn-success">Hinzufügen</button>
+                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Abbrechen</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    private bool showForm = false;
+    private JobApplication newJob = new();
+
+    [Parameter]
+    public EventCallback OnJobAdded { get; set; }
+
+    private void ToggleForm()
+    {
+        showForm = !showForm;
+        if (!showForm)
+        {
+            newJob = new JobApplication();
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        newJob.Id = Guid.NewGuid();
+        await JsonService.AddAsFirstAsync(newJob);
+        await OnJobAdded.InvokeAsync();
+        ToggleForm();
+    }
+}
