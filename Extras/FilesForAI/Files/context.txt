@@ -308,6 +308,8 @@ namespace BewerbungMasterApp.Components
 }
 
 <D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeFolder.razor>
+@* TODO: change name of the file -> HomeFolderPath.razor *@
+
 @inject IJSRuntime JSRuntime
 @inject IConfiguration Configuration
 @inject IWebHostEnvironment Environment
