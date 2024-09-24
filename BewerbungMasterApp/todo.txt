@@ -1,9 +1,30 @@
-coloring red: Manager, Senior, KFZ, Wirtschaftstreuhänder,  + deleting option
+## High Priority
+- Implement comprehensive unit and integration tests, e.g. check if number of folders matches to data.json objects
+- Enhance security measures, especially for file operations and user data handling
+- Implement consistent error handling and logging across the application
+- Add input validation for all user-entered data
+- Refactor hardcoded file paths to use configuration files or environment variables
 
-pdfGenerationService.cs can be divided into static and non-static
+## Medium Priority
+- Optimize performance, particularly for PDF generation and file operations
+- Implement a scalable architecture to support multiple concurrent users
+- Add internationalization support for multiple languages
+- Create a robust logging system for better debugging and monitoring
+- Develop a mechanism for easy application updates
 
-unit test - check if number of folders matches to data.json objects
+## Low Priority
+- Reduce dependency on external libraries where possible, or plan for alternatives
+- Refactor complex classes and methods to improve code maintainability
+- Implement a caching mechanism to improve performance for repeated operations
+- Add user authentication and authorization features
+- Create a dashboard for monitoring application performance and usage
+- copy icons in inputs
+- notes for entry
+- coloring red: Manager, Senior, KFZ, Wirtschaftstreuhänder + deleting option
 
-copy icons in inputs
-
-notes for entry
+## Ongoing
+- Regularly review and update external library dependencies
+- Conduct periodic security audits
+- Refactor code to adhere to SOLID principles and improve overall design, e.g. pdfGenerationService.cs can be divided into static and non-static
+- Document all major classes and methods using XML comments
+- Continuously improve user interface based on feedback
