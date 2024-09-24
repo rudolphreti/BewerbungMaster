@@ -73,6 +73,14 @@ namespace BewerbungMasterApp.Services
             return item;
         }
 
+        public async Task<T> AddAsFirstAsync<T>(T item) where T : class, new()
+        {
+            var items = await ReadJsonFileAsync<T>(_jobDataFilePath);
+            items.Insert(0, item);
+            await WriteJsonFileAsync(_jobDataFilePath, items);
+            return item;
+        }
+
         public async Task<T> UpdateAsync<T>(T item) where T : class, new()
         {
             var items = await ReadJsonFileAsync<T>(_jobDataFilePath);

@@ -50,6 +50,8 @@
 <div class="container my-5" @onclick="JobEditService.ClearActiveEditField">
     <h3 class="text-center mb-4">Job Applications List</h3>
 
+    <HomeAddJob OnJobAdded="RefreshList" />
+
     @if (jobApplications == null)
     {
         <p class="text-center">Loading data...</p>
@@ -132,6 +134,67 @@ namespace BewerbungMasterApp.Components.Pages
             jobApplications = await JsonService.GetAllAsync<JobApplication>();
             StateHasChanged();
         }
+    }
+}
+
+<D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Components\Pages\HomeAddJob.razor>
+@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+
+<div class="text-end mb-3">
+    <button class="btn btn-primary" @onclick="ToggleForm">+</button>
+</div>
+
+@if (showForm)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <EditForm Model="@newJob" OnValidSubmit="HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <div class="mb-3">
+                    <label for="position" class="form-label">Position</label>
+                    <InputText id="position" @bind-Value="newJob.Position" class="form-control" />
+                    <ValidationMessage For="@(() => newJob.Position)" />
+                </div>
+                <div class="mb-3">
+                    <label for="company" class="form-label">Unternehmen</label>
+                    <InputText id="company" @bind-Value="newJob.Company" class="form-control" />
+                    <ValidationMessage For="@(() => newJob.Company)" />
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">URL</label>
+                    <InputText id="url" @bind-Value="newJob.URL" class="form-control" />
+                    <ValidationMessage For="@(() => newJob.URL)" />
+                </div>
+                <button type="submit" class="btn btn-success">Hinzufügen</button>
+                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Abbrechen</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    private bool showForm = false;
+    private JobApplication newJob = new();
+
+    [Parameter]
+    public EventCallback OnJobAdded { get; set; }
+
+    private void ToggleForm()
+    {
+        showForm = !showForm;
+        if (!showForm)
+        {
+            newJob = new JobApplication();
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        newJob.Id = Guid.NewGuid();
+        await JsonService.AddAsFirstAsync(newJob);
+        await OnJobAdded.InvokeAsync();
     }
 }
 
@@ -488,6 +551,7 @@ namespace BewerbungMasterApp.Services
         Task<List<T>> GetAllAsync<T>();
         Task<T> GetByIdAsync<T>(Guid id) where T : class, new();
         Task<T> AddAsync<T>(T item) where T : class, new();
+        Task<T> AddAsFirstAsync<T>(T item) where T : class, new();
         Task<T> UpdateAsync<T>(T item) where T : class, new();
         Task<bool> DeleteAsync<T>(Guid id) where T : class, new();
         Task UpdateAllAsync<T>(List<T> items) where T : class, new();
@@ -507,6 +571,7 @@ namespace BewerbungMasterApp.Interfaces
 }
 
 <D:\Visual Studio - Projects\BewerbungMaster\BewerbungMasterApp\Models\JobApplication.cs>
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace BewerbungMasterApp.Models
@@ -517,14 +582,19 @@ namespace BewerbungMasterApp.Models
         public Guid Id { get; set; }
 
         [JsonPropertyName("URL")]
+        [Required(ErrorMessage = "URL ist erforderlich.")]
+        [Url(ErrorMessage = "Bitte geben Sie eine gültige URL ein.")]
         public string URL { get; set; } = string.Empty;
 
         [JsonPropertyName("position")]
+        [Required(ErrorMessage = "Position ist erforderlich.")]
+        [StringLength(100, ErrorMessage = "Die Position darf nicht länger als 100 Zeichen sein.")]
         public string Position { get; set; } = string.Empty;
 
         [JsonPropertyName("company")]
+        [Required(ErrorMessage = "Unternehmen ist erforderlich.")]
+        [StringLength(100, ErrorMessage = "Der Unternehmensname darf nicht länger als 100 Zeichen sein.")]
         public string Company { get; set; } = string.Empty;
-
     }
 }
 
@@ -907,6 +977,14 @@ namespace BewerbungMasterApp.Services
         {
             var items = await ReadJsonFileAsync<T>(_jobDataFilePath);
             items.Add(item);
+            await WriteJsonFileAsync(_jobDataFilePath, items);
+            return item;
+        }
+
+        public async Task<T> AddAsFirstAsync<T>(T item) where T : class, new()
+        {
+            var items = await ReadJsonFileAsync<T>(_jobDataFilePath);
+            items.Insert(0, item);
             await WriteJsonFileAsync(_jobDataFilePath, items);
             return item;
         }
