@@ -27,6 +27,15 @@
                     <InputText id="url" @bind-Value="newJob.URL" class="form-control" />
                     <ValidationMessage For="@(() => newJob.URL)" />
                 </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Stellentyp</label>
+                    <InputSelect id="type" @bind-Value="newJob.Type" class="form-select">
+                        @foreach (var jobType in jobTypes)
+                        {
+                            <option value="@jobType">@jobType</option>
+                        }
+                    </InputSelect>
+                </div>
                 <button type="submit" class="btn btn-success">Hinzufügen</button>
                 <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Abbrechen</button>
             </EditForm>
@@ -37,9 +46,16 @@
 @code {
     private bool showForm = false;
     private JobApplication newJob = new();
+    private List<string> jobTypes = new();
 
     [Parameter]
     public EventCallback OnJobAdded { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var jobAppContents = await JsonService.GetAllJobAppContentsAsync();
+        jobTypes = jobAppContents.Select(jac => jac.Name).ToList();
+    }
 
     private void ToggleForm()
     {
@@ -55,5 +71,6 @@
         newJob.Id = Guid.NewGuid();
         await JsonService.AddAsFirstAsync(newJob);
         await OnJobAdded.InvokeAsync();
+        newJob = new JobApplication();
     }
 }

@@ -14,7 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--TODO: explain for what? it seems to be unneccessary-->
+		<!--TODO: explain for what?-->
 	  <Content Include="wwwroot\Users\default\data.json">
 	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
