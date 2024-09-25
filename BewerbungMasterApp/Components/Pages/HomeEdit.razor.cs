@@ -78,7 +78,7 @@ namespace BewerbungMasterApp.Components
         // Handle keyboard events (Enter to save, Escape to cancel)
         protected async Task HandleKeyDown(KeyboardEventArgs e)
         {
-            if (e.Key == "Enter")
+            if (e.Key == "Enter") //TODO: Better use switch 
             {
                 if (IsEditingPosition)
                     await UpdatePosition();

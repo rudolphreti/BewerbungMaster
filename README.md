@@ -80,7 +80,7 @@ The `Crawlers` directory contains sample crawlers for extracting this data writt
 
 This project uses the following main dependencies:
 
-- .NET 8.0
+- .NET 8.0, C# 12
 - itext7 (v8.0.5)
 - itext7.bouncy-castle-adapter (v8.0.5) - doesn't work without it
 - itext7.commons (v8.0.5)
