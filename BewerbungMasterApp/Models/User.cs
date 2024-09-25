@@ -10,6 +10,5 @@
         public string Email { get; set; } = string.Empty;
         public string LinkedIn { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
-        public string JobAppContent { get; set; } = string.Empty;
     }
 }

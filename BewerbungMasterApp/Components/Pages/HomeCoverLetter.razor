@@ -2,6 +2,7 @@
 @inject IJsonService JsonService
 @using BewerbungMasterApp.Services
 @using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Interfaces
 
 <button title="Copy cover letter to clipboard" class="btn btn-primary btn-sm" @onclick="CopyCoverLetterToClipboard">Cover letter 📋</button>
 
@@ -12,11 +13,19 @@
     private async Task CopyCoverLetterToClipboard()
     {
         var user = await JsonService.GetUserDataAsync();
-        var coverLetterContent = GenerateCoverLetterContent(user, Job);
+        var jobAppContent = await JsonService.GetJobAppContentByNameAsync(Job.Type);
+
+        if (jobAppContent == null)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Kein Inhalt für den Stellentyp '{Job.Type}' gefunden.");
+            return;
+        }
+
+        var coverLetterContent = GenerateCoverLetterContent(user, Job, jobAppContent);
         await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", coverLetterContent);
     }
 
-    private string GenerateCoverLetterContent(User user, JobApplication job)
+    private string GenerateCoverLetterContent(User user, JobApplication job, JobAppContent jobAppContent)
     {
         var content = $@"{user.FirstName} {user.LastName}
 {user.Address}
@@ -34,7 +43,7 @@ Bewerbung als {job.Position}
 
 Sehr geehrte Damen und Herren,
 
-{FillPlaceholders(user.JobAppContent, job)}
+{FillPlaceholders(jobAppContent.Content, job)}
 
 Mit freundlichen Grüßen
 {user.FirstName} {user.LastName}";

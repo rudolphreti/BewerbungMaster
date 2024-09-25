@@ -4,7 +4,7 @@ namespace BewerbungMasterApp.Services
 {
     public partial class FileManagementService : IFileManagementService
     {
-        public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications) //TODO: Unit test - if the number of folders matches the number of items
+        public async Task GenerateJobApplicationSetsAsync(List<JobApplication> jobApplications)
         {
             var user = await _jsonService.GetUserDataAsync();
             var folderApplicationMap = FileManagementServiceStatic.CreateFolderApplicationMap(jobApplications);
@@ -22,8 +22,16 @@ namespace BewerbungMasterApp.Services
                     var fileName = $"{user.FirstName}_{user.LastName}_Bewerbungsschreiben.pdf";
                     try
                     {
-                        _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application);
-                        _logger.LogInformation("PDF generated: {FileName} for folder: {FolderName}", fileName, uniqueFolderName);
+                        var jobAppContent = await _jsonService.GetJobAppContentByNameAsync(application.Type);
+                        if (jobAppContent != null)
+                        {
+                            _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application, jobAppContent);
+                            _logger.LogInformation("PDF generated: {FileName} for folder: {FolderName}", fileName, uniqueFolderName);
+                        }
+                        else
+                        {
+                            _logger.LogWarning("JobAppContent not found for type: {Type}", application.Type);
+                        }
                     }
                     catch (Exception ex)
                     {

@@ -48,9 +48,9 @@ namespace BewerbungMasterApp.Services
             AddParagraph(document, "Sehr geehrte Damen und Herren,", 10);
         }
 
-        private static void AddMainContent(Document document, PdfFont regularFont, User user, JobApplication application)
+        private static void AddMainContent(Document document, PdfFont regularFont, JobApplication application, JobAppContent jobAppContent)
         {
-            string filledContent = FillPlaceholders(user.JobAppContent, application);
+            string filledContent = FillPlaceholders(jobAppContent.Content, application);
             Paragraph content = ProcessContentWithLinks(filledContent, regularFont, 11);
             content.SetTextAlignment(TextAlignment.JUSTIFIED);
             content

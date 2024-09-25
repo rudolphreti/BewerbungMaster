@@ -140,7 +140,7 @@ namespace BewerbungMasterApp.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error loading JobAppContents");
-                return new List<JobAppContent>();
+                throw;
             }
         }
 

@@ -11,7 +11,7 @@ namespace BewerbungMasterApp.Services
     {
         private readonly ILogger<PdfGenerationService> _logger = logger;
 
-        public void GenerateCoverLetter(string outputPath, User user, JobApplication application)
+        public void GenerateCoverLetter(string outputPath, User user, JobApplication application, JobAppContent jobAppContent)
         {
             _logger.LogInformation("Generating cover letter for {UserName}: {OutputPath}",
                 $"{user.FirstName} {user.LastName}", outputPath);
@@ -31,7 +31,7 @@ namespace BewerbungMasterApp.Services
                 AddDate(document, user.City);
                 AddTitle(document, boldFont, application.Position);
                 AddGreeting(document);
-                AddMainContent(document, regularFont, user, application);
+                AddMainContent(document, regularFont,  application, jobAppContent);
                 AddClosing(document, user);
 
                 VerifyFileCreation(outputPath);
@@ -39,7 +39,6 @@ namespace BewerbungMasterApp.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error generating cover letter: {ErrorMessage}", ex.Message);
-
             }
         }
     }
