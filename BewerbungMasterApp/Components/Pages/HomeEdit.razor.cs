@@ -2,15 +2,16 @@
 using BewerbungMasterApp.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.Extensions.Logging;
 
 namespace BewerbungMasterApp.Components
 {
-    public class HomeEditBase : ComponentBase
+    public class HomeEditBase : ComponentBase //TODO: refactor -> to many responsibilities
     {
-        // Inject the JSON service for data operations
         [Inject] protected IJsonService JsonService { get; set; } = default!;
+        [Inject] protected ILogger<HomeEditBase> Logger { get; set; } = default!;
 
-        // Parameters for component configuration and data binding
+
         [Parameter] public JobApplication Job { get; set; } = default!;
         [Parameter] public EventCallback OnUpdate { get; set; } = default!;
         [Parameter] public bool IsEditingPosition { get; set; }
@@ -18,22 +19,42 @@ namespace BewerbungMasterApp.Components
         [Parameter] public EventCallback<string> OnStartEditing { get; set; }
         [Parameter] public EventCallback OnStopEditing { get; set; } = default!;
 
-        // Properties to hold edited values
-        protected string EditedPosition { get; set; } = string.Empty;
-        protected string EditedCompany { get; set; } = string.Empty; 
+        [Parameter] public List<JobAppContent> JobAppContents { get; set; } = new();
 
-        // References to input elements for focus management
+        private string _editedType = string.Empty;
+        protected string EditedType
+        {
+            get => _editedType;
+            set
+            {
+                if (_editedType != value)
+                {
+                    _editedType = value;
+                    UpdateTypeAsync().ConfigureAwait(false);
+                }
+            }
+        }
+
+        protected string EditedPosition { get; set; } = string.Empty;
+        protected string EditedCompany { get; set; } = string.Empty;
+
         protected ElementReference positionInput;
         protected ElementReference companyInput;
 
-        // Update local edit fields when parameters change
         protected override void OnParametersSet()
         {
+            base.OnParametersSet();
             EditedPosition = Job.Position;
             EditedCompany = Job.Company;
+            _editedType = Job.Type;
+
+            Logger.LogInformation($"JobAppContents count: {JobAppContents.Count}");
+            foreach (var content in JobAppContents)
+            {
+                Logger.LogInformation($"JobAppContent: {content.Name}");
+            }
         }
 
-        // Set focus to the active input field after rendering
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (IsEditingPosition)
@@ -46,7 +67,6 @@ namespace BewerbungMasterApp.Components
             }
         }
 
-        // Update the position and save changes
         protected async Task UpdatePosition()
         {
             if (Job.Position != EditedPosition)
@@ -57,7 +77,6 @@ namespace BewerbungMasterApp.Components
             await OnStopEditing.InvokeAsync();
         }
 
-        // Update the company and save changes
         protected async Task UpdateCompany()
         {
             if (Job.Company != EditedCompany)
@@ -68,33 +87,38 @@ namespace BewerbungMasterApp.Components
             await OnStopEditing.InvokeAsync();
         }
 
-        // Save the updated job to the JSON service
+        private async Task UpdateTypeAsync()
+        {
+            if (Job.Type != _editedType)
+            {
+                Job.Type = _editedType;
+                await UpdateJob();
+            }
+        }
+
         private async Task UpdateJob()
         {
             await JsonService.UpdateAsync(Job);
             await OnUpdate.InvokeAsync();
         }
 
-        // Handle keyboard events (Enter to save, Escape to cancel)
         protected async Task HandleKeyDown(KeyboardEventArgs e)
         {
-            if (e.Key == "Enter") //TODO: Better use switch 
+            switch (e.Key)
             {
-                if (IsEditingPosition)
-                    await UpdatePosition();
-                else if (IsEditingCompany)
-                    await UpdateCompany();
-            }
-            else if (e.Key == "Escape")
-            {
-                await OnStopEditing.InvokeAsync();
+                case "Enter":
+                    if (IsEditingPosition)
+                        await UpdatePosition();
+                    else if (IsEditingCompany)
+                        await UpdateCompany();
+                    break;
+                case "Escape":
+                    await OnStopEditing.InvokeAsync();
+                    break;
             }
         }
 
-        // Start editing the position field
         protected async Task StartEditingPosition() => await OnStartEditing.InvokeAsync("position");
-
-        // Start editing the company field
         protected async Task StartEditingCompany() => await OnStartEditing.InvokeAsync("company");
     }
 }

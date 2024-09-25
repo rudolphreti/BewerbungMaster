@@ -40,6 +40,16 @@ namespace BewerbungMasterApp
                     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                     .Build();
 
+                // Ensure all necessary configurations are loaded
+                var requiredConfigs = new[] { "UserDirectoryPath", "JobDataFile", "JobAppContentFile", "UserDataFile" };
+                foreach (var configItem in requiredConfigs)
+                {
+                    if (string.IsNullOrEmpty(builder.Configuration[configItem]))
+                    {
+                        throw new InvalidOperationException($"Missing required configuration: {configItem}");
+                    }
+                }
+
                 // Register configuration
                 builder.Services.AddSingleton<IConfiguration>(config);
 
@@ -60,6 +70,8 @@ namespace BewerbungMasterApp
                 builder.Logging.AddDebug();
                 builder.Logging.SetMinimumLevel(LogLevel.Trace);  // Fügen Sie diese Zeile hinzu
 
+
+
                 var app = builder.Build();
 
                 // Configure the HTTP request pipeline
@@ -79,7 +91,6 @@ namespace BewerbungMasterApp
                 app.MapRazorComponents<App>()
                     .AddInteractiveServerRenderMode();
 
-                // Initialize application
                 // Initialize application
                 var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
                 await initializationService.InitializeAsync(app.Services);

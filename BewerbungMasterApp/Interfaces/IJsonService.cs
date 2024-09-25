@@ -12,5 +12,7 @@ namespace BewerbungMasterApp.Services
         Task<bool> DeleteAsync<T>(Guid id) where T : class, new();
         Task UpdateAllAsync<T>(List<T> items) where T : class, new();
         Task<User> GetUserDataAsync();
+        Task<List<JobAppContent>> GetAllJobAppContentsAsync();
+        Task<JobAppContent?> GetJobAppContentByNameAsync(string name);
     }
 }

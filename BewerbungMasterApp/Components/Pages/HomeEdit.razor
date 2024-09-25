@@ -32,3 +32,11 @@
         <span @onclick="StartEditingCompany">@Job.Company</span>
     }
 </td>
+<td class="text-center text-wrap">
+    <select @bind="EditedType" @onclick:stopPropagation>
+        @foreach (var content in JobAppContents)
+        {
+            <option value="@content.Name" selected="@(content.Name == Job.Type)">@content.Name</option>
+        }
+    </select>
+</td>

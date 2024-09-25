@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using BewerbungMasterApp.Models;
 
 namespace BewerbungMasterApp.Services
 {
@@ -9,17 +10,22 @@ namespace BewerbungMasterApp.Services
         private readonly ILogger<JsonService> _logger;
         private readonly string _jobDataFilePath;
         private readonly string _userDataFilePath;
+        private readonly string _jobAppContentFilePath;
         private readonly JsonSerializerOptions _jsonOptions;
 
         public JsonService(ILogger<JsonService> logger, IConfiguration configuration, IWebHostEnvironment environment)
         {
             _logger = logger;
-            var jobDataFileName = configuration["JobDataFile"] ?? throw new InvalidOperationException("JobDataFile configuration is missing");
             var userDirectoryPath = configuration["UserDirectoryPath"] ?? throw new InvalidOperationException("UserDirectoryPath configuration is missing");
+            var jobDataFileName = configuration["JobDataFile"] ?? throw new InvalidOperationException("JobDataFile configuration is missing");
             var userDataFileName = configuration["UserDataFile"] ?? throw new InvalidOperationException("UserDataFile configuration is missing");
+            var jobAppContentFileName = configuration["JobAppContentFile"] ?? throw new InvalidOperationException("JobAppContentFile configuration is missing");
 
-            _jobDataFilePath = Path.Combine(environment.WebRootPath, jobDataFileName);
-            _userDataFilePath = Path.Combine(environment.WebRootPath, userDirectoryPath, userDataFileName);
+            var fullUserDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
+
+            _jobDataFilePath = Path.Combine(fullUserDirectoryPath, Path.GetFileName(jobDataFileName));
+            _userDataFilePath = Path.Combine(fullUserDirectoryPath, userDataFileName);
+            _jobAppContentFilePath = Path.Combine(fullUserDirectoryPath, jobAppContentFileName);
 
             _jsonOptions = new JsonSerializerOptions
             {
@@ -27,6 +33,10 @@ namespace BewerbungMasterApp.Services
                 Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
                 PropertyNameCaseInsensitive = true
             };
+
+            _logger.LogInformation($"JobDataFilePath: {_jobDataFilePath}");
+            _logger.LogInformation($"UserDataFilePath: {_userDataFilePath}");
+            _logger.LogInformation($"JobAppContentFilePath: {_jobAppContentFilePath}");
         }
 
         private async Task<List<T>> ReadJsonFileAsync<T>(string filePath)
@@ -117,6 +127,27 @@ namespace BewerbungMasterApp.Services
                 return true;
             }
             return false;
+        }
+
+        public async Task<List<JobAppContent>> GetAllJobAppContentsAsync()
+        {
+            try
+            {
+                var contents = await ReadJsonFileAsync<JobAppContent>(_jobAppContentFilePath);
+                _logger.LogInformation($"Loaded {contents.Count} JobAppContents");
+                return contents;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error loading JobAppContents");
+                return new List<JobAppContent>();
+            }
+        }
+
+        public async Task<JobAppContent?> GetJobAppContentByNameAsync(string name)
+        {
+            var contents = await GetAllJobAppContentsAsync();
+            return contents.FirstOrDefault(c => c.Name == name);
         }
     }
 }

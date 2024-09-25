@@ -10,6 +10,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="wwwroot\users\miko\jobAppContent.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<!--TODO: explain for what? it seems to be unneccessary-->
 	  <Content Include="wwwroot\Users\default\data.json">
 	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

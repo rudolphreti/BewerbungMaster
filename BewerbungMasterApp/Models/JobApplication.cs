@@ -22,5 +22,8 @@ namespace BewerbungMasterApp.Models
         [Required(ErrorMessage = "Unternehmen ist erforderlich.")]
         [StringLength(100, ErrorMessage = "Der Unternehmensname darf nicht länger als 100 Zeichen sein.")]
         public string Company { get; set; } = string.Empty;
+
+        [JsonPropertyName("type")]
+        public string Type { get; set; } = "Deweloper";
     }
 }
