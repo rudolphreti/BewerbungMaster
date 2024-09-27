@@ -1,0 +1,33 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+
+<td class="text-center text-wrap">
+    <input @bind="Company"
+           @bind:event="oninput"
+           @onblur="UpdateCompany"
+           style="width:100%" />
+</td>
+
+@code {
+    [Parameter] public JobApplication Job { get; set; } = default!;
+    [Parameter] public EventCallback OnUpdate { get; set; }
+
+    private string Company
+    {
+        get => Job.Company;
+        set
+        {
+            if (Job.Company != value)
+            {
+                Job.Company = value;
+            }
+        }
+    }
+
+    private async Task UpdateCompany()
+    {
+        await JsonService.UpdateAsync(Job);
+        await OnUpdate.InvokeAsync();
+    }
+}

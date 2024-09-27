@@ -11,7 +11,7 @@
     [Parameter]
     public required JobApplication Job { get; set; }
 
-    private async Task CopyCoverLetterToClipboard()
+    private async Task CopyCoverLetterToClipboard() //TODO: refactor, the method ist similar to GenerateCoverLetter from PDFService
     {
         var user = await JsonService.GetUserDataAsync();
         var jobAppContent = await JsonService.GetJobAppContentByNameAsync(Job.Type);
@@ -28,11 +28,13 @@
 
     private string GenerateCoverLetterContent(User user, JobApplication job, JobAppContent jobAppContent)
     {
+        var linkedInLine = string.IsNullOrEmpty(user.LinkedIn) ? "" : user.LinkedIn + Environment.NewLine;
+        var jobType = job.IsInitiative ? "Initiativbewerbung" : $"Bewerbung als {job.Position}";
         var content = $@"{user.FirstName} {user.LastName}
 {user.Address}
 {user.ZipCode} {user.City}
 {user.Email}
-{(string.IsNullOrEmpty(user.LinkedIn) ? "" : user.LinkedIn + Environment.NewLine)}
+{linkedInLine}
 Telefonnummer: {user.Phone}
 
 An:
@@ -40,7 +42,7 @@ An:
 
 {user.City}, {DateTime.Now:dd.MM.yyyy}
 
-Bewerbung als {job.Position}
+{jobType}
 
 Sehr geehrte Damen und Herren,
 

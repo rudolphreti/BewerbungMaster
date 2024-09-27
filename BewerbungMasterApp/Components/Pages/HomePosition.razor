@@ -1,0 +1,40 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+
+<td class="text-center text-wrap">
+    @if (!Job.IsInitiative)
+    {
+        <input @bind="Position"
+               @bind:event="oninput"
+               @onblur="UpdatePosition"
+               style="width:100%" />
+    }
+    else
+    {
+        <span>Initiativbewerbung</span>
+    }
+</td>
+
+@code {
+    [Parameter] public JobApplication Job { get; set; } = default!;
+    [Parameter] public EventCallback OnUpdate { get; set; }
+
+    private string Position
+    {
+        get => Job.Position;
+        set
+        {
+            if (Job.Position != value)
+            {
+                Job.Position = value;
+            }
+        }
+    }
+
+    private async Task UpdatePosition()
+    {
+        await JsonService.UpdateAsync(Job);
+        await OnUpdate.InvokeAsync();
+    }
+}

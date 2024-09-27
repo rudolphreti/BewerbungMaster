@@ -44,13 +44,9 @@
                         var currentIndex = index;
                         <tr>
                             <td class="text-center">@(index + 1)</td>
-                            <HomeEdit Job="job"
-                                      OnUpdate="RefreshList"
-                                      IsEditingPosition="@JobEditService.IsEditingPosition(currentIndex)"
-                                      IsEditingCompany="@JobEditService.IsEditingCompany(currentIndex)"
-                                      OnStartEditing="(field) => JobEditService.SetActiveEditField(currentIndex, field)"
-                                      OnStopEditing="JobEditService.ClearActiveEditField"
-                                      JobAppContents="jobAppContents" />
+                            <HomePosition Job="job" OnUpdate="RefreshList" />
+                            <HomeCompany Job="job" OnUpdate="RefreshList" />
+                            <HomeType Job="job" OnUpdate="RefreshList" JobAppContents="jobAppContents" />
                             <td class="text-center">
                                 <a href="@job.URL" style="text-decoration: none" target="_blank">🔗</a>
                             </td>
