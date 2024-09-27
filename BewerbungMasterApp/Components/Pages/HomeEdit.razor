@@ -1,19 +1,19 @@
 ﻿@inherits HomeEditBase
 
 <td class="text-center text-wrap">
-    @if (IsEditingPosition)
+    @if (IsEditingPosition && !Job.IsInitiative)
     {
         <input @ref="positionInput"
                @bind="EditedPosition"
                @bind:event="oninput"
                @onfocusout="UpdatePosition"
                @onkeydown="HandleKeyDown"
-        @onclick:stopPropagation
+               @onclick:stopPropagation
                style="width:100%" />
     }
     else
     {
-        <span @onclick="StartEditingPosition">@Job.Position</span>
+        <span @onclick="StartEditingPosition">@(Job.IsInitiative ? "Initiativbewerbung" : Job.Position)</span>
     }
 </td>
 <td class="text-center text-wrap">
@@ -24,7 +24,7 @@
                @bind:event="oninput"
                @onfocusout="UpdateCompany"
                @onkeydown="HandleKeyDown"
-        @onclick:stopPropagation
+               @onclick:stopPropagation
                style="width:100%" />
     }
     else
@@ -36,7 +36,7 @@
     <select @bind="EditedType" @onclick:stopPropagation>
         @foreach (var content in JobAppContents)
         {
-            <option value="@content.Name" selected="@(content.Name == Job.Type)">@content.Name</option>
+            <option value="@content.Name">@content.Name</option>
         }
     </select>
 </td>

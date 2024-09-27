@@ -6,11 +6,10 @@ using Microsoft.Extensions.Logging;
 
 namespace BewerbungMasterApp.Components
 {
-    public class HomeEditBase : ComponentBase //TODO: refactor -> to many responsibilities
+    public class HomeEditBase : ComponentBase
     {
         [Inject] protected IJsonService JsonService { get; set; } = default!;
         [Inject] protected ILogger<HomeEditBase> Logger { get; set; } = default!;
-
 
         [Parameter] public JobApplication Job { get; set; } = default!;
         [Parameter] public EventCallback OnUpdate { get; set; } = default!;
@@ -21,7 +20,7 @@ namespace BewerbungMasterApp.Components
 
         [Parameter] public List<JobAppContent> JobAppContents { get; set; } = new();
 
-        private string _editedType = string.Empty;
+        protected string _editedType = string.Empty;
         protected string EditedType
         {
             get => _editedType;
@@ -57,7 +56,7 @@ namespace BewerbungMasterApp.Components
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            if (IsEditingPosition)
+            if (IsEditingPosition && !Job.IsInitiative)
             {
                 await positionInput.FocusAsync();
             }
@@ -69,7 +68,7 @@ namespace BewerbungMasterApp.Components
 
         protected async Task UpdatePosition()
         {
-            if (Job.Position != EditedPosition)
+            if (Job.Position != EditedPosition && !Job.IsInitiative)
             {
                 Job.Position = EditedPosition;
                 await UpdateJob();
@@ -92,6 +91,10 @@ namespace BewerbungMasterApp.Components
             if (Job.Type != _editedType)
             {
                 Job.Type = _editedType;
+                if (Job.IsInitiative)
+                {
+                    Job.Position = "Initiativbewerbung";
+                }
                 await UpdateJob();
             }
         }
@@ -107,7 +110,7 @@ namespace BewerbungMasterApp.Components
             switch (e.Key)
             {
                 case "Enter":
-                    if (IsEditingPosition)
+                    if (IsEditingPosition && !Job.IsInitiative)
                         await UpdatePosition();
                     else if (IsEditingCompany)
                         await UpdateCompany();
@@ -118,7 +121,14 @@ namespace BewerbungMasterApp.Components
             }
         }
 
-        protected async Task StartEditingPosition() => await OnStartEditing.InvokeAsync("position");
+        protected async Task StartEditingPosition()
+        {
+            if (!Job.IsInitiative)
+            {
+                await OnStartEditing.InvokeAsync("position");
+            }
+        }
+
         protected async Task StartEditingCompany() => await OnStartEditing.InvokeAsync("company");
     }
 }

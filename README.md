@@ -70,7 +70,7 @@ Currently, only the source code is available. To set up the project:
    - Position
    - Company
 
-The `Crawlers` directory contains sample crawlers for extracting this data written in Python/Selenium.
+The `Crawlers` directory contains sample crawlers for extracting this data written in Python/Selenium. You need to have a chrome webdriver version, which is compatible with your Chrome-Browser: https://googlechromelabs.github.io/chrome-for-testing/
 
 2. You can create your own documents in the `Users` directory within `wwwroot`. Make sure to indicate this directory in the `appsetings.Development.json` file.
 
