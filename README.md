@@ -8,10 +8,12 @@ BewerbungMaster is a Blazor application designed to efficiently create and manag
 - Job application files generation (CVs, cover letters) from JSON data:
 ![screenshot](screens/screen2.png)
 ![screenshot](screens/screen3.png)
-- Editing and deleting entries
-- Moving entries to the end of the list
+- Adding, editing and deleting entries
+- Selecting the type of position and, depending on that, generating the appropriate cover letter
+- Moving entries to the top and the end of the list
+- Copying a job application folder path to the clipboard
 - Copying a message to an employer to the clipboard
--  Copying a job application folder path to the clipboard
+- Copying a cover letter to the clipboard
 
 ## To-Do
 - adding entries manually
