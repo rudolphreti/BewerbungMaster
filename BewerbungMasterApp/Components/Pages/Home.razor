@@ -11,6 +11,7 @@
 <div class="container-fluid my-5" @onclick="JobEditService.ClearActiveEditField">
     <h3 class="text-center mb-4">Job Applications List</h3>
 
+    <HomeRefreshButton OnRefreshCompleted="RefreshList" />
     <HomeAddJob OnJobAdded="RefreshList" />
 
     @if (jobApplications == null)

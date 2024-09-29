@@ -60,7 +60,7 @@ class Program
     static void CollectFilesToProcess(List<(string, string, string)> filesToProcess)
     {
         string[] foldersToCopy = ["Components\\Pages", "Interfaces", "Models", "Services"];
-        string[] filesToCopyFromApp = ["appsettings.Development.json", "appsettings.json", "Program.cs"];
+        string[] filesToCopyFromApp = ["appsettings.Development.json", "appsettings.json", "Program.cs", "BewerbungMasterApp.csproj", "BewerbungMasterApp.csproj.user"];
         string[] filesToCopyFromRoot = ["BewerbungMaster.sln", "README.md"];
 
         // Add files from specified folders

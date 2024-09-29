@@ -1,0 +1,39 @@
+﻿@using BewerbungMasterApp.Interfaces
+@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IFileManagementService FileManagementService
+@inject IJsonService JsonService
+@inject ILogger<HomeRefreshButton> Logger
+
+<button class="btn btn-primary position-absolute top-0 end-0 m-3" @onclick="RefreshJobApplicationFiles">
+    Refresh Job Applications Files
+</button>
+
+@code {
+    [Parameter] public EventCallback OnRefreshCompleted { get; set; }
+
+    private async Task RefreshJobApplicationFiles()
+    {
+        try
+        {
+            Logger.LogInformation("Starting job applications refresh process");
+
+            await RefreshJobApplicationSets();
+
+            Logger.LogInformation("Job applications refresh process completed successfully");
+            await OnRefreshCompleted.InvokeAsync();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error occurred while refreshing job applications");
+            // Hier könnten Sie eine Benutzerbenachrichtigung hinzufügen
+        }
+    }
+
+    private async Task RefreshJobApplicationSets()
+    {
+        FileManagementService.InitializeJobAppDocsDirectory();
+        var jobApplications = await JsonService.GetAllAsync<JobApplication>();
+        await FileManagementService.GenerateJobApplicationSetsAsync(jobApplications);
+    }
+}
