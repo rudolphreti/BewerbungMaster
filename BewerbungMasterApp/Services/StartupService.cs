@@ -1,6 +1,6 @@
 ﻿using BewerbungMasterApp.Components;
-using BewerbungMasterApp.Configuration;
 using BewerbungMasterApp.Interfaces;
+using BewerbungMasterApp.Services;
 
 namespace BewerbungMasterApp.Services
 {
@@ -11,16 +11,16 @@ namespace BewerbungMasterApp.Services
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
 
-            ConfigureSignalR(builder);
-            ConfigureBlazorServer(builder);
+            ConfigureSignalR(builder.Services);
+            ConfigureBlazorServer(builder.Services);
             ConfigureConfiguration(builder);
-            RegisterApplicationServices(builder);
-            ConfigureLogging(builder);
+            RegisterApplicationServices(builder.Services);
+            ConfigureLogging(builder.Logging, builder.Configuration);
         }
 
-        private void ConfigureSignalR(WebApplicationBuilder builder)
+        private void ConfigureSignalR(IServiceCollection services)
         {
-            builder.Services.AddSignalR(options =>
+            services.AddSignalR(options =>
             {
                 options.ClientTimeoutInterval = TimeSpan.FromDays(1);
                 options.KeepAliveInterval = TimeSpan.FromSeconds(10);
@@ -29,9 +29,9 @@ namespace BewerbungMasterApp.Services
             });
         }
 
-        private void ConfigureBlazorServer(WebApplicationBuilder builder)
+        private void ConfigureBlazorServer(IServiceCollection services)
         {
-            builder.Services.AddServerSideBlazor(options =>
+            services.AddServerSideBlazor(options =>
             {
                 options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromDays(1);
                 options.DisconnectedCircuitMaxRetained = 100;
@@ -43,44 +43,47 @@ namespace BewerbungMasterApp.Services
 
         private void ConfigureConfiguration(WebApplicationBuilder builder)
         {
-            var appSettings = new AppSettings();
-            builder.Configuration.Bind(appSettings);
-            builder.Services.AddSingleton(appSettings);
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .Build();
 
-            ValidateConfiguration(appSettings);
+            builder.Services.AddSingleton<IConfiguration>(config);
+
+            ValidateConfiguration(config);
         }
 
-        private void ValidateConfiguration(AppSettings appSettings)
+        private void ValidateConfiguration(IConfiguration config)
         {
             var requiredConfigs = new[] { "UserDirectoryPath", "JobDataFile", "JobAppContentFile", "UserDataFile" };
             foreach (var configItem in requiredConfigs)
             {
-                if (string.IsNullOrEmpty(appSettings.GetType().GetProperty(configItem)?.GetValue(appSettings) as string))
+                if (string.IsNullOrEmpty(config[configItem]))
                 {
                     throw new InvalidOperationException($"Missing required configuration: {configItem}");
                 }
             }
         }
 
-        private void RegisterApplicationServices(WebApplicationBuilder builder)
+        private void RegisterApplicationServices(IServiceCollection services)
         {
-            builder.Services.AddHttpClient();
-            builder.Services.AddSingleton<IFileManagementService, FileManagementService>();
-            builder.Services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
-            builder.Services.AddSingleton<IJsonService, JsonService>();
-            builder.Services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
-            builder.Services.AddSingleton<JobEditService>();
+            services.AddHttpClient();
+            services.AddSingleton<IFileManagementService, FileManagementService>();
+            services.AddSingleton<IPdfGenerationService, PdfGenerationService>();
+            services.AddSingleton<IJsonService, JsonService>();
+            services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
+            services.AddSingleton<JobEditService>();
         }
 
-        private void ConfigureLogging(WebApplicationBuilder builder)
+        private void ConfigureLogging(ILoggingBuilder logging, IConfiguration configuration)
         {
-            builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
-            builder.Logging.AddConsole();
-            builder.Logging.AddDebug();
-            builder.Logging.SetMinimumLevel(LogLevel.Trace);
+            logging.AddConfiguration(configuration.GetSection("Logging"));
+            logging.AddConsole();
+            logging.AddDebug();
+            logging.SetMinimumLevel(LogLevel.Trace);
         }
 
-        public async Task InitializeApplicationAsync(WebApplication app)
+        public void Configure(WebApplication app)
         {
             if (!app.Environment.IsDevelopment())
             {
@@ -96,9 +99,6 @@ namespace BewerbungMasterApp.Services
 
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode();
-
-            var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
-            await initializationService.InitializeAsync(app.Services);
         }
     }
 }

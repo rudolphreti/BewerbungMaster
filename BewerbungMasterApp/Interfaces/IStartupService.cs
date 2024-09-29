@@ -3,6 +3,6 @@
     public interface IStartupService
     {
         void ConfigureServices(WebApplicationBuilder builder);
-        Task InitializeApplicationAsync(WebApplication app);
+        void Configure(WebApplication app);
     }
 }

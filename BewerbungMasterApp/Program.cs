@@ -1,4 +1,6 @@
+using BewerbungMasterApp.Interfaces;
 using BewerbungMasterApp.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BewerbungMasterApp
 {
@@ -13,15 +15,20 @@ namespace BewerbungMasterApp
                 var startupService = new StartupService();
                 startupService.ConfigureServices(builder);
 
+                builder.Services.AddSingleton<IStartupService>(startupService);
+
                 var app = builder.Build();
-                await startupService.InitializeApplicationAsync(app);
+
+                startupService.Configure(app);
+
+                var initializationService = app.Services.GetRequiredService<IApplicationInitializationService>();
+                await initializationService.InitializeAsync(app.Services);
 
                 await app.RunAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Unhandled exception during startup: {ex}");
-                // Hier könnte man auch ein Logging-Framework verwenden
+                Console.WriteLine($"Unhandled exception: {ex}");
             }
         }
     }
