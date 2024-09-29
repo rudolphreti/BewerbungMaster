@@ -1,40 +1,37 @@
 ﻿using BewerbungMasterApp.Models;
 using BewerbungMasterApp.Services;
 using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
 
 namespace BewerbungMasterApp.Components.Pages
 {
-    public partial class HomeBase : ComponentBase
+    public partial class Home //TODO: Move to code brackets into the Home.razor; files don't must be named with 'Home' prefix, but they can be ordered into the folders
     {
         [Inject]
-        public IJsonService JsonService { get; set; } = default!;
+        private IJsonService JsonService { get; set; } = default!;
 
         [Inject]
-        public IJSRuntime JSRuntime { get; set; } = default!;
+        private JobEditService JobEditService { get; set; } = default!;
 
-        [Inject]
-        public ILogger<HomeBase> Logger { get; set; } = default!;
-
-        protected List<JobApplication> jobApplications = [];
-        protected List<JobAppContent> jobAppContents = [];
+        private List<JobApplication> jobApplications = [];
+        private List<JobAppContent> jobAppContents = [];
 
         protected override async Task OnInitializedAsync()
         {
             await RefreshList();
             await LoadJobAppContents();
+            Console.WriteLine($"Home component initialized with {jobApplications.Count} applications");
         }
 
-        protected async Task RefreshList()
+        private async Task RefreshList()
         {
             jobApplications = await JsonService.GetAllAsync<JobApplication>();
+            Console.WriteLine($"RefreshList: Loaded {jobApplications.Count} applications");
             StateHasChanged();
         }
 
-        protected async Task LoadJobAppContents()
+        private async Task LoadJobAppContents()
         {
             jobAppContents = await JsonService.GetAllJobAppContentsAsync();
-            Logger.LogInformation($"Loaded {jobAppContents.Count} JobAppContents");
         }
     }
 }

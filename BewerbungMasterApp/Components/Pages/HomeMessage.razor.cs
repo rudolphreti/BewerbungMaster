@@ -5,7 +5,7 @@ using Microsoft.JSInterop;
 
 namespace BewerbungMasterApp.Components
 {
-    public class HomeMessageBase : ComponentBase
+    public class HomeMessageBase : ComponentBase //TODO: Move to code brackets into the HomeMessage.razor
     {
         [Inject]
         protected IJsonService JsonService { get; set; } = default!;

@@ -4,7 +4,7 @@ using BewerbungMasterApp.Services;
 
 namespace BewerbungMasterApp.Components
 {
-    public class HomeMoveUpDownBase : ComponentBase
+    public class HomeMoveUpDownBase : ComponentBase //TODO: Move to code brackets into the HomeMoveUpDown.razor
     {
         [Inject]
         protected IJsonService JsonService { get; set; } = default!;

@@ -1,0 +1,32 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Components.Pages
+
+<tr>
+    <td class="text-center">@(JobApplications.IndexOf(Job) + 1)</td>
+    <HomePosition Job="Job" OnUpdate="OnUpdate" />
+    <HomeCompany Job="Job" OnUpdate="OnUpdate" />
+    <HomeType Job="Job" OnUpdate="OnUpdate" JobAppContents="JobAppContents" />
+    <td class="text-center">
+        <a href="@Job.URL" style="text-decoration: none" target="_blank">🔗</a>
+    </td>
+    <td class="text-center">
+        <HomeFolder Job="Job" />
+    </td>
+    <td class="text-center">
+        <HomeDelete Job="Job" OnDelete="OnDelete" />
+        <HomeMoveUpDown Job="Job" OnMove="OnMove" />
+    </td>
+    <td class="text-center">
+        <HomeMessage Job="Job" />
+        <HomeCoverLetter Job="Job" />
+    </td>
+</tr>
+
+@code {
+    [Parameter] public JobApplication Job { get; set; } = new();
+    [Parameter] public List<JobApplication> JobApplications { get; set; } = new();
+    [Parameter] public List<JobAppContent> JobAppContents { get; set; } = new();
+    [Parameter] public EventCallback OnUpdate { get; set; }
+    [Parameter] public EventCallback OnDelete { get; set; }
+    [Parameter] public EventCallback OnMove { get; set; }
+}

@@ -18,7 +18,7 @@ namespace BewerbungMasterApp.Services
             ConfigureLogging(builder.Logging, builder.Configuration);
         }
 
-        private void ConfigureSignalR(IServiceCollection services)
+        private static void ConfigureSignalR(IServiceCollection services)
         {
             services.AddSignalR(options =>
             {
@@ -29,7 +29,7 @@ namespace BewerbungMasterApp.Services
             });
         }
 
-        private void ConfigureBlazorServer(IServiceCollection services)
+        private static void ConfigureBlazorServer(IServiceCollection services)
         {
             services.AddServerSideBlazor(options =>
             {
@@ -41,7 +41,7 @@ namespace BewerbungMasterApp.Services
             });
         }
 
-        private void ConfigureConfiguration(WebApplicationBuilder builder)
+        private static void ConfigureConfiguration(WebApplicationBuilder builder)
         {
             var config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -53,7 +53,7 @@ namespace BewerbungMasterApp.Services
             ValidateConfiguration(config);
         }
 
-        private void ValidateConfiguration(IConfiguration config)
+        private static void ValidateConfiguration(IConfiguration config)
         {
             var requiredConfigs = new[] { "UserDirectoryPath", "JobDataFile", "JobAppContentFile", "UserDataFile" };
             foreach (var configItem in requiredConfigs)
@@ -65,7 +65,7 @@ namespace BewerbungMasterApp.Services
             }
         }
 
-        private void RegisterApplicationServices(IServiceCollection services)
+        private static void RegisterApplicationServices(IServiceCollection services)
         {
             services.AddHttpClient();
             services.AddSingleton<IFileManagementService, FileManagementService>();
@@ -75,7 +75,7 @@ namespace BewerbungMasterApp.Services
             services.AddSingleton<JobEditService>();
         }
 
-        private void ConfigureLogging(ILoggingBuilder logging, IConfiguration configuration)
+        private static void ConfigureLogging(ILoggingBuilder logging, IConfiguration configuration)
         {
             logging.AddConfiguration(configuration.GetSection("Logging"));
             logging.AddConsole();
