@@ -13,8 +13,6 @@ namespace BewerbungMasterApp.Services
 
         public void GenerateCoverLetter(string outputPath, User user, JobApplication application, JobAppContent jobAppContent)
         {
-            _logger.LogInformation("Generating cover letter for {UserName}: {OutputPath}",
-                $"{user.FirstName} {user.LastName}", outputPath);
             try
             {
                 using var writer = new PdfWriter(outputPath);

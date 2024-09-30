@@ -9,7 +9,6 @@ namespace BewerbungMasterApp.Models
         public Guid Id { get; set; }
 
         [JsonPropertyName("URL")]
-        [Required(ErrorMessage = "URL ist erforderlich.")]
         [Url(ErrorMessage = "Bitte geben Sie eine gültige URL ein.")]
         public string URL { get; set; } = string.Empty;
 
@@ -24,7 +23,7 @@ namespace BewerbungMasterApp.Models
         public string Company { get; set; } = string.Empty;
 
         [JsonPropertyName("type")]
-        public string Type { get; set; } = "Initiativbewerbung";
+        public string Type { get; set; } = "Deweloper";
 
         [JsonPropertyName("isInitiative")]
         public bool IsInitiative => Type == "Initiativbewerbung";

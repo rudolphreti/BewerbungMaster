@@ -1,0 +1,22 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+
+<button class="btn btn-danger btn-sm" @onclick="DeleteJobApplication">🗑 Delete</button>
+
+@code {
+    [Parameter]
+    public JobApplication Job { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback OnDelete { get; set; }
+
+    protected async Task DeleteJobApplication()
+    {
+        var success = await JsonService.DeleteAsync<JobApplication>(Job.Id);
+        if (success)
+        {
+            await OnDelete.InvokeAsync();
+        }
+    }
+}

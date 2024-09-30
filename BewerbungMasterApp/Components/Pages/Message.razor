@@ -1,0 +1,24 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+@inject IJSRuntime JSRuntime
+
+<button title="Copy e-mail message to the employer to the clipboard" class="btn btn-outline-dark btn-sm" @onclick="CopyPersonalizedMessage">E-mail 📋</button>
+
+@code {
+    [Parameter]
+    public required JobApplication Job { get; set; }
+
+    private async Task CopyPersonalizedMessage()
+    {
+        var user = await JsonService.GetUserDataAsync();
+        var message = $@"Sehr geehrte Damen und Herren,
+
+als Antwort auf die Anzeige {Job.URL} für die Stelle {Job.Position} in Ihrem Unternehmen {Job.Company} sende ich Ihnen meine Bewerbungsunterlagen im Anhang.
+
+Mit freundlichen Grüßen
+{user.FirstName} {user.LastName}";
+
+        await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", message);
+    }
+}

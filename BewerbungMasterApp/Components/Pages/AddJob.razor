@@ -3,7 +3,7 @@
 @inject IJsonService JsonService
 
 <div class="text-end mb-3">
-    <button title="Add new entry" class="btn btn-primary" @onclick="ToggleForm">+</button>
+    <button title="Add new entry" class="btn btn-primary" @onclick="ToggleForm">Add Job +</button>
 </div>
 
 @if (showForm)
@@ -36,8 +36,8 @@
                         }
                     </InputSelect>
                 </div>
-                <button type="submit" class="btn btn-success">Hinzufügen</button>
-                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Abbrechen</button>
+                <button type="submit" class="btn btn-success">Add Job</button>
+                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Hide form</button>
             </EditForm>
         </div>
     </div>

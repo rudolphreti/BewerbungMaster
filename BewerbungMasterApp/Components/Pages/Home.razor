@@ -1,13 +1,15 @@
 ﻿@page "/"
 @using BewerbungMasterApp.Components.Pages
 @using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+@inject ILogger<Home> Logger
 @rendermode InteractiveServer
 
-<div class="container-fluid my-5" @onclick="JobEditService.ClearActiveEditField">
-    <h3 class="text-center mb-4">Job Applications List</h3>
 
-    <HomeRefreshButton OnRefreshCompleted="RefreshList" />
-    <HomeAddJob OnJobAdded="RefreshList" />
+<div class="container-fluid my-5">
+    <RefreshButton OnRefreshCompleted="RefreshList" />
+-    <AddJob OnJobAdded="RefreshList" />
 
     @if (jobApplications == null)
     {
@@ -19,10 +21,34 @@
     }
     else
     {
-        <HomeJobApplicationTable JobApplications="jobApplications" 
+        <JobApplicationTable JobApplications="jobApplications" 
                              JobAppContents="jobAppContents"
                              OnUpdate="RefreshList" 
                              OnDelete="RefreshList" 
                              OnMove="RefreshList" />
     }
 </div>
+
+@code {
+    private List<JobApplication> jobApplications = new();
+    private List<JobAppContent> jobAppContents = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshList();
+    }
+
+    private async Task RefreshList()
+    {
+        try
+        {
+            jobApplications = await JsonService.GetAllAsync<JobApplication>();
+            jobAppContents = await JsonService.GetAllJobAppContentsAsync();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error refreshing job applications list");
+            // TODO: Add user notification of error
+        }
+    }
+}

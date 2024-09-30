@@ -3,22 +3,22 @@
 
 <tr>
     <td class="text-center">@(JobApplications.IndexOf(Job) + 1)</td>
-    <HomePosition Job="Job" OnUpdate="OnUpdate" />
-    <HomeCompany Job="Job" OnUpdate="OnUpdate" />
-    <HomeType Job="Job" OnUpdate="OnUpdate" JobAppContents="JobAppContents" />
+    <PositionInput Job="Job" OnUpdate="OnUpdate" />
+    <CompanyInput Job="Job" OnUpdate="OnUpdate" />
+    <TypeInput Job="Job" OnUpdate="OnUpdate" JobAppContents="JobAppContents" />
     <td class="text-center">
         <a href="@Job.URL" style="text-decoration: none" target="_blank">🔗</a>
     </td>
     <td class="text-center">
-        <HomeFolder Job="Job" />
+        <Folder Job="Job" />
     </td>
     <td class="text-center">
-        <HomeDelete Job="Job" OnDelete="OnDelete" />
-        <HomeMoveUpDown Job="Job" OnMove="OnMove" />
+        <Delete Job="Job" OnDelete="OnDelete" />
+        <MoveUpDown Job="Job" OnMove="OnMove" />
     </td>
     <td class="text-center">
-        <HomeMessage Job="Job" />
-        <HomeCoverLetter Job="Job" />
+        <Message Job="Job" />
+        <CoverLetter Job="Job" />
     </td>
 </tr>
 

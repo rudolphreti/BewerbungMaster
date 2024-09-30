@@ -3,7 +3,7 @@
 @inject IJsonService JsonService
 
 <td class="text-center text-wrap">
-    <select @bind-value="Type" @bind-value:event="onchange">
+    <select @bind="JobType" @bind:event="onchange">
         @foreach (var content in JobAppContents)
         {
             <option value="@content.Name">@content.Name</option>
@@ -11,14 +11,12 @@
     </select>
 </td>
 
-@code { //TODO: 
-        // refactor, compare with another edit components
-        // edit in the name is unneccasary
+@code {
     [Parameter] public JobApplication Job { get; set; } = default!;
     [Parameter] public List<JobAppContent> JobAppContents { get; set; } = new();
     [Parameter] public EventCallback OnUpdate { get; set; }
 
-    private string Type
+    private string JobType
     {
         get => Job.Type;
         set
