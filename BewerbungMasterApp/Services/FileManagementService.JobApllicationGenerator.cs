@@ -25,8 +25,7 @@ namespace BewerbungMasterApp.Services
                         var jobAppContent = await _jsonService.GetJobAppContentByNameAsync(application.Type);
                         if (jobAppContent != null)
                         {
-                            _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application, jobAppContent);
-                            _logger.LogInformation("PDF generated: {FileName} for folder: {FolderName}", fileName, uniqueFolderName);
+                            _pdfGenerationService.GenerateCoverLetter(Path.Combine(targetDirectoryPath, fileName), user, application, jobAppContent);              
                         }
                         else
                         {

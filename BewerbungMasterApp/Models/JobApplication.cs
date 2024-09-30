@@ -9,23 +9,23 @@ namespace BewerbungMasterApp.Models
         public Guid Id { get; set; }
 
         [JsonPropertyName("URL")]
-        [Url(ErrorMessage = "Bitte geben Sie eine gültige URL ein.")]
-        public string URL { get; set; } = string.Empty;
+        [Url(ErrorMessage = "Please provide a valid URL.")]
+        public string? URL { get; set; }
 
         [JsonPropertyName("position")]
-        [Required(ErrorMessage = "Position ist erforderlich.")]
-        [StringLength(100, ErrorMessage = "Die Position darf nicht länger als 100 Zeichen sein.")]
+        [Required(ErrorMessage = "Position is required.")]
+        [StringLength(100, ErrorMessage = "Position cannot be longer than 100 characters.")]
         public string Position { get; set; } = string.Empty;
 
         [JsonPropertyName("company")]
-        [Required(ErrorMessage = "Unternehmen ist erforderlich.")]
-        [StringLength(100, ErrorMessage = "Der Unternehmensname darf nicht länger als 100 Zeichen sein.")]
+        [Required(ErrorMessage = "Company is required.")]
+        [StringLength(100, ErrorMessage = "Company name cannot be longer than 100 characters.")]
         public string Company { get; set; } = string.Empty;
 
         [JsonPropertyName("type")]
-        public string Type { get; set; } = "Deweloper";
+        public string Type { get; set; } = "Deweloper"; //it schould be on English
 
         [JsonPropertyName("isInitiative")]
-        public bool IsInitiative => Type == "Initiativbewerbung";
+        public bool IsInitiative => Type == "Initiativbewerbung" || Type == "Head hunter"; //it schould be on English
     }
 }

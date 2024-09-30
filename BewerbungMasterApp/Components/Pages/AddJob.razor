@@ -3,7 +3,7 @@
 @inject IJsonService JsonService
 
 <div class="text-end mb-3">
-    <button title="Add new entry" class="btn btn-primary" @onclick="ToggleForm">Add Job +</button>
+    <button title="Neuen Eintrag hinzufügen" class="btn btn-primary" @onclick="ToggleForm">Job hinzufügen +</button>
 </div>
 
 @if (showForm)
@@ -23,9 +23,12 @@
                     <ValidationMessage For="@(() => newJob.Company)" />
                 </div>
                 <div class="mb-3">
-                    <label for="url" class="form-label">URL</label>
+                    <label for="url" class="form-label">URL (optional)</label>
                     <InputText id="url" @bind-Value="newJob.URL" class="form-control" />
-                    <ValidationMessage For="@(() => newJob.URL)" />
+                    @if (!string.IsNullOrWhiteSpace(newJob.URL) && !Uri.IsWellFormedUriString(newJob.URL, UriKind.Absolute))
+                    {
+                        <div class="text-danger">Bitte geben Sie eine gültige URL ein.</div>
+                    }
                 </div>
                 <div class="mb-3">
                     <label for="type" class="form-label">Stellentyp</label>
@@ -36,8 +39,8 @@
                         }
                     </InputSelect>
                 </div>
-                <button type="submit" class="btn btn-success">Add Job</button>
-                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Hide form</button>
+                <button type="submit" class="btn btn-success">Job hinzufügen</button>
+                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Formular ausblenden</button>
             </EditForm>
         </div>
     </div>
@@ -68,9 +71,13 @@
 
     private async Task HandleValidSubmit()
     {
-        newJob.Id = Guid.NewGuid();
-        await JsonService.AddAsFirstAsync(newJob);
-        await OnJobAdded.InvokeAsync();
-        newJob = new JobApplication();
+        if (string.IsNullOrWhiteSpace(newJob.URL) || Uri.IsWellFormedUriString(newJob.URL, UriKind.Absolute))
+        {
+            newJob.Id = Guid.NewGuid();
+            await JsonService.AddAsFirstAsync(newJob);
+            await OnJobAdded.InvokeAsync();
+            newJob = new JobApplication();
+            showForm = false;
+        }
     }
 }
