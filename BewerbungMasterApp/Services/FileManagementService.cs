@@ -11,15 +11,8 @@ namespace BewerbungMasterApp.Services
         private readonly ILogger<FileManagementService> _logger;
         public FileManagementService(IConfiguration configuration, IWebHostEnvironment environment, IPdfGenerationService pdfGenerationService, IJsonService jsonService, ILogger<FileManagementService> logger)
         {
-            if (string.IsNullOrWhiteSpace(environment.WebRootPath))
-                throw new InvalidOperationException("Web root path cannot be null or empty.");
-
-            var userDirectoryPath = configuration["UserDirectoryPath"];
-            if (string.IsNullOrWhiteSpace(userDirectoryPath))
-                throw new InvalidOperationException("User directory path cannot be null or empty.");
-
             _jobAppDocsPath = Path.Combine(environment.WebRootPath, "JobAppDocs");
-            _userDirectoryPath = Path.Combine(environment.WebRootPath, userDirectoryPath);
+            _userDirectoryPath = Path.Combine(environment.WebRootPath, configuration["UserDirectoryPath"]);
             _pdfGenerationService = pdfGenerationService;
             _jsonService = jsonService;
             _logger = logger;

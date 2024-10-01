@@ -5,6 +5,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<OutputPath>bin\$(Configuration)\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -36,4 +39,11 @@
 	<ItemGroup>
 		<Folder Include="wwwroot\JobAppDocs\" />
 	</ItemGroup>
+
+	<Target Name="CustomPublish" AfterTargets="Publish">
+		<ItemGroup>
+			<PublishFiles Include="$(PublishDir)**\*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(PublishFiles)" DestinationFolder="$(SolutionDir)publish\%(RecursiveDir)" />
+	</Target>
 </Project>

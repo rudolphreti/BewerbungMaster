@@ -12,6 +12,8 @@ namespace BewerbungMasterApp
             {
                 var builder = WebApplication.CreateBuilder(args);
 
+                builder.Configuration.SetBasePath(AppDomain.CurrentDomain.BaseDirectory);
+
                 var startupService = new StartupService();
                 startupService.ConfigureServices(builder);
 
