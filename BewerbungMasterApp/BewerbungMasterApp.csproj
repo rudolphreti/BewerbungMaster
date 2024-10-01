@@ -6,51 +6,36 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="wwwroot\%2a%2a" />
+		<Content Remove="wwwroot\**\*" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <_ContentIncludedByDefault Remove="wwwroot\users\miko\jobAppContent.json" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Content Include="wwwroot\Users\default\data.json">
+		<Content Include="wwwroot\app.css">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="wwwroot\Users\default\jobAppContent.json">
+		<Content Include="wwwroot\favicon.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="wwwroot\Users\default\user.json">
+		<Content Include="wwwroot\JobAppDocs\**\*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="wwwroot\Users\default\CV.pdf">
+		<Content Include="wwwroot\Users\default\**\*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Include="wwwroot\Users\default\CV_Zeugnis.pdf">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="wwwroot\Users\default\LAP-Zeugnis.pdf">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="wwwroot\Users\default\profilfoto.jpg">
+		<Content Include="wwwroot\bootstrap\**\*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="itext7" Version="8.0.5" />
-	  <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.5" />
+		<PackageReference Include="itext7" Version="8.0.5" />
+		<PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.5" />
 		<PackageReference Include="itext7.commons" Version="8.0.5" />
 		<PackageReference Include="itext7.hyph" Version="8.0.5" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="wwwroot\JobAppDocs\" />
 	</ItemGroup>
 
 	<PropertyGroup>
 		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
-
 </Project>
