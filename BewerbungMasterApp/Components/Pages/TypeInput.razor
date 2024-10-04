@@ -24,6 +24,10 @@
             if (Job.Type != value)
             {
                 Job.Type = value;
+                if (value == "Initiativbewerbung")
+                {
+                    Job.Position = string.Empty;
+                }
                 UpdateType().ConfigureAwait(false);
             }
         }

@@ -3,7 +3,14 @@
 
 <tr>
     <td class="text-center">@(JobApplications.IndexOf(Job) + 1)</td>
-    <PositionInput Job="Job" OnUpdate="OnUpdate" />
+    @if (Job.Type != "Initiativbewerbung")
+    {
+        <PositionInput Job="Job" OnUpdate="OnUpdate" />
+    }
+    else
+    {
+        <td></td>
+    }
     <CompanyInput Job="Job" OnUpdate="OnUpdate" />
     <TypeInput Job="Job" OnUpdate="OnUpdate" JobAppContents="JobAppContents" />
     <td class="text-center">
