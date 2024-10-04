@@ -5,12 +5,21 @@
 @inject IJsonService JsonService
 @inject ILogger<RefreshButton> Logger
 
-<button class="btn btn-primary position-absolute top-0 end-0 m-3" @onclick="RefreshJobApplicationFiles">
-    🗘 Refresh Job Applications Files
-</button>
+<div class="d-flex align-items-center position-absolute top-0 end-0 m-3">
+    @if (ShowWarning)
+    {
+        <div class="text-danger me-2">
+            <strong>WARNING!</strong> Click to update job applications files!
+        </div>
+    }
+    <button class="btn btn-primary" @onclick="RefreshJobApplicationFiles">
+        🗘 Refresh Job Applications Files
+    </button>
+</div>
 
 @code {
     [Parameter] public EventCallback OnRefreshCompleted { get; set; }
+    [Parameter] public bool ShowWarning { get; set; }
 
     private async Task RefreshJobApplicationFiles()
     {
@@ -26,7 +35,7 @@
         catch (Exception ex)
         {
             Logger.LogError(ex, "Error occurred while refreshing job applications");
-            // Hier könnten Sie eine Benutzerbenachrichtigung hinzufügen
+            // TODO: Add user notification about the error
         }
     }
 

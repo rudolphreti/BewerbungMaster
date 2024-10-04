@@ -6,10 +6,9 @@
 @inject ILogger<Home> Logger
 @rendermode InteractiveServer
 
-
 <div class="container-fluid my-5">
-    <RefreshButton OnRefreshCompleted="RefreshList" />
--    <AddJob OnJobAdded="RefreshList" />
+    <RefreshButton OnRefreshCompleted="RefreshList" ShowWarning="@showWarning" />
+    <AddJob OnJobAdded="RefreshList" />
 
     @if (jobApplications == null)
     {
@@ -21,10 +20,10 @@
     }
     else
     {
-        <JobApplicationTable JobApplications="jobApplications" 
+        <JobApplicationTable JobApplications="jobApplications"
                              JobAppContents="jobAppContents"
-                             OnUpdate="RefreshList" 
-                             OnDelete="RefreshList" 
+                             OnUpdate="HandleUpdate"
+                             OnDelete="RefreshList"
                              OnMove="RefreshList" />
     }
 </div>
@@ -32,6 +31,7 @@
 @code {
     private List<JobApplication> jobApplications = new();
     private List<JobAppContent> jobAppContents = new();
+    private bool showWarning = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -44,11 +44,18 @@
         {
             jobApplications = await JsonService.GetAllAsync<JobApplication>();
             jobAppContents = await JsonService.GetAllJobAppContentsAsync();
+            showWarning = false;
         }
         catch (Exception ex)
         {
             Logger.LogError(ex, "Error refreshing job applications list");
             // TODO: Add user notification of error
         }
+    }
+
+    private void HandleUpdate()
+    {
+        showWarning = true;
+        StateHasChanged();
     }
 }
