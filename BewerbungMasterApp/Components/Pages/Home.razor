@@ -8,7 +8,7 @@
 
 <div class="container-fluid my-5">
     <RefreshButton OnRefreshCompleted="RefreshList" ShowWarning="@showWarning" />
-    <AddJob OnJobAdded="RefreshList" />
+    <AddJob OnJobAdded="HandleJobAdded" />
 
     @if (jobApplications == null)
     {
@@ -55,6 +55,13 @@
 
     private void HandleUpdate()
     {
+        showWarning = true;
+        StateHasChanged();
+    }
+
+    private async Task HandleJobAdded()
+    {
+        await RefreshList();
         showWarning = true;
         StateHasChanged();
     }

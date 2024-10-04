@@ -3,7 +3,7 @@
 @inject IJsonService JsonService
 
 <div class="text-end mb-3">
-    <button title="Neuen Eintrag hinzufügen" class="btn btn-primary" @onclick="ToggleForm">Job hinzufügen +</button>
+    <button title="Add new entry" class="btn btn-primary" @onclick="ToggleForm">Add Job +</button>
 </div>
 
 @if (showForm)
@@ -18,7 +18,7 @@
                     <ValidationMessage For="@(() => newJob.Position)" />
                 </div>
                 <div class="mb-3">
-                    <label for="company" class="form-label">Unternehmen</label>
+                    <label for="company" class="form-label">Company</label>
                     <InputText id="company" @bind-Value="newJob.Company" class="form-control" />
                     <ValidationMessage For="@(() => newJob.Company)" />
                 </div>
@@ -27,11 +27,11 @@
                     <InputText id="url" @bind-Value="newJob.URL" class="form-control" />
                     @if (!string.IsNullOrWhiteSpace(newJob.URL) && !Uri.IsWellFormedUriString(newJob.URL, UriKind.Absolute))
                     {
-                        <div class="text-danger">Bitte geben Sie eine gültige URL ein.</div>
+                        <div class="text-danger">Please enter a valid URL.</div>
                     }
                 </div>
                 <div class="mb-3">
-                    <label for="type" class="form-label">Stellentyp</label>
+                    <label for="type" class="form-label">Job Type</label>
                     <InputSelect id="type" @bind-Value="newJob.Type" class="form-select">
                         @foreach (var jobType in jobTypes)
                         {
@@ -39,8 +39,8 @@
                         }
                     </InputSelect>
                 </div>
-                <button type="submit" class="btn btn-success">Job hinzufügen</button>
-                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Formular ausblenden</button>
+                <button type="submit" class="btn btn-success">Add Job</button>
+                <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Hide Form</button>
             </EditForm>
         </div>
     </div>
