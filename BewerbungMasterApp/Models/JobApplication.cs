@@ -24,8 +24,5 @@ namespace BewerbungMasterApp.Models
 
         [JsonPropertyName("type")]
         public string Type { get; set; } = "Deweloper"; //it schould be on English
-
-        [JsonPropertyName("isInitiative")]
-        public bool IsInitiative => Type == "Initiativbewerbung" || Type == "Head hunter"; //it schould be on English
     }
 }

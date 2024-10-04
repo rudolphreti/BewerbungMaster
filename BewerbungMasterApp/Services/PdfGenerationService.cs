@@ -27,7 +27,7 @@ namespace BewerbungMasterApp.Services
                 AddHeader(document, user);
                 AddRecipient(document, application.Company);
                 AddDate(document, user.City);
-                AddTitle(document, boldFont, application);
+                AddTitle(document, boldFont, application, jobAppContent);
                 AddGreeting(document);
                 AddMainContent(document, regularFont,  application, jobAppContent);
                 AddClosing(document, user);

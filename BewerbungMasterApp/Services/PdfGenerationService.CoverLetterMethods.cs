@@ -38,9 +38,9 @@ namespace BewerbungMasterApp.Services
             AddParagraph(document, $"{city}, {DateTime.Now:dd.MM.yyyy}", 10, TextAlignment.RIGHT);
         }
 
-        private static void AddTitle(Document document, PdfFont boldFont, JobApplication application)
+        private static void AddTitle(Document document, PdfFont boldFont, JobApplication application, JobAppContent jobAppContent)
         {
-            string title = application.IsInitiative ? "Initiativbewerbung" : $"Bewerbung als {application.Position}";
+            string title = FillPlaceholders(jobAppContent.Title, application);
             AddParagraph(document, title, 20, TextAlignment.CENTER, 14, boldFont);
         }
 

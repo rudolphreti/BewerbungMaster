@@ -3,17 +3,10 @@
 @inject IJsonService JsonService
 
 <td class="text-center text-wrap">
-    @if (!Job.IsInitiative)
-    {
-        <input @bind="Position"
-               @bind:event="oninput"
-               @onblur="UpdatePosition"
-               style="width:100%" />
-    }
-    else
-    {
-        <span>Initiativbewerbung</span>
-    }
+    <input @bind="Position"
+           @bind:event="oninput"
+           @onblur="UpdatePosition"
+           style="width:100%" />
 </td>
 
 @code {

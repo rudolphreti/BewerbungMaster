@@ -10,6 +10,9 @@ namespace BewerbungMasterApp.Models
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
 
+        [JsonPropertyName("title")]
+        public string Title { get; set; } = string.Empty;
+
         [JsonPropertyName("content")]
         public string Content { get; set; } = string.Empty;
     }

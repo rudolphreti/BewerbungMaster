@@ -24,10 +24,6 @@
             if (Job.Type != value)
             {
                 Job.Type = value;
-                if (Job.IsInitiative)
-                {
-                    Job.Position = "Initiativbewerbung";
-                }
                 UpdateType().ConfigureAwait(false);
             }
         }
