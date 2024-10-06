@@ -1,9 +1,11 @@
 ﻿@using BewerbungMasterApp.Models
 @using BewerbungMasterApp.Components.Pages
+@using BewerbungMasterApp.Services
+@inject ConfigurationService ConfigService
 
 <tr>
     <td class="text-center">@(JobApplications.IndexOf(Job) + 1)</td>
-    @if (Job.Type != "Initiativbewerbung")
+    @if (!ConfigService.JobTypesWithoutPosition.Contains(Job.Type))
     {
         <PositionInput Job="Job" OnUpdate="OnUpdate" />
     }

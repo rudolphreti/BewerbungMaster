@@ -73,6 +73,7 @@ namespace BewerbungMasterApp.Services
             services.AddSingleton<IJsonService, JsonService>();
             services.AddSingleton<IApplicationInitializationService, ApplicationInitializationService>();
             services.AddSingleton<JobEditService>();
+            services.AddSingleton<ConfigurationService>();
         }
 
         private static void ConfigureLogging(ILoggingBuilder logging, IConfiguration configuration)

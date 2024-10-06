@@ -13,7 +13,6 @@ namespace BewerbungMasterApp.Models
         public string? URL { get; set; }
 
         [JsonPropertyName("position")]
-        [Required(ErrorMessage = "Position is required.")]
         [StringLength(100, ErrorMessage = "Position cannot be longer than 100 characters.")]
         public string Position { get; set; } = string.Empty;
 

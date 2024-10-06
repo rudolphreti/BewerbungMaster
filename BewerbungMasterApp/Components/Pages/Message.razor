@@ -17,7 +17,10 @@
 als Antwort auf die Anzeige {Job.URL} für die Stelle {Job.Position} in Ihrem Unternehmen {Job.Company} sende ich Ihnen meine Bewerbungsunterlagen im Anhang.
 
 Mit freundlichen Grüßen
-{user.FirstName} {user.LastName}";
+{user.FirstName} {user.LastName}
+
+Ich bin damit einverstanden, dass meine personenbezogenen Daten zum Zweck der Durchführung des Bewerbungsverfahrens verarbeitet werden. Meine Daten werden vertraulich behandelt und nur an die am Bewerbungsprozess beteiligten Personen weitergegeben.
+";
 
         await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", message);
     }

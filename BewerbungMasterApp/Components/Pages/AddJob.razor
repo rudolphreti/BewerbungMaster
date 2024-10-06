@@ -1,6 +1,7 @@
 ﻿@using BewerbungMasterApp.Models
 @using BewerbungMasterApp.Services
 @inject IJsonService JsonService
+@inject ConfigurationService ConfigService
 
 <div class="text-end mb-3">
     <button title="Add new entry" class="btn btn-primary" @onclick="ToggleForm">Add Job +</button>
@@ -13,10 +14,22 @@
             <EditForm Model="@newJob" OnValidSubmit="HandleValidSubmit">
                 <DataAnnotationsValidator />
                 <div class="mb-3">
-                    <label for="position" class="form-label">Position</label>
-                    <InputText id="position" @bind-Value="newJob.Position" class="form-control" />
-                    <ValidationMessage For="@(() => newJob.Position)" />
+                    <label for="type" class="form-label">Job Type</label>
+                    <InputSelect id="type" @bind-Value="newJob.Type" class="form-select" @onchange="OnJobTypeChanged">
+                        @foreach (var jobType in jobTypes)
+                        {
+                            <option value="@jobType">@jobType</option>
+                        }
+                    </InputSelect>
                 </div>
+                @if (!ConfigService.JobTypesWithoutPosition.Contains(newJob.Type))
+                {
+                    <div class="mb-3">
+                        <label for="position" class="form-label">Position</label>
+                        <InputText id="position" @bind-Value="newJob.Position" class="form-control" />
+                        <ValidationMessage For="@(() => newJob.Position)" />
+                    </div>
+                }
                 <div class="mb-3">
                     <label for="company" class="form-label">Company</label>
                     <InputText id="company" @bind-Value="newJob.Company" class="form-control" />
@@ -29,15 +42,6 @@
                     {
                         <div class="text-danger">Please enter a valid URL.</div>
                     }
-                </div>
-                <div class="mb-3">
-                    <label for="type" class="form-label">Job Type</label>
-                    <InputSelect id="type" @bind-Value="newJob.Type" class="form-select">
-                        @foreach (var jobType in jobTypes)
-                        {
-                            <option value="@jobType">@jobType</option>
-                        }
-                    </InputSelect>
                 </div>
                 <button type="submit" class="btn btn-success">Add Job</button>
                 <button type="button" class="btn btn-secondary" @onclick="ToggleForm">Hide Form</button>
@@ -66,6 +70,15 @@
         if (!showForm)
         {
             newJob = new JobApplication();
+        }
+    }
+
+    private void OnJobTypeChanged(ChangeEventArgs e)
+    {
+        newJob.Type = e.Value?.ToString() ?? "";
+        if (ConfigService.JobTypesWithoutPosition.Contains(newJob.Type))
+        {
+            newJob.Position = string.Empty;
         }
     }
 
