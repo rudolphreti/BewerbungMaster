@@ -5,7 +5,8 @@
 @inject IJsonService JsonService
 @inject ILogger<RefreshButton> Logger
 
-<div class="d-flex align-items-center position-absolute top-0 end-0 m-3">
+    @* TODO: after some operations like eg. delete, move... warrning message dissapears*@
+<div class="d-flex align-items-center position-absolute top-0 end-0 m-3"> 
     @if (ShowWarning)
     {
         <div class="text-danger me-2">

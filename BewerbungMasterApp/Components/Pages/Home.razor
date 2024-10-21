@@ -9,6 +9,7 @@
 <div class="container-fluid my-5">
     <RefreshButton OnRefreshCompleted="RefreshList" ShowWarning="@showWarning" />
     <AddJob OnJobAdded="HandleJobAdded" />
+    <Search OnSearch="HandleSearch" />
 
     @if (jobApplications == null)
     {
@@ -20,7 +21,7 @@
     }
     else
     {
-        <JobApplicationTable JobApplications="jobApplications"
+        <JobApplicationTable JobApplications="filteredJobApplications"
                              JobAppContents="jobAppContents"
                              OnUpdate="HandleUpdate"
                              OnDelete="RefreshList"
@@ -30,8 +31,10 @@
 
 @code {
     private List<JobApplication> jobApplications = new();
+    private List<JobApplication> filteredJobApplications = new();
     private List<JobAppContent> jobAppContents = new();
     private bool showWarning = false;
+    private Func<JobApplication, bool> currentFilter = _ => true;
 
     protected override async Task OnInitializedAsync()
     {
@@ -43,6 +46,7 @@
         try
         {
             jobApplications = await JsonService.GetAllAsync<JobApplication>();
+            ApplyFilter();
             jobAppContents = await JsonService.GetAllJobAppContentsAsync();
             showWarning = false;
         }
@@ -63,6 +67,18 @@
     {
         await RefreshList();
         showWarning = true;
+        StateHasChanged();
+    }
+
+    private void HandleSearch(Func<JobApplication, bool> searchFilter)
+    {
+        currentFilter = searchFilter;
+        ApplyFilter();
+    }
+
+    private void ApplyFilter()
+    {
+        filteredJobApplications = jobApplications.Where(currentFilter).ToList();
         StateHasChanged();
     }
 }

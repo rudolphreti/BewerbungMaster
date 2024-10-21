@@ -1,0 +1,46 @@
+﻿@using BewerbungMasterApp.Models
+@using BewerbungMasterApp.Services
+@inject IJsonService JsonService
+
+<div class="d-flex align-items-center mb-3">
+    <input type="text"
+           class="form-control me-2"
+           placeholder="Enter search keyword"
+           @bind="searchTerm"
+           @bind:event="oninput"
+           @onkeyup="HandleKeyUp" />
+    <button class="btn btn-outline-primary" @onclick="PerformSearch">
+        🔎
+    </button>
+</div>
+
+@code {
+    private string searchTerm = "";
+
+    [Parameter]
+    public EventCallback<Func<JobApplication, bool>> OnSearch { get; set; }
+
+    private async Task PerformSearch()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            await OnSearch.InvokeAsync(_ => true);  // No filter
+        }
+        else
+        {
+            await OnSearch.InvokeAsync(job =>
+                job.Position.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                job.Company.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                job.Type.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
+            );
+        }
+    }
+
+    private async Task HandleKeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await PerformSearch();
+        }
+    }
+}

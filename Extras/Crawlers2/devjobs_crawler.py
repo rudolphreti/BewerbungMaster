@@ -12,7 +12,7 @@ import logging
 class DevJobsCrawler(BaseCrawler):
     def __init__(self, chrome_driver_path):
         super().__init__(chrome_driver_path, 'devjobs_data.json')
-        self.base_url = "https://devjobs.at/jobs/search?locations=wien-109166&text=junior&sort=relevance"
+        self.base_url = "https://devjobs.at/jobs/search?locations=wien-109166&text=IT-Support&sort=relevance"
 
     def initialize_driver(self):
         chrome_options = Options()

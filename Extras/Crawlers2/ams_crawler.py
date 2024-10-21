@@ -24,7 +24,7 @@ class AMSCrawler(BaseCrawler):
     def crawl_jobs(self):
         all_jobs, page_number = [], 0
         while True:
-            url = f'https://jobs.ams.at/public/emps/jobs?page={page_number}&query=tester&location=wien&JOB_OFFER_TYPE=SB_WKO&JOB_OFFER_TYPE=IJ&JOB_OFFER_TYPE=BA&WORKING_TIME=V&PERIOD=ALL&sortField=PERIOD'
+            url = f'https://jobs.ams.at/public/emps/jobs?page={page_number}&query=IT-Support&location=wien&JOB_OFFER_TYPE=SB_WKO&JOB_OFFER_TYPE=IJ&JOB_OFFER_TYPE=BA&WORKING_TIME=V&PERIOD=ALL&sortField=PERIOD'
             self.driver.get(url)
             time.sleep(2)
             if "error" in self.driver.current_url:

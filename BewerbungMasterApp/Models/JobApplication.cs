@@ -22,6 +22,6 @@ namespace BewerbungMasterApp.Models
         public string Company { get; set; } = string.Empty;
 
         [JsonPropertyName("type")]
-        public string Type { get; set; } = "Deweloper"; //it schould be on English
+        public string Type { get; set; } = "IT-Support"; //it should to be on English
     }
 }
